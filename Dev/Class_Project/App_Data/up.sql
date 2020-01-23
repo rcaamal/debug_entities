@@ -27,3 +27,5 @@ Create Table [Coaches](
 
 
 Alter Table [Administrator] Add Foreign Key ([UserID]) References [User] ([UserID])
+Alter Table [Administrator] Add Foreign Key ([CoachID]) References [Coaches] ([CoachesID])
+Alter Table [Administrator] Add Foreign Key ([Results]) References [Results] ([CoachesID])
