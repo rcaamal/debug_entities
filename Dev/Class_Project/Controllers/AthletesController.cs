@@ -16,19 +16,18 @@ namespace Class_Project.Controllers
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        // GET: Athletes
-        [HttpGet]
-        public ActionResult Index(string SearchName)
+        public ActionResult Index()
         {
-            if (!String.IsNullOrEmpty(SearchName))
-            {
-                var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();
-                return View(res);
-                
-            }
             return View(db.Athletes.Include(a => a.Result));
+        }
 
-            //return View(db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList());
+         
+        // GET: Athletes
+        [HttpPost]
+        public ActionResult Index(String SearchName)
+        {
+            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();       
+            return View(res);
         }
        
 

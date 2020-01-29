@@ -5,10 +5,10 @@
 }
 <h2>Athlete List</h2>
 
-@using (Html.BeginForm("Index", "Athletes", FormMethod.Get))
+@using (Html.BeginForm("Index", "Athletes", FormMethod.Post))
 {
     <p>
-        @Html.TextBox("Search Name")<br/>
+        @Html.TextBox("SearchName")<br/>
         <input type="submit" value="Search" />
     </p>
 }
