@@ -2,6 +2,7 @@ namespace Class_Project.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -18,10 +19,13 @@ namespace Class_Project.Models
 
         public int AthResults { get; set; }
 
+        
         [StringLength(120)]
+        [DisplayName("First Name")]
         public string FName { get; set; }
 
         [StringLength(120)]
+        [DisplayName("Last Name")]
         public string LName { get; set; }
 
         public virtual Result Result { get; set; }
