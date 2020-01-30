@@ -16,14 +16,19 @@ namespace Class_Project.Controllers
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        // GET: Athletes
         public ActionResult Index()
         {
-           
-            var athletes = db.Athletes.Include(a => a.Result);
-            return View(athletes.ToList());
+            return View(db.Athletes.Include(a => a.Result));
         }
 
+         
+        // GET: Athletes
+        [HttpPost]
+        public ActionResult Index(String SearchName)
+        {
+            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();       
+            return View(res);
+        }
        
 
         // GET: Athletes/Details/5
@@ -38,6 +43,7 @@ namespace Class_Project.Controllers
             {
                 return HttpNotFound();
             }
+    
             return View(athlete);
         }
 
