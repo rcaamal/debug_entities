@@ -11,9 +11,9 @@ CREATE TABLE [dbo].[Results](
 Create Table [dbo].[Athletes](
 
     [ID] INT IDENTITY(1,1) NOT NULL,
-    [AthResults] INT NOT NULL,
     [FName] NVARCHAR(120),
     [LName] NVARCHAR(120),
+	[AthResults] INT NOT NULL,
     
     CONSTRAINT [PK_dbo.Athletes] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FK_dbo.Athletes_dbo.Results_ID] FOREIGN KEY ([AthResults]) REFERENCES [dbo].[Results] ([ID])
