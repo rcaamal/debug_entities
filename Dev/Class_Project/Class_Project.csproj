@@ -148,6 +148,7 @@
     <Compile Include="DAL\ClassProjectContext.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\UploadContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -157,6 +158,10 @@
       <DependentUpon>ClassProject.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\down.sql" />
+    <Content Include="App_Data\IanClassProject.mdf" />
+    <Content Include="App_Data\IanClassProject_log.ldf">
+      <DependentUpon>IanClassProject.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\newTest.sql" />
     <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\up.sql" />
@@ -170,6 +175,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\DebugAthletics - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
