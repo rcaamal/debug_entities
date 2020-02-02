@@ -16,7 +16,7 @@ namespace Class_Project.Controllers
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        //public ActionResult Index() => View(db.Athletes.Include(a => a.Result));
+        public ActionResult Index() => View(db.Athletes.Include(a => a.Result));
 
 
         // GET: Athletes
