@@ -5,8 +5,8 @@
 }
 <h2>Athlete List</h2>
 
-@using (Html.BeginForm("Index", "Athletes", FormMethod.Post))
-{
+ @using (Html.BeginForm("Index", "Athletes", FormMethod.Post))
+    {
     <p>
         @Html.TextBox("SearchName")<br/>
         <input type="submit" value="Search" />
@@ -19,7 +19,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Result.AthleteStats)
+            @Html.DisplayNameFor(model => model.Result.TimeEvents)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FName)
@@ -33,7 +33,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Result.AthleteStats)
+            @Html.DisplayFor(modelItem => item.Result.TimeEvents)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FName)
