@@ -1,8 +1,13 @@
-
+﻿
 CREATE TABLE [dbo].[Results](
     [ID]  INT IDENTITY(1,1) NOT NULL,
 	[AthleteStats] nvarchar(120),
 	[TimeEvents] DATETIME,
+	[Location] nvarchar(120),
+	[Place] Int NOT NULL,
+	[Distance/Miles] INT NOT NULL,
+	[SwimResult] time,
+    
     CONSTRAINT [PK_dbo.Results] PRIMARY KEY CLUSTERED ([ID] ASC)
     
 );
@@ -69,5 +74,32 @@ Create Table [dbo].[Administrator](
 
 
 
+INSERT INTO [dbo].[Results]([AthleteStats],[TimeEvents],[Location],[Place],[Distance/Miles],[SwimResult]) VALUES
+('A','2008-01-01 05:30:00 ','Salem, Oregon',1, 15, '00:05:12'),
+('B',' 2014-01-01 02:30:00','Salem, Oregon',2, 15, '00:15:32'),
+('C','2019-01-01 12:00:00','Salem, Oregon',3, 15, '00:25:52');
 
 
+
+
+
+INSERT INTO [dbo].[Athletes]([FName],[LName],[AthResults]) VALUES
+('David','De Gea',1),
+('Paul','Pogba',3),
+('Luis','Nani',2);
+
+
+
+INSERT INTO [dbo].[Coaches]([Name],[Password],[Athlete],[AthlResult]) VALUES
+('Ole', 'Ole password', 2,3),
+('Jose', 'Jose password', 1,1);
+
+
+INSERT INTO [dbo].[Users]([Name],[Password],[Email],[AthResult]) VALUES
+('Zaid', 'Zaid password', 'zaid@gmail.com', 1),
+('Paul', 'Paul password', 'Paul@gmail.com', 3);
+
+
+INSERT INTO [dbo].[Administrator]([Name],[Password],[Coach],[UserInfo],[ResultAth]) VALUES
+('John','password',2,1,3),
+('Nancy','password',1,2,2);

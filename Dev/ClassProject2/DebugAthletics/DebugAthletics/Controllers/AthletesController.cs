@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Class_Project.DAL;
-using Class_Project.Models;
+using DebugAthletics.DAL;
 
-namespace Class_Project.Controllers
+namespace DebugAthletics.Controllers
 {
     public class AthletesController : Controller
     {
-        private ClassProjectContext db = new ClassProjectContext();
+        private ClassProjectModels db = new ClassProjectModels();
 
         public ActionResult Index() => View(db.Athletes.Include(a => a.Result));
 
@@ -23,10 +21,9 @@ namespace Class_Project.Controllers
         [HttpPost]
         public ActionResult Index(String SearchName)
         {
-            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();       
+            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();
             return View(res);
         }
-       
 
         // GET: Athletes/Details/5
         public ActionResult Details(int? id)
@@ -40,7 +37,6 @@ namespace Class_Project.Controllers
             {
                 return HttpNotFound();
             }
-    
             return View(athlete);
         }
 
@@ -56,7 +52,7 @@ namespace Class_Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,AthResults,FName,LName")] Athlete athlete)
+        public ActionResult Create([Bind(Include = "ID,FName,LName,AthResults")] Athlete athlete)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,7 @@ namespace Class_Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,AthResults,FName,LName")] Athlete athlete)
+        public ActionResult Edit([Bind(Include = "ID,FName,LName,AthResults")] Athlete athlete)
         {
             if (ModelState.IsValid)
             {
