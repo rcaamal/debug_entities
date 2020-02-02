@@ -20,6 +20,11 @@ namespace Class_Project.Controllers
 
 
         // GET: Athletes
+        public ActionResult Index()
+        {
+            return View(db.Athletes.Include(a => a.Result));
+        }
+
         [HttpPost]
         public ActionResult Index(String SearchName)
         {
