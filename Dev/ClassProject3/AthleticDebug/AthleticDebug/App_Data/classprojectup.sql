@@ -89,5 +89,6 @@ INSERT INTO [dbo].[Athletes]([FName],[LName],[Gender],[Picture],[CoachID],[TeamI
 
 INSERT INTO [dbo].[Results]([AthleteID],[TimeEvents],[Location],[Place],[Distance/Miles],[SwimResult]) VALUES
 (1,'2008-01-01 05:30:00','Salem, Oregon',1, 15, '00:05:12'),
+(1,'2008-01-01 05:30:00','Salem, Oregon',1, 15, '00:03:12'),
 (2,'2014-01-01 02:30:00','Salem, Oregon',2, 15, '00:15:32'),
 (3,'2019-01-01 12:00:00','Salem, Oregon',3, 15, '00:25:52');
