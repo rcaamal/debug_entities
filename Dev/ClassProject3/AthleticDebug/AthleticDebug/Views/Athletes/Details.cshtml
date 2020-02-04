@@ -2,10 +2,11 @@
 
 @{
     ViewBag.Title = "Details";
+    string temp = "/images/" + Model.Picture;
 }
 
 <h2>Details</h2>
-
+    <img src=@temp alt="Image Not Available" width="250" height="250">
 <div>
     <h4>Athlete</h4>
     <hr />
@@ -49,15 +50,6 @@
         <dd>
             @Html.DisplayFor(model => model.Gender)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
-
     </dl>
 </div>
 <p>
