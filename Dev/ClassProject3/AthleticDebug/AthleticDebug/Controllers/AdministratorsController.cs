@@ -10,126 +10,112 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    [Authorize]
-    public class AthletesController : Controller
+    public class AdministratorsController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        public ActionResult Index() => View(db.Athletes.Include(a => a.Results));
-
-
-        // GET: Athletes
-        [HttpPost]
-        public ActionResult Index(String SearchName)
+        // GET: Administrators
+        public ActionResult Index()
         {
-            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();
-            return View(res);
+            var administrators = db.Administrators.Include(a => a.User);
+            return View(administrators.ToList());
         }
 
-        // GET: Athletes/Details/5
+        // GET: Administrators/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.AthleteResult = id;
-            Result result = db.Results.Find(id);
-            var athleteResult = db.Results.Where(i => i.AthleteID == id);
-            /*if (result == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }*/
-            //Athlete athlete = db.Athletes.Find(id);
-            if (result == null)
+            }
+            Administrator administrator = db.Administrators.Find(id);
+            if (administrator == null)
             {
                 return HttpNotFound();
             }
-            return View(athleteResult);
+            return View(administrator);
         }
 
-
-
-        // GET: Athletes/Create
+        // GET: Administrators/Create
         public ActionResult Create()
         {
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name");
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name");
+            ViewBag.UserInfo = new SelectList(db.Users, "ID", "Name");
             return View();
         }
 
-        // POST: Athletes/Create
+        // POST: Administrators/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Create([Bind(Include = "ID,Name,Password,UserInfo")] Administrator administrator)
         {
             if (ModelState.IsValid)
             {
-                db.Athletes.Add(athlete);
+                db.Administrators.Add(administrator);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.UserInfo = new SelectList(db.Users, "ID", "Name", administrator.UserInfo);
+            return View(administrator);
         }
 
-        // GET: Athletes/Edit/5
+        // GET: Administrators/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Administrator administrator = db.Administrators.Find(id);
+            if (administrator == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.UserInfo = new SelectList(db.Users, "ID", "Name", administrator.UserInfo);
+            return View(administrator);
         }
 
-        // POST: Athletes/Edit/5
+        // POST: Administrators/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Edit([Bind(Include = "ID,Name,Password,UserInfo")] Administrator administrator)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(athlete).State = EntityState.Modified;
+                db.Entry(administrator).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.UserInfo = new SelectList(db.Users, "ID", "Name", administrator.UserInfo);
+            return View(administrator);
         }
 
-        // GET: Athletes/Delete/5
+        // GET: Administrators/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Administrator administrator = db.Administrators.Find(id);
+            if (administrator == null)
             {
                 return HttpNotFound();
             }
-            return View(athlete);
+            return View(administrator);
         }
 
-        // POST: Athletes/Delete/5
+        // POST: Administrators/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Athlete athlete = db.Athletes.Find(id);
-            db.Athletes.Remove(athlete);
+            Administrator administrator = db.Administrators.Find(id);
+            db.Administrators.Remove(administrator);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

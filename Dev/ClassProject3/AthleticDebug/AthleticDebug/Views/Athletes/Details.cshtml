@@ -1,66 +1,61 @@
-﻿@model AthleticDebug.DAL.Athlete
+﻿@model IEnumerable<AthleticDebug.DAL.Result>
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Index";
 }
 
-<h2>Details</h2>
+<h2>Index</h2>
 
-<div>
-    <h4>Athlete</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Coach.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Coach.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Team.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Team.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
-
-    </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Athlete.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEvents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance_Miles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SwimResult)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Athlete.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEvents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance_Miles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwimResult)
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to List", "Index", "Athletes")

@@ -10,126 +10,107 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    [Authorize]
-    public class AthletesController : Controller
+    public class TeamsController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        public ActionResult Index() => View(db.Athletes.Include(a => a.Results));
-
-
-        // GET: Athletes
-        [HttpPost]
-        public ActionResult Index(String SearchName)
+        // GET: Teams
+        public ActionResult Index()
         {
-            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();
-            return View(res);
+            return View(db.Teams.ToList());
         }
 
-        // GET: Athletes/Details/5
+        // GET: Teams/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.AthleteResult = id;
-            Result result = db.Results.Find(id);
-            var athleteResult = db.Results.Where(i => i.AthleteID == id);
-            /*if (result == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }*/
-            //Athlete athlete = db.Athletes.Find(id);
-            if (result == null)
+            }
+            Team team = db.Teams.Find(id);
+            if (team == null)
             {
                 return HttpNotFound();
             }
-            return View(athleteResult);
+            return View(team);
         }
 
-
-
-        // GET: Athletes/Create
+        // GET: Teams/Create
         public ActionResult Create()
         {
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name");
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name");
             return View();
         }
 
-        // POST: Athletes/Create
+        // POST: Teams/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Create([Bind(Include = "ID,Name")] Team team)
         {
             if (ModelState.IsValid)
             {
-                db.Athletes.Add(athlete);
+                db.Teams.Add(team);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            return View(team);
         }
 
-        // GET: Athletes/Edit/5
+        // GET: Teams/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Team team = db.Teams.Find(id);
+            if (team == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            return View(team);
         }
 
-        // POST: Athletes/Edit/5
+        // POST: Teams/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Edit([Bind(Include = "ID,Name")] Team team)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(athlete).State = EntityState.Modified;
+                db.Entry(team).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            return View(team);
         }
 
-        // GET: Athletes/Delete/5
+        // GET: Teams/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Team team = db.Teams.Find(id);
+            if (team == null)
             {
                 return HttpNotFound();
             }
-            return View(athlete);
+            return View(team);
         }
 
-        // POST: Athletes/Delete/5
+        // POST: Teams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Athlete athlete = db.Athletes.Find(id);
-            db.Athletes.Remove(athlete);
+            Team team = db.Teams.Find(id);
+            db.Teams.Remove(team);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
