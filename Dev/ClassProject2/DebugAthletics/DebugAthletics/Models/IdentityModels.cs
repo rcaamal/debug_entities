@@ -25,7 +25,7 @@ namespace DebugAthletics.Models
         //: base("AzureConnection", throwIfV1Schema: false)
         {
             // Disable code-first migrations
-            Database.SetInitializer<ApplicationDbContext>(null);
+            //Database.SetInitializer<ApplicationDbContext>(null);
         }
 
         public static ApplicationDbContext Create()

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DebugAthletics.DAL;
 
 namespace DebugAthletics.Controllers
 {   
     [Authorize]
     public class HomeController : Controller
     {
+        private ClassProjectModels db = new ClassProjectModels();
         public ActionResult Index()
         {
             return View();
@@ -26,6 +28,11 @@ namespace DebugAthletics.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Athletes()
+        {
+            ViewBag.Message = "These are the athletes that we have at this moement";
+            return View(db.Athletes.OrderBy(a => a.FName).ToList());
         }
     }
 }
