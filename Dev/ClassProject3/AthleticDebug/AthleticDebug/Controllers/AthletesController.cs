@@ -38,6 +38,8 @@ namespace AthleticDebug.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Best = db.Results.Where(a => a.AthleteID == id).OrderBy(a => a.SwimResult).Take(0);
+
             return View(athlete);
         }
 
