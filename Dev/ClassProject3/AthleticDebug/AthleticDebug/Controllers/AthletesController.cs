@@ -10,7 +10,7 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AthletesController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
