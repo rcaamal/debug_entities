@@ -10,126 +10,112 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    //[Authorize]
-    public class AthletesController : Controller
+    public class ResultsController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
 
-        public ActionResult Index() => View(db.Athletes.Include(a => a.Results));
-
-
-        // GET: Athletes
-        [HttpPost]
-        public ActionResult Index(String SearchName)
+        // GET: Results
+        public ActionResult Index()
         {
-            var res = db.Athletes.Where(p => p.FName.Contains(SearchName)).ToList();
-            return View(res);
+            var results = db.Results.Include(r => r.Athlete);
+            return View(results.ToList());
         }
 
-        // GET: Athletes/Details/5
+        // GET: Results/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.AthleteResult = id;
-            Result result = db.Results.Find(id);
-            var athleteResult = db.Results.Where(i => i.AthleteID == id);
-            /*if (result == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }*/
-            //Athlete athlete = db.Athletes.Find(id);
+            }
+            Result result = db.Results.Find(id);
             if (result == null)
             {
                 return HttpNotFound();
             }
-            return View(athleteResult);
+            return View(result);
         }
 
-
-
-        // GET: Athletes/Create
+        // GET: Results/Create
         public ActionResult Create()
         {
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name");
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name");
+            ViewBag.AthleteID = new SelectList(db.Athletes, "ID", "FName");
             return View();
         }
 
-        // POST: Athletes/Create
+        // POST: Results/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Create([Bind(Include = "ID,AthleteID,TimeEvents,Location,Place,Distance_Miles,SwimResult")] Result result)
         {
             if (ModelState.IsValid)
             {
-                db.Athletes.Add(athlete);
+                db.Results.Add(result);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.AthleteID = new SelectList(db.Athletes, "ID", "FName", result.AthleteID);
+            return View(result);
         }
 
-        // GET: Athletes/Edit/5
+        // GET: Results/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Result result = db.Results.Find(id);
+            if (result == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.AthleteID = new SelectList(db.Athletes, "ID", "FName", result.AthleteID);
+            return View(result);
         }
 
-        // POST: Athletes/Edit/5
+        // POST: Results/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FName,LName,Gender,Picture,CoachID,TeamID")] Athlete athlete)
+        public ActionResult Edit([Bind(Include = "ID,AthleteID,TimeEvents,Location,Place,Distance_Miles,SwimResult")] Result result)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(athlete).State = EntityState.Modified;
+                db.Entry(result).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CoachID = new SelectList(db.Coaches, "ID", "Name", athlete.CoachID);
-            ViewBag.TeamID = new SelectList(db.Teams, "ID", "Name", athlete.TeamID);
-            return View(athlete);
+            ViewBag.AthleteID = new SelectList(db.Athletes, "ID", "FName", result.AthleteID);
+            return View(result);
         }
 
-        // GET: Athletes/Delete/5
+        // GET: Results/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            Result result = db.Results.Find(id);
+            if (result == null)
             {
                 return HttpNotFound();
             }
-            return View(athlete);
+            return View(result);
         }
 
-        // POST: Athletes/Delete/5
+        // POST: Results/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Athlete athlete = db.Athletes.Find(id);
-            db.Athletes.Remove(athlete);
+            Result result = db.Results.Find(id);
+            db.Results.Remove(result);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
