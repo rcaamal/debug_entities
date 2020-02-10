@@ -46,10 +46,7 @@ This is the repository for Debug Entities, a team for the CS461/CS462 Senior Pro
             2.	List of requirements, NFR's
             3.	Overall architecture design
             4.	Initial modeling (initial database design, use cases, ...) 
-            5.	Timeline and release plan
-            6.	Epics/Features/User stories in Azure DevOps backlog with ID, effort, priority.
-            7.	Final Vision Statement
-            8.	Identification of Risks
+            5.	Final Vision Statement
 	5. Milestone5
 		* Restrospectives
 		* Team details
