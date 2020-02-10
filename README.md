@@ -82,7 +82,7 @@ The [Get Started ](GETSTARTED.md) file has information about how to fork and clo
 
 ### Guidlines ###
 
-For coding guildines when working on this project, see these [Guidelines](Guidelines.md).
+For coding guildines when working on this project, see these [Guidelines](Guidlines.md).
 
 ### Software Construction Process ###
 
