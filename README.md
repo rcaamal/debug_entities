@@ -64,7 +64,7 @@ This is the repository for Debug Entities, a team for the CS461/CS462 Senior Pro
 * [Zeed Alsuwayyigh](https://github.com/ZeedAlsuwayyigh)
 * [Randy Caamal](https://github.com/rcaamal)
 * [Troy Duncanson](https://github.com/Silmarwin)
-* [Ian Oberst](https://github.com/rcaamal)
+* [Ian Oberst](https://github.com/Ioberst17)
 
 ## Debug Entities Project ##
 
