@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -179,6 +182,7 @@
     <Compile Include="Controllers\AthletesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Athlete.cs" />
     <Compile Include="DAL\ClassProjectContext.cs" />
@@ -365,6 +369,11 @@
     <Content Include="Views\Athletes\Details.cshtml" />
     <Content Include="Views\Athletes\Edit.cshtml" />
     <Content Include="Views\Athletes\Index.cshtml" />
+    <Content Include="Views\Results\Create.cshtml" />
+    <Content Include="Views\Results\Delete.cshtml" />
+    <Content Include="Views\Results\Details.cshtml" />
+    <Content Include="Views\Results\Edit.cshtml" />
+    <Content Include="Views\Results\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
