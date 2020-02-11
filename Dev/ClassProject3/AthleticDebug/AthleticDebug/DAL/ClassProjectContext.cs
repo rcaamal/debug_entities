@@ -8,7 +8,7 @@ namespace AthleticDebug.DAL
     public partial class ClassProjectContext : DbContext
     {
         public ClassProjectContext()
-            : base("name=ClassProjectContext")
+            : base("name=ClassProjectContext_Azure")
         {
         }
 
