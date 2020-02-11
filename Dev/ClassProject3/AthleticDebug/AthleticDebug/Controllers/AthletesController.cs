@@ -29,19 +29,22 @@ namespace AthleticDebug.Controllers
         // GET: Athletes/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            ViewBag.AthleteResult = id;
+            Result result = db.Results.Find(id);
+            var athleteResult = db.Results.Where(i => i.AthleteID == id);
+            /*if (result == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            }*/
+            //Athlete athlete = db.Athletes.Find(id);
+            if (result == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Best = db.Results.Where(a => a.AthleteID == id).OrderBy(a => a.SwimResult).Take(1);
-
-            return View(athlete);
+            return View(athleteResult);
         }
+
+
 
         // GET: Athletes/Create
         public ActionResult Create()
