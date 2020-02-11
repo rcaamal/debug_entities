@@ -7,7 +7,7 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
@@ -32,7 +32,7 @@ namespace AthleticDebug.Controllers
 
         public ActionResult Athletes()
         {
-            ViewBag.Message = "These are the athletes that we have at this moement";
+            ViewBag.Message = "These are the athletes that we have at this moment";
             return View(db.Athletes.OrderBy(a => a.FName).ToList());
         }
     }
