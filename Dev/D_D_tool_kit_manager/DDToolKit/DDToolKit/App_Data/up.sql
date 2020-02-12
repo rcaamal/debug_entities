@@ -14,13 +14,14 @@
 	[Intelligence] int Not Null,
 	[Wisdom] int Not Null,
 	[Charisma] int Not Null,
+	[Languages] NvarChar(100) Not Null,
+	[ChallangeRating] Int Not Null,
 	[Speed] JSON Not Null,
-	[Proficiencies] JSON Not Null,
-	[DamageResistance] JSON Not Null,
-	[DamageVulnerability] JSON Not Null,
-	[DamageImmunitiy] JSON Not Null,
+	[Proficiencies] JSON,
+	[DamageResistance] JSON,
+	[DamageVulnerability] JSON,
+	[DamageImmunity] JSON,
+	[ConditionImmunity] JSON,
 	[Senses] JSON Not Null,
-	[Languages] JSON Not Null,
-	[ChallangeRating] JSON Not Null,
-	[SpecialAbility] JSON Not Null
+	[SpecialAbility] JSON
 );
