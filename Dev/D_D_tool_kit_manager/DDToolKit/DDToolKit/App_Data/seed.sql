@@ -1,11 +1,13 @@
-﻿Insert Into [dbo].[Creatures]([Name], [Size], [Type], [SubType], [Aligment], [ArmorClass], [HitPoints], [HitDice], [Strength], [Dexterity], [Constitution], [Intelligence], [Wisdom], [Charisma],[Languages], [ChallangeRating], [Speed], [Proficiencies], [DamageResistance], [DamageVulnerability], [DamageImmunity], [ConditionImmunity], [Senses], [SpecialAbility]) Values
-	('Adult Black Dragon', 'Huge', 'Dragon', 'Null', 'Chaotic Evil', '19', '195', '17d12', '23', '14', '21', '14', '13', '17','Common, Draconic', '14',
-	[{"Name" : "Walk", "Speed" : "40ft"}, {"Name" : "Fly", "Speed" : "80ft"}, {"Name" : "Swim", "Speed" : "40ft"}],
-	[{"Name" : "Saving Throw Dexterity", "Value" : "7"}, {"Name" : "Saving Throw Constitution", "Value" : "10"}, {"Name" : "Saving Throw Wisdom", "Value" : "6"}, {"Name" : "Saving Throw Charisma", "Value" : "11"}, {"Name" : "Perception", "Value" : "11"}, {"Name" : "Stealth", "7"}],
-	[{}],
-	[{}],
-	[{"Name" : "Acid"}],
-	[{}],
-	[{"Name" : "Blindsight", "Value" : "60ft"}, {"Name" : "Dark Vision", "Value" : "120ft"}, {"Name" : "Passive Perception", "Value" : "21"}],
-	[{"Name" : "Amphibious", "Description" : "The dragon can breathe air and water."}, {"Name" : "Legendary Resistance", "Description" : "If the dragon fails a saving throw, it can choose to succeed instead."}, {"Usage" : "3 per day"}]	
+﻿Insert Into [dbo].[Creatures]([Name], [Size], [Type], [SubType], [Aligment], [ArmorClass], [HitPoints], [HitDice], [Strength], [Dexterity], [Constitution], [Intelligence], [Wisdom], [Charisma],[Languages], [ChallangeRating], [Speed], [Proficiencies], [DamageResistance], [DamageVulnerability], [DamageImmunity], [ConditionImmunity], [Senses], [SpecialAbility], [Actions], [LegendaryActions]) Values
+	('Adult Black Dragon', 'Huge', 'Dragon', null, 'Chaotic Evil', 19, 195, '17d12', 23, 14, 21, 14, 13, 17,'Common, Draconic', 14,
+	'Name: Walk, Value: 40ft, Name: Fly, Value: 80ft, Name: Swim Value 40ft', 
+	'Name: Saving Throw Dex, Value: 7, Name: Savint Throw Con, Value: 10, Name: Saving Throw Wis, Value: 6, Name: Saving Throw Cha, Value: 8, Name: Perception, Value: 11, Name: Stealth, Value: 7',
+	null,null,'Name: Damage Immunity, Value: Acid' 
+	,null,
+	'Name: Blindsight, Value: 60ft, Name: DarkVision, Value: 120ft, Name: Passive Perception, Value: 21',
+	'Name: Amphibious, Value: The Dragon can breathe air and water, Name: Legendary Resistance, Value: 3 times a day if the dragon fails a saving throw, it can choose to succeed instead.',
+	'Name: Multiattack, Value: The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws., Name: Bite, Value: Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) acid damage., Name: Claw, Value: Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.
+	,Name: Tail, Value: Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage., Name: Frightful Presence, Value:Each creature of the dragons choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creatures saving throw is successful or the effect ends for it, the creature is immune to the dragons Frightful Presence for the next 24 hours.
+	,Name: Acid Breathe: Value: The dragon exhales acid in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.',
+	'Name: Detect, Value: The dragon makes a Wisdom (Perception) check., Name: Tail Attack, Value: The dragon makes a tail attack., Name: Wing Attack (Costs 2 Actions), Value: The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.' 
 	);
