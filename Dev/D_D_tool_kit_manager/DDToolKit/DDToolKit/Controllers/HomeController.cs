@@ -29,5 +29,25 @@ namespace DDToolKit.Controllers
 
             return View();
         }
+
+        public ActionResult FAQ()
+        {
+
+
+
+            return View();
+        }
+
+        public ActionResult ExternalLinks()
+        {
+
+            return View();
+        }
+
+        public ActionResult Tutorial()
+        {
+
+            return View();
+        }
     }
 }
