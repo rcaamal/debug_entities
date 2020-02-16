@@ -15,7 +15,10 @@ namespace DDToolKit.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Vision Statement.";
+            ViewBag.Message2 = "Goals";
+            ViewBag.Message3 = "What we want to Achieve";
+            ViewBag.Message4 = "More Information";
 
             return View();
         }
