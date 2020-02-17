@@ -1,60 +1,61 @@
-﻿@model AthleticDebug.DAL.Athlete
+﻿@model IEnumerable<AthleticDebug.DAL.Result>
 
 @{
     ViewBag.Title = "Details";
-    string temp = "/images/" + Model.Picture;
+    string temp = ViewBag.Picture;
 }
 
 <h2>Details</h2>
 <img src=@temp alt="Image Not Available" width="250" height="300">
-<div>
-    <h4>Athlete</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Coach.Name)
-        </dt>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Athlete.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEvents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance_Miles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SwimResult)
+        </th>
+        <th></th>
+    </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Coach.Name)
-        </dd>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Athlete.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEvents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance_Miles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwimResult)
+            </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Team.Name)
-        </dt>
+        </tr>
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Team.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</table>
+@Html.ActionLink("Back to List", "Index", "Athletes")
 
 

@@ -10,7 +10,7 @@ using AthleticDebug.DAL;
 
 namespace AthleticDebug.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AthletesController : Controller
     {
         private ClassProjectContext db = new ClassProjectContext();
@@ -29,17 +29,25 @@ namespace AthleticDebug.Controllers
         // GET: Athletes/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            ViewBag.AthleteResult = id;
+            Result result = db.Results.Find(id);
+            var athleteResult = db.Results.Where(i => i.AthleteID == id);
+            /*if (result == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Athlete athlete = db.Athletes.Find(id);
-            if (athlete == null)
+            }*/
+            //Athlete athlete = db.Athletes.Find(id);
+            if (result == null)
             {
                 return HttpNotFound();
             }
-            return View(athlete);
+            Athlete temp = db.Athletes.Find(id);
+            string pic = temp.Picture;
+            ViewBag.Picture = pic;
+            return View(athleteResult);
         }
+
+
 
         // GET: Athletes/Create
         public ActionResult Create()
