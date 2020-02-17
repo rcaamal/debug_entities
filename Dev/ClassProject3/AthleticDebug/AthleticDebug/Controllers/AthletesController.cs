@@ -41,6 +41,9 @@ namespace AthleticDebug.Controllers
             {
                 return HttpNotFound();
             }
+            Athlete temp = db.Athletes.Find(id);
+            string pic = temp.Picture;
+            ViewBag.Picture = pic;
             return View(athleteResult);
         }
 
