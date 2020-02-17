@@ -7,9 +7,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
@@ -22,6 +19,11 @@ body {
     background: #0CF;
 }
 
+.wrapper #error_message{
+    margin-bottom:20px;
+    padding: 10px;
+    background: #fe8b8e;
+}
 
 
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] {
