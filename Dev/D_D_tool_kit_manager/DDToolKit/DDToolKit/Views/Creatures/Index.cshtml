@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DDToolKit.Models.Creature>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<body style="background-image: url(https://storage.needpix.com/rsynced_images/dark-brown-background-1450781607k3z.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
+</body>
+
+<h2 class="Silver">Monserters currently in database!</h2>
+
+<table class="Silver">
+    <tr class="Silver">
+        <th class="Silver">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
+}
+
+</table>
