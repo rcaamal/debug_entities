@@ -15,7 +15,7 @@
 	[Wisdom] int Not Null,
 	[Charisma] int Not Null,
 	[Languages] NvarChar(500),
-	[ChallangeRating] Int Not Null,
+	[ChallangeRating] Float Not Null,
 	[Speed] NvarChar(500) Not Null,
 	[Proficiencies] NvarChar(500),
 	[DamageResistance] NvarChar(500),
