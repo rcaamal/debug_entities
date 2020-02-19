@@ -39,6 +39,8 @@ namespace DDToolKit.Controllers
             return View(creature);
         }
 
+
+
         // GET: Creatures/Create
         public ActionResult Create()
         {
