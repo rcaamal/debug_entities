@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DDToolKit.DAL;
 using DDToolKit.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DDToolKit.Controllers
 {
@@ -124,5 +127,55 @@ namespace DDToolKit.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult spells()
+        {
+            string json = MySpells("https://www.dnd5eapi.co/api/spells/");
+            JObject geo = JObject.Parse(json);
+            // count data
+            int count = (int)geo["count"];
+            //make an empty list to store the parsed data
+            List<string> output = new List<string>();
+            for (int i = 0; i < count; i++)
+            {
+                //string index = (string)geo["results"][i]["index"];
+                // parsing the results to get the spell's names.
+                string name = (string)geo["results"][i]["name"];
+                output.Add($"{name}");
+            }
+
+            string jsonString = JsonConvert.SerializeObject(output, Formatting.Indented);
+
+            return new ContentResult
+            {
+                Content = jsonString,
+                ContentType = "application/json",
+                ContentEncoding = System.Text.Encoding.UTF8
+            };
+
+
+        }
+
+        private string MySpells(string uri)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            //request.Headers.Add("Authorization", "token " + credentials);
+            //request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
+            request.Accept = "application/json";
+
+            string jsonString = null;
+            // TODO: You should handle exceptions here
+            using (WebResponse response = request.GetResponse())
+            {
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
+                jsonString = reader.ReadToEnd();
+                reader.Close();
+                stream.Close();
+            }
+            return jsonString;
+        }
+
+
     }
 }
