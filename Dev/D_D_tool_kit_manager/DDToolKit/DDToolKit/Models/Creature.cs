@@ -85,8 +85,7 @@ namespace DDToolKit.Models
 
         [Key]
         [Column(Order = 14)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ChallangeRating { get; set; }
+        public double ChallangeRating { get; set; }
 
         [Key]
         [Column(Order = 15)]
