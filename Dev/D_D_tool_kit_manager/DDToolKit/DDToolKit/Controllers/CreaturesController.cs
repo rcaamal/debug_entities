@@ -18,6 +18,16 @@ namespace DDToolKit.Controllers
     {
         private Monsters db = new Monsters();
 
+
+        [HttpPost]
+        public ActionResult Index(String SearchName)
+        {
+            var Res = db.Creatures.Where(p => p.Name.Contains(SearchName)).ToList();
+            ModelState.Clear();
+            return View(Res);
+        }
+
+
         // GET: Creatures
         public ActionResult Index()
         {

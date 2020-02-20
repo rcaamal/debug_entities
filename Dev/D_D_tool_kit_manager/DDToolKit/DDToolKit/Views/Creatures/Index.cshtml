@@ -16,11 +16,14 @@
 
 <h2 class="Silver">Monserters currently in database!</h2>
 
-@using (Html.BeginForm("Index", "Athletes", FormMethod.Post))
+@using (Html.BeginForm("Index", "Creatures", FormMethod.Post))
 {
     <p>
-        @Html.TextBox("SearchName")<br />
-        <input type="submit" value="Search" />
+        <div class="Searchable">
+            @Html.TextBox("SearchName")
+            <input type="submit" value="Search" />
+            <br />
+        </div>
     </p>
 }
 
@@ -37,7 +40,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.ActionLink(item.Name, "Details", "Creatures")
             </td>
         </tr>
     }
