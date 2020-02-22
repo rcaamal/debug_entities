@@ -41,7 +41,8 @@ namespace DDToolKit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Creature creature = db.Creatures.Find(id);
+            //Creature creature = db.Creatures.Find(id);
+            Creature creature = db.Creatures.Where(x => x.ID == id).SingleOrDefault();
             if (creature == null)
             {
                 return HttpNotFound();

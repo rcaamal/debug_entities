@@ -26,4 +26,6 @@
 	[SpecialAbility] NvarChar(500),
 	[Actions] NVarChar(MAX),
 	[LegendaryActions] NVarChar(MAX)
+
+	CONSTRAINT [PK_dbo.Creatures] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
