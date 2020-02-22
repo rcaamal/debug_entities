@@ -18,6 +18,16 @@ namespace DDToolKit.Controllers
     {
         private Monsters db = new Monsters();
 
+
+        [HttpPost]
+        public ActionResult Index(String SearchName)
+        {
+            var Res = db.Creatures.Where(p => p.Name.Contains(SearchName)).ToList();
+            ModelState.Clear();
+            return View(Res);
+        }
+
+
         // GET: Creatures
         public ActionResult Index()
         {
@@ -31,13 +41,15 @@ namespace DDToolKit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Creature creature = db.Creatures.Find(id);
+            Creature creature = db.Creatures.Where(x => x.ID == id).SingleOrDefault();
             if (creature == null)
             {
                 return HttpNotFound();
             }
             return View(creature);
         }
+
+
 
         // GET: Creatures/Create
         public ActionResult Create()

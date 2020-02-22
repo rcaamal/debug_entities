@@ -197,13 +197,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database2.mdf" />
+    <Content Include="App_Data\Database2_log.ldf">
+      <DependentUpon>Database2.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\down.sql" />
+    <Content Include="App_Data\drop_migrationhistory.sql" />
     <Content Include="App_Data\Monsters.mdf" />
     <Content Include="App_Data\Monsters_log.ldf">
       <DependentUpon>Monsters.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\Savedown.sql" />
     <Content Include="App_Data\Saveup.sql" />
+    <Content Include="App_Data\script.sql" />
     <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-theme.css" />
