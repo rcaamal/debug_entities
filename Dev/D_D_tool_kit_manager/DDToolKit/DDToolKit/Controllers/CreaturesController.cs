@@ -141,35 +141,7 @@ namespace DDToolKit.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult spells()
-        {
-            string json = MySpells("https://www.dnd5eapi.co/api/spells/");
-            JObject geo = JObject.Parse(json);
-            // count data
-            int count = (int)geo["count"];
-            //make an empty list to store the parsed data
-            List<string> output = new List<string>();
-            for (int i = 0; i < count; i++)
-            {
-                //string index = (string)geo["results"][i]["index"];
-                // parsing the results to get the spell's names.
-                string name = (string)geo["results"][i]["name"];
-                output.Add($"{name}");
-            }
-
-            string jsonString = JsonConvert.SerializeObject(output, Formatting.Indented);
-
-            return new ContentResult
-            {
-                Content = jsonString,
-                ContentType = "application/json",
-                ContentEncoding = System.Text.Encoding.UTF8
-            };
-
-
-        }
-
-        private string MySpells(string uri)
+        private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             //request.Headers.Add("Authorization", "token " + credentials);
@@ -187,6 +159,42 @@ namespace DDToolKit.Controllers
                 stream.Close();
             }
             return jsonString;
+        }
+
+        [HttpGet]
+        public ActionResult Spells()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Spells(string SpellName)
+        {
+            string json = SendRequest("https://www.dnd5eapi.co/api/spells");
+            JObject data = JObject.Parse(json);
+
+            List<string> list = new List<string>();
+
+            for (int i = 0; i < (int)data["count"]; i++)
+            {
+                string current = (string)data["results"][i]["name"];
+                if (current.Contains(SpellName) == true)
+                {
+                    list.Add((string)data["results"][i]["name"]);
+                }
+            }
+
+            // debugin to test the output.
+            /*for (int j = 0; j < list.Count(); j++)
+            {
+                Debug.WriteLine(list[j]);
+            }*/
+
+            //return jsonString;
+
+            ViewBag.SpellsList = list;
+            ViewBag.Success = true;
+            return View();
         }
 
 
