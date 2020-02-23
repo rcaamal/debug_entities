@@ -33,6 +33,8 @@ textarea {
     right: 0;
 }
 
-.Searchable{
-    
+.overlay{
+    display:block;
+    width: inherit;
+    height: inherit;
 }
