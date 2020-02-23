@@ -18,7 +18,11 @@ namespace DDToolKit.Controllers
         // GET: Saves
         public ActionResult Index()
         {
-            return View(db.Saves.ToList());
+            var controller = DependencyResolver.Current.GetService<ManageController>();
+            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            string id = controller.User.Identity.GetUserId();
+            var temp = db.Saves.ToList().Where(s => s.OwnerID.Contains(id));
+            return View(temp);
         }
 
         // GET: Saves/Details/5
