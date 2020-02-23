@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DDToolKit.Models.Creature>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<form>
+    <input id="request" name="request" type="button" value="Request">
+</form>
+
+<body style="background-image: url(https://storage.needpix.com/rsynced_images/dark-brown-background-1450781607k3z.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
+</body>
+
+<h2 class="Silver">Monserters currently in database!</h2>
+
+@using (Html.BeginForm("Index", "Creatures", FormMethod.Post))
+{
+    <p>
+        <div class="Searchable">
+            @Html.TextBox("SearchName")
+            <input type="submit" value="Search" />
+            <br />
+        </div>
+    </p>
+}
+
+
+<table class="Silver">
+    <tr class="Silver">
+        <th class="Silver">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details", "Creatures")
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <ol id="spells">
+    </ol>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+}
