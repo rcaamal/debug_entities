@@ -10,6 +10,7 @@ namespace DDToolKit.DAL
     {
         public Monsters()
             : base("name=Monsters")
+            /*: base("name=ClassprojectContext_Azure")*/
         {
         }
 
