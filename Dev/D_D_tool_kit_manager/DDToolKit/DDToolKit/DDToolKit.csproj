@@ -245,7 +245,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -336,6 +335,7 @@
     <Content Include="Views\Creatures\Details.cshtml" />
     <Content Include="Views\Creatures\Edit.cshtml" />
     <Content Include="Views\Creatures\Index.cshtml" />
+    <Content Include="Views\Creatures\Spells.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
