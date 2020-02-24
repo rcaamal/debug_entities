@@ -4,9 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<form>
-    <input id="request" name="request" type="button" value="Request">
-</form>
+
 
 <body style="background-image: url(https://storage.needpix.com/rsynced_images/dark-brown-background-1450781607k3z.jpg);
     background-repeat: no-repeat;
@@ -14,7 +12,7 @@
     ">
 </body>
 
-<h2 class="Silver">Monserters currently in database!</h2>
+<h2 class="Silver">Check to See The Monsters currently in the database!</h2>
 
 @using (Html.BeginForm("Index", "Creatures", FormMethod.Post))
 {
@@ -40,18 +38,13 @@
     {
         <tr>
             <td>
-                @Html.ActionLink(item.Name, "Details", "Creatures")
+                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
             </td>
         </tr>
     }
 
 </table>
 
-<div>
-    <ol id="spells">
-    </ol>
-</div>
 
-@section scripts{
-    <script type="text/javascript" src="~/Scripts/main.js"></script>
-}
+
+
