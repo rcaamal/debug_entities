@@ -18,9 +18,9 @@ namespace DDToolKit.Controllers
         // GET: Saves
         public ActionResult Index()
         {
-            var controller = DependencyResolver.Current.GetService<ManageController>();
-            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
-            string id = controller.User.Identity.GetUserId();
+            //var controller = DependencyResolver.Current.GetService<ManageController>();
+            //controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            string id = User.Identity.GetUserId();
             var temp = db.Saves.ToList().Where(s => s.OwnerID.Contains(id));
             return View(temp);
         }
@@ -53,9 +53,9 @@ namespace DDToolKit.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters")] Save save)
         {
-            var controller = DependencyResolver.Current.GetService<ManageController>();
-            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
-            save.OwnerID = controller.User.Identity.GetUserId();
+           // var controller = DependencyResolver.Current.GetService<ManageController>();
+            //controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            save.OwnerID = User.Identity.GetUserId();
             
             if (ModelState.IsValid)
             {
