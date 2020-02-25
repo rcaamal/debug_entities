@@ -20,9 +20,9 @@ namespace DDToolKit.Controllers
         {
             //var controller = DependencyResolver.Current.GetService<ManageController>();
             //controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
-            string id = User.Identity.GetUserId();
-            var temp = db.Saves.ToList().Where(s => s.OwnerID.Contains(id));
-            return View(temp);
+            //string id = User.Identity.GetUserId();
+            //var temp = db.Saves.ToList().Where(s => s.OwnerID.Contains(id));
+            return View();
         }
 
         // GET: Saves/Details/5
