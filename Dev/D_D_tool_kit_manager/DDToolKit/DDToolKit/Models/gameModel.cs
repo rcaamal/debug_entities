@@ -1,20 +1,19 @@
-namespace DDToolKit.DAL
+namespace DDToolKit.Models
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using Models;
 
-    public partial class Monsters : DbContext
+    public partial class gameModel : DbContext
     {
-        public Monsters()
-             :base("name=Monsters")
-           // : base("name=DDToolContext_Azure")
+        public gameModel()
+            : base("name=gameModel2")
         {
         }
 
-        public virtual DbSet<Creature> Creatures { get; set; }
+        public virtual DbSet<Player> Players { get; set; }
+        public virtual DbSet<Save> Saves { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,17 +1,17 @@
 ﻿create table [dbo].[Saves](
 	[ID]		INT IDENTITY(1,1)	NOT NULL,
 	[Name]		Nvarchar(40)		NOT NULL,
-	[OwnerID]	Nvarchar(128)		NOT NULL,
+	[OwnerID]	Nvarchar(128)		,
 	[Monsters]  NvarChar(500),
 
 	CONSTRAINT [PK_dbo.Saves] PRIMARY KEY CLUSTERED ([ID] ASC),
-	CONSTRAINT [FK_dbo.Saves_dbo.AspNetUsers_Id] FOREIGN KEY ([OwnerID]) REFERENCES [dbo].[AspNetUsers]([Id])
+
 );
 
 create table [dbo].[Players](
 	[ID]		INT IDENTITY(1,1)	NOT NULL,
-	[OwnerID]	Nvarchar(128)		NOT NULL,
-	[GameID]	Int					NOT NULL,
+	[OwnerID]	Nvarchar(128)		,
+	[GameID]	Int					,
 	[Name]		NvarChar(30)		Not NULL,
 	[Size]		NvarChar(15)		,
 	[Type]		NvarChar(20)		,
@@ -34,6 +34,4 @@ create table [dbo].[Players](
 	[Actions] NVarChar(MAX)
 
 	CONSTRAINT [PK_dbo.Players] PRIMARY KEY CLUSTERED ([ID] ASC),
-	CONSTRAINT [FK_dbo.Players_dbo.AspNetUsers_Id] FOREIGN KEY ([OwnerID]) REFERENCES [dbo].[AspNetUsers]([Id]),
-	CONSTRAINT [FK_dbo.Players_dbo.Saves_ID] FOREIGN KEY ([GameID]) REFERENCES [dbo].[Saves]([ID])
 );
