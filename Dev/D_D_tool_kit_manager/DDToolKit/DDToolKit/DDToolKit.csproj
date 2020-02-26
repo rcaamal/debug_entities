@@ -182,6 +182,7 @@
     <Compile Include="Controllers\CreaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="Models\Creature.cs" />
     <Compile Include="DAL\Monsters.cs" />
     <Compile Include="Global.asax.cs">
@@ -338,7 +339,6 @@
     <Content Include="Views\Creatures\Edit.cshtml" />
     <Content Include="Views\Creatures\Index.cshtml" />
     <Content Include="Views\Creatures\Spells.cshtml" />
-    <None Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -373,6 +373,12 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\ExternalLinks.cshtml" />
     <Content Include="Views\Home\Tutorial.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Saves\Create.cshtml" />
+    <Content Include="Views\Saves\Delete.cshtml" />
+    <Content Include="Views\Saves\Details.cshtml" />
+    <Content Include="Views\Saves\Edit.cshtml" />
+    <Content Include="Views\Saves\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />

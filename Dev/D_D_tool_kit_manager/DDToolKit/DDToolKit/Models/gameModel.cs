@@ -8,7 +8,8 @@ namespace DDToolKit.Models
     public partial class gameModel : DbContext
     {
         public gameModel()
-            : base("name=gameModel2")
+            //: base("name=gameModel")
+             : base("name=DDToolContext_Azure")
         {
         }
 
