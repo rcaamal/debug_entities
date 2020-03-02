@@ -15,6 +15,69 @@ namespace DDToolKit.Controllers
     {
         private Monsters db = new Monsters();
 
+        public List<string> TrimProficiency(Creature creature)
+        {
+            var prof = creature.Proficiencies.Split(';');
+            List<string> proficiency = new List<string>();
+            string name = "";
+            foreach (var stat in prof)
+            {
+                if (stat.Contains("name"))
+                {
+                    var attrib = stat.Split(':');
+                    name = attrib[1] + ":" + attrib[2];
+                }
+                if (stat.Contains("value") || stat.Contains("desc"))
+                {
+                    var attrib = stat.Split(':');
+                    string value = attrib[1];
+                    string trim = name + " " + value;
+                    string trimmed = trim.Trim(new char[] { ']', '[', '{', '}' });
+                    proficiency.Add(trimmed);
+                }
+            }
+            return proficiency;
+        }
+
+        public List<string> TrimAction(Creature creature)
+        {
+            var act = creature.Actions.Split('{');
+            List<string> actions = new List<string>();
+            string attack = "";
+            foreach (var stat in act)
+            {
+                if (!stat.Contains("url"))
+                {
+                    attack += stat;
+                    if (stat.Contains("}"))
+                    {
+                        attack = attack.Replace("'name':", "");
+                        attack = attack.Replace("'desc':", "");
+                        attack = attack.Replace(";", "");
+                        attack = attack.Replace("'", "");
+                        attack = attack.Replace("]", "");
+                        attack = attack.Replace("[", "");
+                        attack = attack.Replace("}", "");
+                        attack = attack.Replace("{", "");
+                        attack = attack.Replace(";", "");
+                        attack += '\n';
+                        actions.Add(attack);
+                        attack = "";
+                    }
+                }
+            }
+            return actions;
+        }
+
+        /*    public List<string> TrimAction(Creature creature)
+        {
+            List<string> actions = new List<string>();
+            var action = creature.Proficiencies;
+            var test = Newtonsoft.Json.Linq.JObject.Parse(action)["name"]["desc"];
+            return actions;
+        }*/
+
+
         // GET: Creatures
         public ActionResult Index()
         {
@@ -43,6 +106,11 @@ namespace DDToolKit.Controllers
             {
                 return HttpNotFound();
             }
+
+            List<string> prof = TrimProficiency(creature);
+            List<string> action = TrimAction(creature);
+            ViewBag.action = action;
+            ViewBag.prof = prof;
             return View(creature);
         }
 
@@ -60,7 +128,7 @@ namespace DDToolKit.Controllers
         public ActionResult Create([Bind(Include = "ID,Name,Size,Type,Subtype,Alignment,ArmorClass,HitPoints,HitDice,Speed,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Proficiencies,DamageVulnerabilities,DamageResistances,DamageImmunities,ConditionImmunities,Senses,Languages,ChallengeRating,SpecialAbilities,Actions,LegendaryActions,Reactions")] Creature creature)
         {
             if (ModelState.IsValid)
-            {
+            {   
                 db.Creatures.Add(creature);
                 db.SaveChanges();
                 return RedirectToAction("Index");

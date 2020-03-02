@@ -102,9 +102,11 @@
                 @Html.DisplayNameFor(model => model.Proficiencies)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Proficiencies)
-            </dd>
+            @foreach(var prof in ViewBag.prof)
+            {
+                <dd>@prof</dd>
+            }
+
 
             <dt>
                 @Html.DisplayNameFor(model => model.DamageVulnerabilities)
@@ -174,9 +176,10 @@
                 @Html.DisplayNameFor(model => model.Actions)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Actions)
-            </dd>
+                @foreach(var action in ViewBag.action)
+                {
+                    <dd>@action</dd>
+                }
 
             <dt>
                 @Html.DisplayNameFor(model => model.LegendaryActions)
