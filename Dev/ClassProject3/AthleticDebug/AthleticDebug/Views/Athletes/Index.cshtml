@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Athlete List</h2>
+<h2>List of Athletes</h2>
 
 @using (Html.BeginForm("Index", "Athletes", FormMethod.Post))
 {
@@ -15,7 +15,7 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -56,9 +56,9 @@
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |*@
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
             </td>
         </tr>
     }

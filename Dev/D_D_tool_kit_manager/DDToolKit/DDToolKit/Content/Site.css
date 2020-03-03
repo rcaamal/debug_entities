@@ -22,3 +22,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.Silver{
+    color: silver;
+}
+
+.login{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.overlay{
+    display:block;
+    width: inherit;
+    height: inherit;
+}
