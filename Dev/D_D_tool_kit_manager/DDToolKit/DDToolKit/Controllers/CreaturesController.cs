@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DDToolKit.DAL;
 using DDToolKit.Model;
+using Newtonsoft.Json.Linq;
 
 namespace DDToolKit.Controllers
 {
@@ -33,49 +34,70 @@ namespace DDToolKit.Controllers
                     string value = attrib[1];
                     string trim = name + " " + value;
                     string trimmed = trim.Trim(new char[] { ']', '[', '{', '}' });
+                    trimmed = trimmed.Replace("'", "");
                     proficiency.Add(trimmed);
                 }
             }
             return proficiency;
         }
 
-        public List<string> TrimAction(Creature creature)
+        public List<string> TrimAction(string act)
         {
-            var act = creature.Actions.Split('{');
-            List<string> actions = new List<string>();
-            string attack = "";
-            foreach (var stat in act)
+            if (act == "")
+                return null;
+
+            act = act.Replace(";", ",");
+            act = act.Replace("'", "\"");
+            char[] trim = act.ToCharArray();
+            for(int i= 0; i < trim.Length - 1; i++)
             {
-                if (!stat.Contains("url"))
+                if(trim[i] == '\"')
                 {
-                    attack += stat;
-                    if (stat.Contains("}"))
-                    {
-                        attack = attack.Replace("'name':", "");
-                        attack = attack.Replace("'desc':", "");
-                        attack = attack.Replace(";", "");
-                        attack = attack.Replace("'", "");
-                        attack = attack.Replace("]", "");
-                        attack = attack.Replace("[", "");
-                        attack = attack.Replace("}", "");
-                        attack = attack.Replace("{", "");
-                        attack = attack.Replace(";", "");
-                        attack += '\n';
-                        actions.Add(attack);
-                        attack = "";
+                    if (char.IsLetter(trim[i - 1]) && char.IsLetter(trim[i + 1])){
+                        trim[i] = '\'';
                     }
                 }
             }
+            string test = new string(trim);
+            JArray json = JArray.Parse(test);
+            List<string> actions = new List<string>();
+            
+            foreach(var action in json)
+            {
+                actions.Add(action["name"] + ": " + action["desc"]);
+            }
+
+
             return actions;
         }
 
-        /*    public List<string> TrimAction(Creature creature)
+        public string TrimString(string text)
         {
-            List<string> actions = new List<string>();
-            var action = creature.Proficiencies;
-            var test = Newtonsoft.Json.Linq.JObject.Parse(action)["name"]["desc"];
-            return actions;
-        }*/
+            if (text != "[]" || text != "{}")
+            {
+                text = text.Replace("'", "");
+                text = text.Replace(";", ",");
+                text = text.Replace("[", "");
+                text = text.Replace("]", "");
+                text = text.Replace("{", "");
+                text = text.Replace("}", "");
+            }
+            else
+            {
+                text = "";
+            }
+            return text;
+        }
+
+        public List<string> TrimAbilities(Creature creature)
+        {
+            if (creature.SpecialAbilities == null)
+                return null;
+            List<string> abilities = new List<string>();
+            string ability = creature.SpecialAbilities;
+
+            return abilities;
+        }
 
 
         // GET: Creatures
@@ -108,9 +130,21 @@ namespace DDToolKit.Controllers
             }
 
             List<string> prof = TrimProficiency(creature);
-            List<string> action = TrimAction(creature);
+            List<string> action = TrimAction(creature.Actions);
+            List<string> legendary = TrimAction(creature.LegendaryActions);
+            
+
+
+            ViewBag.Abilites = TrimAbilities(creature);
+            ViewBag.Senses = TrimString(creature.Senses);
+            ViewBag.Immunity = TrimString(creature.DamageImmunities);
+            ViewBag.Speed = TrimString(creature.Speed);
+            ViewBag.DamageVuln = TrimString(creature.DamageVulnerabilities);
+            ViewBag.DamageResist = TrimString(creature.DamageResistances);
+            ViewBag.ConditionImmun = TrimString(creature.ConditionImmunities);
             ViewBag.action = action;
             ViewBag.prof = prof;
+            ViewBag.Legendary = legendary;
             return View(creature);
         }
 

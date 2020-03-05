@@ -50,7 +50,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Speed)
+                @ViewBag.Speed
             </dd>
 
             <div class="taper"></div>
@@ -97,55 +97,68 @@
             </div>
 
             <div class="taper"></div>
-            
+
             <dt>
                 @Html.DisplayNameFor(model => model.Proficiencies)
             </dt>
 
-            @foreach(var prof in ViewBag.prof)
+            @foreach (var prof in ViewBag.prof)
             {
                 <dd>@prof</dd>
             }
 
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DamageVulnerabilities)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DamageVulnerabilities)
-            </dd>
+            @if (ViewBag.DamageVuln != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageVulnerabilities)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DamageResistances)
-            </dt>
+                <dd>
+                    @ViewBag.DamageVuln
+                </dd>
+            }
 
-            <dd>
-                @Html.DisplayFor(model => model.DamageResistances)
-            </dd>
+            @if (ViewBag.DamageResist != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageResistances)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DamageImmunities)
-            </dt>
+                <dd>
+                    @ViewBag.DamageResist
+                </dd>
+            }
 
-            <dd>
-                @Html.DisplayFor(model => model.DamageImmunities)
-            </dd>
+            @if (ViewBag.Immunity != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.DamageImmunities)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ConditionImmunities)
-            </dt>
+                <dd>
+                    @ViewBag.Immunity
+                </dd>
+            }
 
-            <dd>
-                @Html.DisplayFor(model => model.ConditionImmunities)
-            </dd>
+            @if (ViewBag.ConditionImmun != "")
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.ConditionImmunities)
+                </dt>
+
+                <dd>
+                    @ViewBag.ConditionImmun
+                </dd>
+            }
 
             <dt>
                 @Html.DisplayNameFor(model => model.Senses)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Senses)
+                @ViewBag.Senses
             </dd>
 
             <dt>
@@ -164,31 +177,40 @@
                 @Html.DisplayFor(model => model.ChallengeRating)
             </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.SpecialAbilities)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.SpecialAbilities)
-            </dd>
+            @if (ViewBag.Abilities != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.SpecialAbilities)
+                </dt>
+
+                <dd>
+                    @ViewBag.Abilities
+                </dd>
+            }
+
+            <div class="taper"></div>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Actions)
             </dt>
 
-                @foreach(var action in ViewBag.action)
-                {
-                    <dd>@action</dd>
-                }
+            @foreach (var action in ViewBag.action)
+            {
+                <dd>@action</dd>
+            }
 
-            <dt>
-                @Html.DisplayNameFor(model => model.LegendaryActions)
-            </dt>
+            @if (ViewBag.Legendary != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.LegendaryActions)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.LegendaryActions)
-            </dd>
-
+                    foreach(var legendary in ViewBag.Legendary)
+                    {
+                        <dd>@legendary</dd>
+                    }
+            }
             <dt>
                 @Html.DisplayNameFor(model => model.Reactions)
             </dt>
