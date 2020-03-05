@@ -21,7 +21,7 @@ namespace DDToolKit.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("Monsters", throwIfV1Schema: false)
+            : base("Monsters_Azure", throwIfV1Schema: false)
         /*: base("ClassprojectContext_Azure", throwIfV1Schema: false) )*/
         {
             // Disable code-first migrations

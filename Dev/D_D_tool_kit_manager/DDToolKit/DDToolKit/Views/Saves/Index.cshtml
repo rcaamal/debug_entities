@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Your Saved Games</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New Game", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -19,8 +19,8 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Monsters)
-        </th>*@
-        <th></th>
+        </th>
+        <th></th>*@
     </tr>
 
 @foreach (var item in Model) {

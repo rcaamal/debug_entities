@@ -8,7 +8,7 @@ namespace DDToolKit.Models
     public partial class GameModel : DbContext
     {
         public GameModel()
-            : base("name=GameModel")
+            : base("name=GameModel_Azure")
         {
         }
 
@@ -17,11 +17,6 @@ namespace DDToolKit.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Save>()
-                .HasMany(e => e.Players)
-                .WithRequired(e => e.Save)
-                .HasForeignKey(e => e.GameID)
-                .WillCascadeOnDelete(false);
         }
     }
 }

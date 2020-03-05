@@ -10,11 +10,10 @@ namespace DDToolKit.Models
     {
         public int ID { get; set; }
 
-        [Required]
         [StringLength(128)]
         public string OwnerID { get; set; }
 
-        public int GameID { get; set; }
+        public int? GameID { get; set; }
 
         [Required]
         [StringLength(30)]
@@ -67,7 +66,5 @@ namespace DDToolKit.Models
         public string SpecialAbility { get; set; }
 
         public string Actions { get; set; }
-
-        public virtual Save Save { get; set; }
     }
 }
