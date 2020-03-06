@@ -9,8 +9,11 @@ using DDToolKit.Models;
 using Microsoft.Owin.Security.Twitter;
 using Microsoft.Owin.Security;
 
+
+
 namespace DDToolKit
-{
+{ 
+     
     public partial class Startup
     {
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
@@ -52,9 +55,9 @@ namespace DDToolKit
             //    clientId: "",
             //    clientSecret: "");
            
-            //app.UseTwitterAuthentication(
-            //consumerKey: "f1Gl8VSB9tEC1xllIhRKBcGDs",
-            //consumerSecret: "CZ2sBrzEV2eSxYCwUsa8ZP1zSd4wWDdrtYmdNU6lEeRYDiPqif");
+           // app.UseTwitterAuthentication(
+            //consumerKey: "",
+           // consumerSecret: "");
 
             //app.UseFacebookAuthentication(
             //   appId: "",
