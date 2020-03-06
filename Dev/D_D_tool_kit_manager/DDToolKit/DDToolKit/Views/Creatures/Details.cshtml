@@ -213,15 +213,14 @@
             }
 
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Reactions)
-            </dt>
-
             @if (ViewBag.Reaction != null)
             {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Reactions)
+                </dt>
                 foreach (var reaction in ViewBag.Reaction)
                 {
-                <dd>@reaction</dd>
+                    <dd>@reaction</dd>
                 }
             }
 
