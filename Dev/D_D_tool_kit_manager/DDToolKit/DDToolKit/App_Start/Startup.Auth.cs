@@ -8,8 +8,7 @@ using Owin;
 using DDToolKit.Models;
 using Microsoft.Owin.Security.Twitter;
 using Microsoft.Owin.Security;
-
-
+using DDToolKit.App_Start;
 
 namespace DDToolKit
 { 
@@ -68,8 +67,8 @@ namespace DDToolKit
 
            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-           ClientId = "510401239922-mp9dfnffurm373n10rstle4ohs3du5od.apps.googleusercontent.com",
-           ClientSecret = "p5plTnlwA_EV6_l6rCoO59a7"
+           ClientId = DDClients.ClientId,
+           ClientSecret = DDClients.ClientSecret
            });
         }
     }
