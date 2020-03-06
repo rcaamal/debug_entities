@@ -43,7 +43,7 @@ namespace DDToolKit.Controllers
 
         public List<string> TrimAction(string act)
         {
-            if (act == "")
+            if (act == null)
                 return null;
 
             act = act.Replace(";", ",");
@@ -145,6 +145,7 @@ namespace DDToolKit.Controllers
             ViewBag.action = action;
             ViewBag.prof = prof;
             ViewBag.Legendary = legendary;
+            ViewBag.Reaction = TrimAction(creature.Reactions);
             return View(creature);
         }
 

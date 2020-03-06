@@ -206,18 +206,24 @@
                     @Html.DisplayNameFor(model => model.LegendaryActions)
                 </dt>
 
-                    foreach(var legendary in ViewBag.Legendary)
-                    {
-                        <dd>@legendary</dd>
-                    }
+                foreach (var legendary in ViewBag.Legendary)
+                {
+                    <dd>@legendary</dd>
+                }
             }
+
+
             <dt>
                 @Html.DisplayNameFor(model => model.Reactions)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Reactions)
-            </dd>
+            @if (ViewBag.Reaction != null)
+            {
+                foreach (var reaction in ViewBag.Reaction)
+                {
+                <dd>@reaction</dd>
+                }
+            }
 
         </dl>
     </div>
