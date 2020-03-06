@@ -54,9 +54,9 @@ namespace DDToolKit
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: "489417875063406",
+              appSecret: "9b079646839da5b0855b4d4aaac86398");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
