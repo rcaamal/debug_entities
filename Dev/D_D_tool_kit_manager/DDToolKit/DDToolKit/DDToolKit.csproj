@@ -174,7 +174,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+<<<<<<< HEAD
     <Compile Include="App_Start\DDClients.cs" />
+=======
+    <Compile Include="App_Start\FbClients.cs" />
+>>>>>>> feature3
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

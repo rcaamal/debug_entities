@@ -6,8 +6,11 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using DDToolKit.Models;
+<<<<<<< HEAD
 using Microsoft.Owin.Security.Twitter;
 using Microsoft.Owin.Security;
+=======
+>>>>>>> feature3
 using DDToolKit.App_Start;
 
 namespace DDToolKit
@@ -58,9 +61,9 @@ namespace DDToolKit
             //consumerKey: "",
            // consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: FbClients.appId,
+              appSecret: FbClients.appSecret);
 
 
 
