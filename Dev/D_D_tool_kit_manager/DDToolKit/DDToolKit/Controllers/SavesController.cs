@@ -156,9 +156,5 @@ namespace DDToolKit.Controllers
 
             return View(player);
         }
-        public ActionResult test()
-        {
-            return View();
-        }
     }
 }

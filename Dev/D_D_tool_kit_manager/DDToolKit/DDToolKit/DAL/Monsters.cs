@@ -9,7 +9,7 @@ namespace DDToolKit.DAL
     public partial class Monsters : DbContext
     {
         public Monsters()
-            : base("name=Monsters_Azure")
+            : base("name=Monsters")
             /*: base("name=ClassprojectContext_Azure")*/
         {
         }
