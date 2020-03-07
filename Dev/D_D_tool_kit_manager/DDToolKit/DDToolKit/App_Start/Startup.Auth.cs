@@ -58,9 +58,9 @@ namespace DDToolKit
             //consumerKey: "",
            // consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: FbClients.appId,
+              appSecret: FbClients.appSecret);
 
 
 
