@@ -8,8 +8,13 @@ namespace DDToolKit.Models
     public partial class gameModel : DbContext
     {
         public gameModel()
+<<<<<<< HEAD
             : base("name=Monsters")
             //: base("name=DDToolContext_Azure")
+=======
+            //: base("name=Monsters")
+             : base("name=DDToolContext_Azure")
+>>>>>>> 80c70d4a08d1633fcc47292ad0feaaa2dea6ec0b
         {
         }
 
