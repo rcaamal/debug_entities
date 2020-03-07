@@ -6,9 +6,13 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using DDToolKit.Models;
+using Microsoft.Owin.Security.Twitter;
+using Microsoft.Owin.Security;
+using DDToolKit.App_Start;
 
 namespace DDToolKit
-{
+{ 
+     
     public partial class Startup
     {
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
@@ -49,20 +53,23 @@ namespace DDToolKit
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");
-
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+           
+           // app.UseTwitterAuthentication(
+            //consumerKey: "",
+           // consumerSecret: "");
 
             //app.UseFacebookAuthentication(
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+
+
+
+           app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+           ClientId = DDClients.ClientId,
+           ClientSecret = DDClients.ClientSecret
+           });
         }
     }
 }
