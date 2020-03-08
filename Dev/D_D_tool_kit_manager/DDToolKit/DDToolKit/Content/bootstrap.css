@@ -10221,4 +10221,12 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=bootstrap.css.map */
+
+app.UseGoogleAuthentication {
+    color: blue;
+}
+=======
+/*# sourceMappingURL=bootstrap.css.map */
+>>>>>>> 80c70d4a08d1633fcc47292ad0feaaa2dea6ec0b
