@@ -1,50 +1,51 @@
 ﻿@model IEnumerable<DDToolKit.Models.Save>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New Save Game", "Create")
 
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        @*<th>2
                 @Html.DisplayNameFor(model => model.OwnerID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Monsters)
             </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
+            <th></th>*@
+    </tr>
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.OwnerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monsters)
+                </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.OwnerID)
+                @Html.ActionLink("Add a character to this save", "CreatePlayer", new { id = item.ID })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Monsters)
+                @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                @Html.ActionLink("To view list monsters", "addMonsters", new { id = item.ID})
             </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                </td>*@
         </tr>
     }
-    
-    </table>
-</body>
-</html>
+</table>

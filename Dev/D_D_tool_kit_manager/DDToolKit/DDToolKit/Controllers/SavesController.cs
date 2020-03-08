@@ -7,12 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DDToolKit.Models;
+using DDToolKit.DAL;
 
 namespace DDToolKit.Controllers
 {
     public class SavesController : Controller
     {
         private gameModel db = new gameModel();
+        private Monsters dbMonsters = new Monsters();
 
         // GET: Saves
         public ActionResult Index()
@@ -122,6 +124,15 @@ namespace DDToolKit.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult addMonsters()
+        {
+
+            ViewBag.names = new SelectList(dbMonsters.Creatures, "ID", "Name");
+
+            return View();
+
         }
     }
 }
