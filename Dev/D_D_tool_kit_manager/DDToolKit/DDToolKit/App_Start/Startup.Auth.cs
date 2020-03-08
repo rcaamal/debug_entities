@@ -54,9 +54,9 @@ namespace DDToolKit
             //    clientId: "",
             //    clientSecret: "");
            
-           // app.UseTwitterAuthentication(
-            //consumerKey: "",
-           // consumerSecret: "");
+           app.UseTwitterAuthentication(
+            consumerKey: TweetClient.consumerKey,
+            consumerSecret: TweetClient.consumerSecret);
 
             app.UseFacebookAuthentication(
               appId: FbClients.appId,

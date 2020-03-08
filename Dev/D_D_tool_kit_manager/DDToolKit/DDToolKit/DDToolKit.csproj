@@ -180,6 +180,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\TweetClient.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -244,8 +245,6 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="credentials.json" />
     <None Include="Properties\PublishProfiles\ddtool - Web Deploy.pubxml" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
