@@ -53,7 +53,7 @@ namespace DDToolKit.Controllers
         {
 
             save.OwnerID = User.Identity.GetUserId();
-            save.Monsters = "Filler";
+            save.Monsters = "Zombie";
             if (ModelState.IsValid)
             {
                 db.Saves.Add(save);
@@ -129,9 +129,18 @@ namespace DDToolKit.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Game()
+        public ActionResult Game(int? id)
         {
-            return View(db.Players.ToList());
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            //var test = db.Saves.ToList().Where(s => s.ID == id);
+            var test2 = db.Saves.Where(s => s.ID == id);
+            //var t3 = test2.monsters;
+            ViewBag.Mons = test2;
+            return View(db.Players.ToList().Where(s => s.GameID == id));
         }
         public ActionResult CreatePlayer()
         {
@@ -142,9 +151,9 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePlayer([Bind(Include = "ID,OwnerID,GameID,Name,Size,Type,Aligment,ArmorClass,HitPoints,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Languages,Speed,Proficiencies,DamageResistance,ConditionImmunity,Senses,SpecialAbility,Actions")] Player player)
+        public ActionResult CreatePlayer(int id, [Bind(Include = "ID,OwnerID,GameID,Name,Size,Type,Aligment,ArmorClass,HitPoints,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Languages,Speed,Proficiencies,DamageResistance,ConditionImmunity,Senses,SpecialAbility,Actions")] Player player)
         {
-            int id = 1;
+            //int id = 1;
             player.OwnerID = User.Identity.GetUserId();
             player.GameID = id;
             if (ModelState.IsValid)

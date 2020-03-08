@@ -2,7 +2,7 @@
 	[ID]		INT IDENTITY(1,1)	NOT NULL,
 	[Name]		Nvarchar(40)		NOT NULL,
 	[OwnerID]	Nvarchar(128)		,
-	[Monsters]  NvarChar(500),
+	[Monsters]  NvarChar(500)		,
 
 	CONSTRAINT [PK_dbo.Saves] PRIMARY KEY CLUSTERED ([ID] ASC),
 	
@@ -24,13 +24,13 @@ create table [dbo].[Players](
 	[Intelligence] int				,
 	[Wisdom]	int					,
 	[Charisma] int					,
-	[Languages] NvarChar(500),
+	[Languages] NvarChar(500)		,
 	[Speed] NvarChar(500)			,
-	[Proficiencies] NvarChar(500),
+	[Proficiencies] NvarChar(500)	,
 	[DamageResistance] NvarChar(500),
 	[ConditionImmunity] NvarChar(500),
 	[Senses] NvarChar(500)			,
-	[SpecialAbility] NvarChar(500),
+	[SpecialAbility] NvarChar(500)	,
 	[Actions] NVarChar(MAX)
 
 	CONSTRAINT [PK_dbo.Players] PRIMARY KEY CLUSTERED ([ID] ASC),
