@@ -5,10 +5,12 @@ namespace DDToolKit.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class GameModel : DbContext
+    public partial class gameModel : DbContext
     {
-        public GameModel()
-            : base("name=GameModel")
+        public gameModel()
+
+            : base("name=Monsters")
+            //: base("name=DDToolContext_Azure")
         {
         }
 

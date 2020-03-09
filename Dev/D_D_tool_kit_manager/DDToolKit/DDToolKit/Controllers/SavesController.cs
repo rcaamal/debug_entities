@@ -8,13 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using DDToolKit.DAL;
 using DDToolKit.Models;
-using Microsoft.AspNet.Identity;
+using DDToolKit.DAL;
 
 namespace DDToolKit.Controllers
 {
     public class SavesController : Controller
     {
-        private GameModel db = new GameModel();
+        private gameModel db = new gameModel();
+        private Monsters dbMonsters = new Monsters();
 
         // GET: Saves
         public ActionResult Index()
@@ -54,7 +55,7 @@ namespace DDToolKit.Controllers
         {
 
             save.OwnerID = User.Identity.GetUserId();
-            save.Monsters = "Zombie";
+            save.Monsters = "";
             if (ModelState.IsValid)
             {
                 db.Saves.Add(save);
@@ -271,6 +272,14 @@ namespace DDToolKit.Controllers
             }
 
             return View(player);
+
+        public ActionResult addMonsters()
+        {
+
+            ViewBag.names = new SelectList(dbMonsters.Creatures, "ID", "Name");
+
+            return View();
+
         }
     }
 }

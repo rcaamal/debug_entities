@@ -34,5 +34,4 @@ create table [dbo].[Players](
 	[Actions] NVarChar(MAX)
 
 	CONSTRAINT [PK_dbo.Players] PRIMARY KEY CLUSTERED ([ID] ASC),
-	
 );
