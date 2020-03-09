@@ -22,6 +22,11 @@ namespace DDToolKit.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Creature>()
+                .Property(e => e.ChallengeRating)
+                .HasPrecision(4, 2);
+
             modelBuilder.Entity<AspNetRole>()
                 .HasMany(e => e.AspNetUsers)
                 .WithMany(e => e.AspNetRoles)
@@ -37,9 +42,7 @@ namespace DDToolKit.DAL
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
 
-            modelBuilder.Entity<Creature>()
-                .Property(e => e.ChallengeRating)
-                .HasPrecision(4, 2);
+            
         }
     }
 }
