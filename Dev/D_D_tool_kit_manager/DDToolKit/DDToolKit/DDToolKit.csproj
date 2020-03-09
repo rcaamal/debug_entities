@@ -378,6 +378,8 @@
     <Content Include="Views\Saves\Details.cshtml" />
     <Content Include="Views\Saves\Edit.cshtml" />
     <Content Include="Views\Saves\Index.cshtml" />
+    <Content Include="Views\Saves\Game.cshtml" />
+    <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
   </ItemGroup>
   <ItemGroup>
