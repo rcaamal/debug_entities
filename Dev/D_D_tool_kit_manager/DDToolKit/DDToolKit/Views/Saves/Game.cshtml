@@ -11,56 +11,48 @@
     <dt>
         Name
     </dt>
-
     <dd>
         @ViewBag.name
     </dd>
     <dt>
         Size
     </dt>
-
     <dd>
         @ViewBag.size
     </dd>
     <dt>
         Type
     </dt>
-
     <dd>
         @ViewBag.type
     </dd>
     <dt>
         Subtype
     </dt>
-
     <dd>
         @ViewBag.stype
     </dd>
     <dt>
         Alignment
     </dt>
-
     <dd>
         @ViewBag.Align
     </dd>
     <dt>
         Armor Class
     </dt>
-
     <dd>
         @ViewBag.ac
     </dd>
     <dt>
         Hit Points
     </dt>
-
     <dd>
         @ViewBag.hp
     </dd>
     <dt>
         Hit Dice
     </dt>
-
     <dd>
         @ViewBag.hd
     </dd>
@@ -73,35 +65,30 @@
     <dt>
         Dexterity
     </dt>
-
     <dd>
         @ViewBag.dex
     </dd>
     <dt>
         Constitution
     </dt>
-
     <dd>
         @ViewBag.con
     </dd>
     <dt>
         Dexterity
     </dt>
-
     <dd>
         @ViewBag.name
     </dd>
     <dt>
         Inteligence
     </dt>
-
     <dd>
         @ViewBag.intel
     </dd>
     <dt>
         Wisdom
     </dt>
-
     <dd>
         @ViewBag.wis
     </dd>
@@ -114,7 +101,6 @@
     <dt>
         Languages
     </dt>
-
     <dd>
         @ViewBag.lang
     </dd>
@@ -127,79 +113,63 @@
     <dt>
         Speed
     </dt>
-
     <dd>
         @ViewBag.speed
     </dd>
     <dt>
         Proficiencies
     </dt>
-
     <dd>
         @ViewBag.prof
     </dd>
     <dt>
         DamageResistance
     </dt>
-
     <dd>
         @ViewBag.resist
     </dd>
-
     <dt>
         DamageVulnerability
     </dt>
-
     <dd>
         @ViewBag.vuln
     </dd>
-
     <dt>
         DamageImmunity
     </dt>
-
     <dd>
         @ViewBag.immune
     </dd>
-
     <dt>
         ConditionImmunity
     </dt>
-
     <dd>
         @ViewBag.invuln
     </dd>
     <dt>
         Special Abilities
     </dt>
-
     <dd>
         @ViewBag.special
     </dd>
     <dt>
         SpecialAbility
     </dt>
-
     <dd>
         @ViewBag.special
     </dd>
-
     <dt>
         Actions
     </dt>
-
     <dd>
         @ViewBag.actions
     </dd>
-
     <dt>
         LegendaryActions
     </dt>
-
     <dd>
         @ViewBag.legactions
     </dd>
-
 </dl>
 <div>
     <button onclick="toggle()">
@@ -209,12 +179,6 @@
 
 <table class="table">
     <tr>
-        @*<th>
-                @Html.DisplayNameFor(model => model.OwnerID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GameID)
-            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -279,13 +243,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.OwnerID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GameID)
-                </td>*@
+        <tr>           
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -345,12 +303,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Actions)
-                </td>*@
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-                </td>*@
+                </td>*@            
         </tr>
     }
 
