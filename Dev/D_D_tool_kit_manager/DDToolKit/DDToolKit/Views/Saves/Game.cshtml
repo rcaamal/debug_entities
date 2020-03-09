@@ -1,19 +1,212 @@
 ﻿@model IEnumerable<DDToolKit.Models.Player>
 
 @{
-    ViewBag.Title = "Game";
+    ViewBag.Title = "Game view";
     
 }
 
 <img src="https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct" alt="Filler" width="500" height="600">
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
+<dl class="dl-horizontal" id="monster">
+    <dt>
+        Name
+    </dt>
 
+    <dd>
+        @ViewBag.name
+    </dd>
+    <dt>
+        Size
+    </dt>
+
+    <dd>
+        @ViewBag.size
+    </dd>
+    <dt>
+        Type
+    </dt>
+
+    <dd>
+        @ViewBag.type
+    </dd>
+    <dt>
+        Subtype
+    </dt>
+
+    <dd>
+        @ViewBag.stype
+    </dd>
+    <dt>
+        Alignment
+    </dt>
+
+    <dd>
+        @ViewBag.Align
+    </dd>
+    <dt>
+        Armor Class
+    </dt>
+
+    <dd>
+        @ViewBag.ac
+    </dd>
+    <dt>
+        Hit Points
+    </dt>
+
+    <dd>
+        @ViewBag.hp
+    </dd>
+    <dt>
+        Hit Dice
+    </dt>
+
+    <dd>
+        @ViewBag.hd
+    </dd>
+    <dt>
+        Strength
+    </dt>
+    <dd>
+        @ViewBag.str
+    </dd>
+    <dt>
+        Dexterity
+    </dt>
+
+    <dd>
+        @ViewBag.dex
+    </dd>
+    <dt>
+        Constitution
+    </dt>
+
+    <dd>
+        @ViewBag.con
+    </dd>
+    <dt>
+        Dexterity
+    </dt>
+
+    <dd>
+        @ViewBag.name
+    </dd>
+    <dt>
+        Inteligence
+    </dt>
+
+    <dd>
+        @ViewBag.intel
+    </dd>
+    <dt>
+        Wisdom
+    </dt>
+
+    <dd>
+        @ViewBag.wis
+    </dd>
+    <dt>
+        Charisma
+    </dt>
+    <dd>
+        @ViewBag.cha
+    </dd>
+    <dt>
+        Languages
+    </dt>
+
+    <dd>
+        @ViewBag.lang
+    </dd>
+    <dt>
+        Challenge Rating
+    </dt>
+    <dd>
+        @ViewBag.chal
+    </dd>
+    <dt>
+        Speed
+    </dt>
+
+    <dd>
+        @ViewBag.speed
+    </dd>
+    <dt>
+        Proficiencies
+    </dt>
+
+    <dd>
+        @ViewBag.prof
+    </dd>
+    <dt>
+        DamageResistance
+    </dt>
+
+    <dd>
+        @ViewBag.resist
+    </dd>
+
+    <dt>
+        DamageVulnerability
+    </dt>
+
+    <dd>
+        @ViewBag.vuln
+    </dd>
+
+    <dt>
+        DamageImmunity
+    </dt>
+
+    <dd>
+        @ViewBag.immune
+    </dd>
+
+    <dt>
+        ConditionImmunity
+    </dt>
+
+    <dd>
+        @ViewBag.invuln
+    </dd>
+    <dt>
+        Special Abilities
+    </dt>
+
+    <dd>
+        @ViewBag.special
+    </dd>
+    <dt>
+        SpecialAbility
+    </dt>
+
+    <dd>
+        @ViewBag.special
+    </dd>
+
+    <dt>
+        Actions
+    </dt>
+
+    <dd>
+        @ViewBag.actions
+    </dd>
+
+    <dt>
+        LegendaryActions
+    </dt>
+
+    <dd>
+        @ViewBag.legactions
+    </dd>
+
+</dl>
 <div>
-    @ViewBag.Mons
+    <button onclick="toggle()">
+        Toggle Monster Information
+    </button>
 </div>
+
 <table class="table">
     <tr>
         @*<th>
@@ -258,6 +451,14 @@
     const rollDice20 = () => rollDice(20)
     const rollDice100 = () => rollDice(100)
 
+    function toggle() {
+        var x = document.getElementById("monster");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+ }
 </script>
 <style>
     table, th, td {

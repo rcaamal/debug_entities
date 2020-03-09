@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DDToolKit.DAL;
 using DDToolKit.Models;
 using Microsoft.AspNet.Identity;
 
@@ -131,15 +132,121 @@ namespace DDToolKit.Controllers
         }
         public ActionResult Game(int? id)
         {
-
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //var test = db.Saves.ToList().Where(s => s.ID == id);
-            var test2 = db.Saves.Where(s => s.ID == id);
-            //var t3 = test2.monsters;
-            ViewBag.Mons = test2;
+
+            Monsters db2 = new Monsters();
+            string monsters = (from saves in db.Saves
+                            where (saves.ID == id)
+                            select saves.Monsters).Single();
+
+            string size = (from creatures in db2.Creatures
+                            where (creatures.Name == monsters)
+                            select creatures.Size).Single();
+            string type = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.Type).Single();
+            string stype = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.SubType).Single();
+            string Align = (from creatures in db2.Creatures
+                            where (creatures.Name == monsters)
+                            select creatures.Aligment).Single();
+            int ac = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.ArmorClass).Single();
+            int hp = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.HitPoints).Single();
+            string hd = (from creatures in db2.Creatures
+                      where (creatures.Name == monsters)
+                      select creatures.HitDice).Single();
+            int str = (from creatures in db2.Creatures
+                      where (creatures.Name == monsters)
+                      select creatures.Strength).Single();
+            int dex = (from creatures in db2.Creatures
+                      where (creatures.Name == monsters)
+                      select creatures.Dexterity).Single();
+            int con = (from creatures in db2.Creatures
+                      where (creatures.Name == monsters)
+                      select creatures.Constitution).Single();
+            int intel = (from creatures in db2.Creatures
+                      where (creatures.Name == monsters)
+                      select creatures.Intelligence).Single();
+            int wis = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.Wisdom).Single();
+            int cha = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.Charisma).Single();
+            string lang = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.Languages).Single();
+            double chalrating = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.ChallangeRating).Single();
+            string speed = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.Speed).Single();
+            string prof = (from creatures in db2.Creatures
+                         where (creatures.Name == monsters)
+                         select creatures.Proficiencies).Single();
+            string Dresist = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.DamageResistance).Single();
+            string Dvuln = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.DamageVulnerability).Single();
+            string Dinvuln = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.DamageImmunity).Single();
+            string Cinvuln = (from creatures in db2.Creatures
+                              where (creatures.Name == monsters)
+                              select creatures.ConditionImmunity).Single();
+            string senses = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.Senses).Single();
+            string special = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.SpecialAbility).Single();
+            string actions = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.Actions).Single();
+            string legactions = (from creatures in db2.Creatures
+                           where (creatures.Name == monsters)
+                           select creatures.LegendaryActions).Single();
+
+            ViewBag.name = monsters;
+            ViewBag.size = size;
+            ViewBag.type = type;
+            ViewBag.stype = stype;
+            ViewBag.Align = Align;
+            ViewBag.ac = ac;
+            ViewBag.hp = hp;
+            ViewBag.hd = hd;
+            ViewBag.str = str;
+            ViewBag.dex = dex;
+            ViewBag.con = con;
+            ViewBag.intel = intel;
+            ViewBag.wis = wis;
+            ViewBag.cha = cha;
+            ViewBag.lang = lang;
+            ViewBag.chal = chalrating;
+            ViewBag.speed = speed;
+            ViewBag.prof = prof;
+            ViewBag.resist = Dresist;
+            ViewBag.vuln = Dvuln;
+            ViewBag.immune = Dinvuln;
+            ViewBag.invuln = Cinvuln;
+            ViewBag.senses = senses;
+            ViewBag.special = special;
+            ViewBag.actions = actions;
+            ViewBag.legact = legactions;
+
+            //ViewBag.mons = test;
             return View(db.Players.ToList().Where(s => s.GameID == id));
         }
         public ActionResult CreatePlayer()
