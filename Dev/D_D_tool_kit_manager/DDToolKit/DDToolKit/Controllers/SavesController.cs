@@ -19,7 +19,8 @@ namespace DDToolKit.Controllers
         // GET: Saves
         public ActionResult Index()
         {
-            return View(db.Saves.ToList());
+            /*Console.WriteLine(db.Saves.ToList())*/
+            return View(db.Saves.OrderBy(s => s.ID).ToList());
         }
 
         // GET: Saves/Details/5
