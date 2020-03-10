@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using DDToolKit.DAL;
 using DDToolKit.Models;
-using DDToolKit.DAL;
 using Microsoft.AspNet.Identity;
 
 namespace DDToolKit.Controllers
