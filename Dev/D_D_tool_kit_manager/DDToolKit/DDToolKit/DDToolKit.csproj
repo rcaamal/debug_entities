@@ -183,6 +183,7 @@
     <Compile Include="App_Start\TweetClient.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreaturesController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
@@ -381,9 +382,11 @@
     <Content Include="Views\Saves\Game.cshtml" />
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Views\Item\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
