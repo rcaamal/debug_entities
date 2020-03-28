@@ -55,14 +55,6 @@ namespace DDToolKit.Controllers
                 }
             }
 
-            // debugin to test the output.
-            /*for (int j = 0; j < list.Count(); j++)
-            {
-                Debug.WriteLine(list[j]);
-            }*/
-
-            //return jsonString;
-
             ViewBag.EquipList = list;
             ViewBag.Success = true;
             return View();
