@@ -4,7 +4,7 @@
 }
 <h2>Index</h2>
 <p>
-    @Html.ActionLink("Create New Save Game", "Create")
+    <button>@Html.ActionLink("Create New Save Game", "Create")</button>
    
 
 </p>
@@ -21,10 +21,10 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Add a character to this save", "CreatePlayer", new { id = item.ID })
+                <button>@Html.ActionLink("Add a character to this save", "CreatePlayer", new { id = item.ID })</button>
             </td>
             <td>
-                @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
+                <button>@Html.ActionLink("Let's Play!", "Game", new { id = item.ID })</button>
             </td>
         </tr>
     }
