@@ -21,7 +21,7 @@ namespace DDToolKit.Controllers
         public ActionResult Index()
         {
             string id = User.Identity.GetUserId();
-            return View(db.Saves.ToList().Where(s => s.OwnerID.Contains(id)));
+            return View(db.Saves.Where(s => s.OwnerID.Contains(id)).ToList());
         }
 
 
