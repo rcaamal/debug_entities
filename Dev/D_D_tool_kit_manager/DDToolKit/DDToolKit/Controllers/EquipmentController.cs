@@ -51,7 +51,7 @@ namespace DDToolKit.Controllers
                 string current = (string)data["results"][i]["name"];
                 if (current.Contains(equipName) == true)
                 {
-                    list.Add((string)data["results"][i]["name"]);
+                    list.Add((string)data["results"][i]["index"]);
                 }
             }
 
@@ -59,5 +59,42 @@ namespace DDToolKit.Controllers
             ViewBag.Success = true;
             return View();
         }
+
+        
+        public ActionResult equipInfo(string equipName)
+        {
+            string json = SendRequest("https://www.dnd5eapi.co/api/equipment/" + equipName);
+
+            JObject data = JObject.Parse(json);
+
+            List<string> list = new List<string>();
+            //"equipment_category": "Adventuring Gear",
+            string equipCategory = (string)data["equipment_category"];
+            string quantity = (string)data["cost"]["quantity"];
+            string unit = (string)data["cost"]["unit"];
+            /*
+             * "_id": "5e7ba0810b1bb138c5324f43",
+	"index": "abacus",
+	"name": "Abacus",
+	"equipment_category": "Adventuring Gear",
+	"gear_category": "Standard Gear",
+	"cost": {
+		"quantity": 2,
+		"unit": "gp"
+	},
+	"weight": 2,
+             */
+
+            ViewBag.nameeee = equipCategory;
+            
+
+
+
+
+            return View();
+
+        }
+
+
     }
 }

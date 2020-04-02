@@ -231,6 +231,7 @@
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\equip.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\index.js.flow" />
@@ -383,6 +384,7 @@
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
     <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\equipInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
