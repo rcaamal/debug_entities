@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Game view";
-    
+
 }
 
 <img src="https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct" alt="Filler" width="500" height="600">
@@ -177,7 +177,9 @@
     </button>
 </div>
 
-<table class="table">
+
+
+<table cellpadding="0" cellspacing="0" class="Grid">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -241,9 +243,10 @@
             </th>*@
     </tr>
 
+
     @foreach (var item in Model)
     {
-        <tr>           
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -303,119 +306,119 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Actions)
-                </td>*@            
+                </td>*@
         </tr>
     }
 
 </table>
 
 
-<table style="width:40%">
-    <tr>
-        <td style="text-align:center">
-            Four-sided Die
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result4"></p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:center">
-            Six-sided Die
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result6"></p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:center">
-            Eight-sided Die
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result8"></p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:center">
-            Twelve-sided Die
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result12"></p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:center">
-            Twenty-sided Die
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result20"></p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:center">
-            Two Ten-sided Dice
-        </td>
-        <td style="text-align:center">
-            <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
-                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-            </href>
-        </td>
-        <td style="text-align:center">
-            <p id="result100"></p>
-        </td>
-    </tr>
-</table>
+    <table style="width:40%">
+        <tr>
+            <td style="text-align:center">
+                Four-sided Die
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result4"></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                Six-sided Die
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result6"></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                Eight-sided Die
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result8"></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                Twelve-sided Die
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result12"></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                Twenty-sided Die
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result20"></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                Two Ten-sided Dice
+            </td>
+            <td style="text-align:center">
+                <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
+                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                </href>
+            </td>
+            <td style="text-align:center">
+                <p id="result100"></p>
+            </td>
+        </tr>
+    </table>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function rollDice(max) {
-        return 1 + Math.floor(Math.random() * max)
-    }
+        function rollDice(max) {
+            return 1 + Math.floor(Math.random() * max)
+        }
 
-    const rollDice4 = () => rollDice(4)
-    const rollDice6 = () => rollDice(6)
-    const rollDice8 = () => rollDice(8)
-    const rollDice12 = () => rollDice(12)
-    const rollDice20 = () => rollDice(20)
-    const rollDice100 = () => rollDice(100)
+        const rollDice4 = () => rollDice(4)
+        const rollDice6 = () => rollDice(6)
+        const rollDice8 = () => rollDice(8)
+        const rollDice12 = () => rollDice(12)
+        const rollDice20 = () => rollDice(20)
+        const rollDice100 = () => rollDice(100)
 
-    function toggle() {
-        var x = document.getElementById("monster");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
- }
-</script>
-<style>
-    table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
+        function toggle() {
+            var x = document.getElementById("monster");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
