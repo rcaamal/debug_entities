@@ -40,6 +40,11 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
+        public ActionResult map()
+        {
+            return View();
+        }
+
         // GET: Saves/Create
         public ActionResult Create()
         {

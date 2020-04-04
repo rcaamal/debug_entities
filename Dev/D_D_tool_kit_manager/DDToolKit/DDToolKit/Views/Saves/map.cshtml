@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Map Page</p>
+<button onclick="toggleColor('z1')">test</button>
+<div id="z1" style="background-color:white">check</div>
+<table style="width: 25%;" border="1">
+    <tbody>
+        <tr>
+            <td id="a1" style="background-color:white; display:none" onclick="toggleColor('a1')">&nbsp;</td>
+            <td id="a2" style="background-color:white; display:none" onclick="toggleColor('a2')">&nbsp;</td>
+            <td id="a3" style="background-color:white; display:none" onclick="toggleColor('a3')">&nbsp;</td>
+            <td id="a4" style="background-color:white; display:none" onclick="toggleColor('a4')">&nbsp;</td>
+            <td id="a5" style="background-color:white; display:none" onclick="toggleColor('a5')">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="b1" style="background-color:white; display:none" onclick="toggleColor('b1')">&nbsp;</td>
+            <td id="b2" style="background-color:white; display:none" onclick="toggleColor('b2')">&nbsp;</td>
+            <td id="b3" style="background-color:white; display:none" onclick="toggleColor('b3')">&nbsp;</td>
+            <td id="b4" style="background-color:white; display:none" onclick="toggleColor('b4')">&nbsp;</td>
+            <td id="b5" style="background-color:white; display:none" onclick="toggleColor('b5')">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="c1" style="background-color:white; display:none" onclick="toggleColor('c1')">&nbsp;</td>
+            <td id="c2" style="background-color:white; display:none" onclick="toggleColor('c2')">&nbsp;</td>
+            <td id="c3" style="background-color:white; display:none" onclick="toggleColor('c3')">&nbsp;</td>
+            <td id="c4" style="background-color:white; display:none" onclick="toggleColor('c4')">&nbsp;</td>
+            <td id="c5" style="background-color:white; display:none" onclick="toggleColor('c5')">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<button onclick="test()">test</button>
+<div id="test1" style="display:none">test1</div>
+<div id="test2" style="display:normal">test2</div>
+
+<script>
+    function toggleColor(id) {
+        var x = document.getElementById(id);
+
+        if (x.style.backgroundColor === "white") {
+            x.style.backgroundColor = "blue";
+        } else if (x.style.backgroundColor === "blue") {
+            x.style.backgroundColor = "yellow";
+        } else if (x.style.backgroundColor === "yellow") {
+            x.style.backgroundColor = "white";
+        }
+    }
+    var alpha = ['a', 'b', 'c'];
+    var nums = ['1', '2', '3', '4', '5'];
+    var xaxis = 5;
+    var yaxis = 3;
+    function test() {
+        var temp = document.getElementById('test1');
+        temp.style.display = "block";
+        temp = document.getElementById('test2');
+        temp.style.display = "none";
+        var count1;
+        var count2;
+        for (count1 = 0; count1 < yaxis; count1++) {
+            for (count2 = 0; count2 < xaxis; count2++) {
+                temp = document.getElementById(alpha[count1] + nums[count2]);
+                temp.style.display = "table-cell";
+            }
+        }
+        
+    }
+</script>
