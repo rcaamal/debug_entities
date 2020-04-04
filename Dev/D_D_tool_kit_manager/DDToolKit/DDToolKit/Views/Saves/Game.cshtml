@@ -7,6 +7,12 @@
 
 <img src="https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct" alt="Filler" width="500" height="600">
 
+<div>
+    <button onclick="toggle()">
+        Toggle Monster Information
+    </button>
+</div>
+
 <dl class="dl-horizontal" id="monster">
     <dt>
         Name
@@ -171,206 +177,265 @@
         @ViewBag.legactions
     </dd>
 </dl>
-<div>
-    <button onclick="toggle()">
-        Toggle Monster Information
-    </button>
-</div>
 
 
-
-<table cellpadding="0" cellspacing="0" class="Grid">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Aligment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArmorClass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HitPoints)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Strength)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dexterity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Constitution)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Intelligence)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Wisdom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Charisma)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Languages)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Speed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Proficiencies)
-        </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.DamageResistance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ConditionImmunity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Senses)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SpecialAbility)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Actions)
-            </th>*@
-    </tr>
-
-
-
-
-    @foreach (var item in Model)
-    {
+<body>
+   <table cellpadding="0" cellspacing="0" class="Grid" id="Stats">
         <tr>
-            <td>
-                <table cellpadding="0" cellspacing="0" class="ChildGrid">
+            <th></th>
+            <th>     Players Stats                       </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aligment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArmorClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HitPoints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Strength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dexterity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Constitution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intelligence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wisdom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charisma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Languages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proficiencies)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.DamageResistance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ConditionImmunity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Senses)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialAbility)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Actions)
+                </th>
+        </tr>*@
 
-                    <tr>
-                        <td>@item.Name</td>
-                        <td> @item.Size</td>
-                        <td>@item.Type</td>
-                        <td>@item.Aligment</td>
-                        <td>@item.ArmorClass</td>
-                        <td>@item.HitPoints</td>
-                        <td>@item.Strength</td>
-                        <td>@item.Dexterity</td>
-                        <td>@item.Constitution</td>
-                        <td>@item.Intelligence</td>
-                        <td>@item.Wisdom</td>
-                        <td>@item.Charisma</td>
-                        <td>@item.Languages</td>
-                        <td>@item.Speed</td>
-                        <td>@item.Proficiencies</td>
-                    </tr>
-                    
-
-                </table>
 
 
-
-
-
-            </td>
-
-
-
-        </tr>
-    }
-
-
-
-
-
-
-
-    @*  @foreach (var item in Model)
-        {
+       
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Size)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Aligment)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ArmorClass)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HitPoints)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Strength)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dexterity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Constitution)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Intelligence)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Wisdom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Charisma)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Languages)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Speed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Proficiencies)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.DamageResistance)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ConditionImmunity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Senses)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SpecialAbility)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Actions)
-                    </td>
-            </tr>
-        }*@
+                <img src="/Images/plus.png" />
+                <div style="display:none">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Size
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Aligment
+                            </th>
+                            <th>
+                                ArmorClass
+                            </th>
+                            <th>
+                                HitPoints
+                            </th>
+                            <th>
+                                Strength
+                            </th>
+                            <th>
+                                Dexterity
+                            </th>
+                            <th>
+                                Constitution
+                            </th>
+                            <th>
+                                Intelligence
+                            </th>
+                            <th>
+                                Wisdom
+                            </th>
+                            <th>
+                                Charisma
+                            </th>
+                            <th>
+                                Languages
+                            </th>
+                            <th>
+                                Speed
+                            </th>
+                            <th>
+                                Proficiencies
+                            </th>
+                        </tr>
+                       @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Size
+                            </td>
+                            <td>
+                                @item.Type
+                            </td>
+                            <td>
+                                @item.Aligment
+                            </td>
+                            <td>
+                                @item.ArmorClass
+                            </td>
+                            <td>
+                                @item.HitPoints
+                            </td>
+                            <td>
+                                @item.Strength
+                            </td>
+                            <td>
+                                @item.Dexterity
+                            </td>
+                            <td>
+                                @item.Constitution
+                            </td>
+                            <td>
+                                @item.Intelligence
+                            </td>
+                            <td>
+                                @item.Wisdom
+                            </td>
+                            <td>
+                                @item.Charisma
+                            </td>
+                            <td>
+                                @item.Languages
+                            </td>
+                            <td>
+                                @item.Speed
+                            </td>
+                            <td>
+                                @item.Proficiencies
 
-</table>
+                            </td>
+                            @*<td>
+                @Html.DisplayFor(modelItem => item.DamageResistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConditionImmunity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actions)
+            </td>*@
+                        </tr>
+                        }
+                    </table>
+                    </div>
+                </td>
+                <td>This Is Where You Will Be Able To See All The Players Stats That You Have Choosen</td>
+                
+</tr>
+        
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    //Assign Click event to Plus Image.
-    $("body").on("click", "img[src*='plus.png']", function () {
-        $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
-        $(this).attr("src", "/images/minus.png");
-    });
-    //Assign Click event to Minus Image.
-    $("body").on("click", "img[src*='minus.png']", function () {
-        $(this).attr("src", "/images/plus.png");
-        $(this).closest("tr").next().remove();
-    });
-</script>
+
+    </table>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Assign Click event to Plus Image.
+        $("body").on("click", "img[src*='plus.png']", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+            $(this).attr("src", "/images/minus.png");
+        });
+        //Assign Click event to Minus Image.
+        $("body").on("click", "img[src*='minus.png']", function () {
+            $(this).attr("src", "/images/plus.png");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
+
+</body>
+<div>
+    <button onclick="hide()">
+        Hide/Unhide
+    </button>
+</div>
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+        .Grid th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid img {
+            cursor: pointer;
+        }
+
+    .ChildGrid {
+        width: 100%;
+    }
+
+        .ChildGrid th {
+            background-color: #6C6C6C;
+            color: #fff;
+            font-weight: bold;
+        }
+</style>
+
 
 <table style="width:40%">
     <tr>
@@ -453,6 +518,22 @@
     </tr>
 </table>
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    function hide() {
+
+         var x = document.getElementById("Stats");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    
+
+</script>
+
 <script type="text/javascript">
 
     function rollDice(max) {
@@ -476,8 +557,8 @@
     }
 </script>
 <style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
