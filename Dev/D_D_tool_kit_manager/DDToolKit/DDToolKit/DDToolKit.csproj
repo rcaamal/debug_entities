@@ -199,6 +199,7 @@
     <Compile Include="Models\gameModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +208,7 @@
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\drop_migrationhistory.sql" />
+    <Content Include="App_Data\mapup.sql" />
     <Content Include="App_Data\Monsters.mdf" />
     <Content Include="App_Data\Monsters_log.ldf">
       <DependentUpon>Monsters.mdf</DependentUpon>
