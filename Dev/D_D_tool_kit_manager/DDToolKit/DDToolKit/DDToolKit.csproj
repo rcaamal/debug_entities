@@ -383,7 +383,8 @@
     <Content Include="Views\Saves\Game.cshtml" />
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
-    <Content Include="Views\Saves\map.cshtml" />
+    <Content Include="Views\Saves\MapEdit.cshtml" />
+    <Content Include="Views\Saves\MapSetup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />

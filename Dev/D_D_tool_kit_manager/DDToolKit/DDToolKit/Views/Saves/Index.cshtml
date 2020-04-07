@@ -24,6 +24,9 @@
                 @Html.ActionLink("Add a character to this save", "CreatePlayer", new { id = item.ID })
             </td>
             <td>
+                @Html.ActionLink("Create a map for this save", "MapSetup", new { id = item.ID})
+            </td>
+            <td>
                 @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
             </td>
         </tr>

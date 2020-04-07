@@ -40,7 +40,36 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
-        public ActionResult map()
+        public ActionResult MapIndex()
+        {
+            return View();
+        }
+
+        // GET: Saves/MapSetup
+        public ActionResult MapSetup()
+        {
+            return View();
+        }
+
+        // POST: Saves/MapSetup
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MapSetup(int id, [Bind(Include = "ID,MapWidth,MapHeight")] Map map)
+        {
+            map.OwnerID = User.Identity.GetUserId();
+            map.GameID = id;
+            if (ModelState.IsValid)
+            {
+                db.Maps.Add(map);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(map);
+        }
+
+        public ActionResult MapEdit()
         {
             return View();
         }
