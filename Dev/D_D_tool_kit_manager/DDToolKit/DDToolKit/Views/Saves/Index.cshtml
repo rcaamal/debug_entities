@@ -27,7 +27,7 @@
         @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
     </td>
     <td>
-        <button class="button button">
+        <button onclick="myEditFunction()"  class="button button">
             @Html.ActionLink("Edit", "Edit", new { id = item.ID })
         </button>
         <style>    
@@ -57,3 +57,9 @@
 </tr>
     }
 </table>
+
+<script>
+function myEditFunction() {
+  alert("Do you want to edit this item?");
+}
+</script>

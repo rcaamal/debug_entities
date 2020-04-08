@@ -179,91 +179,66 @@
     </button>
  
 </div>
-<html>
-<body>
-    <style type="text/css">
-        body {
-            font-family: Arial;
-            font-size: 10pt;
-        }
 
-        .table {
-            border: 1px solid #ccc;
-            border-collapse: collapse;
-        }
-
-            .table th {
-                background-color: #F7F7F7;
-                color: #333;
-                font-weight: bold;
-            }
-
-            .table th, .table td {
-                padding: 5px;
-                border: 1px solid #ccc;
-            }
-    </style>
     <table id="stats" class="table" cellpadding="0" cellspacing="0">
         <tr>
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Size)
             </th>
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Type)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Aligment)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.ArmorClass)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.HitPoints)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Strength)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Dexterity)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Constitution)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Intelligence)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Wisdom)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Charisma)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Languages)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Speed)
             </th>
 
-            <th style="width:150px">
+            <th>
                 @Html.DisplayNameFor(model => model.Proficiencies)
             </th>
-
-            <th style="width:150px"</th>
             @*<th>
                     @Html.DisplayNameFor(model => model.DamageResistance)
                 </th>
@@ -284,84 +259,69 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td class="Name">
-                    <span>@Html.DisplayFor(modelItem => item.Name) </span>
-                    <input type="text" value="@item.Name" style="display:none" />
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name) 
 
-                </td>
-
-                <td class="Size">
-                    <span> @Html.DisplayFor(modelItem => item.Size) </span>
-                    <input type="number" value="@item.Size" style="display:none" />
-                </td>
-
-                <td class="Type">
-                    <span> @Html.DisplayFor(modelItem => item.Type)</span>
-                    <input type="text" value="@item.Type" style="display:none" />
-                </td>
-
-                <td class="Aligment">
-                    <span> @Html.DisplayFor(modelItem => item.Aligment)</span>
-                    <input type="number" value="@item.Aligment" style="display:none" />
-                </td>
-
-                <td class="ArmorClass">
-                    <span> @Html.DisplayFor(modelItem => item.ArmorClass)</span>
-                    <input type="number" value="@item.ArmorClass" style="display:none" />
-                </td>
-
-                <td class="HitPoints">
-                    <span> @Html.DisplayFor(modelItem => item.HitPoints)</span>
-                    <input type="number" value="@item.HitPoints" style="display:none" />
-                </td>
-
-                <td class="Strength">
-                    <span> @Html.DisplayFor(modelItem => item.Strength)</span>
-                    <input type="number" value="@item.Strength" style="display:none" />
-                </td>
-
-                <td class="Dexterity">
-                    <span> @Html.DisplayFor(modelItem => item.Dexterity)</span>
-                    <input type="number" value="@item.Dexterity" style="display:none" />
-                </td>
-
-                <td class="Constitution">
-                    <span>@Html.DisplayFor(modelItem => item.Constitution)</span>
-                    <input type="number" value="@item.Constitution" style="display:none" />
-                </td>
-
-                <td class="Intelligence">
-                    <span> @Html.DisplayFor(modelItem => item.Intelligence)</span>
-                    <input type="number" value="@item.Intelligence" style="display:none" />
-                </td>
-
-                <td class="Wisdom">
-                    <span> @Html.DisplayFor(modelItem => item.Wisdom) </span>
-                    <input type="number" value="@item.Wisdom" style="display:none" />
-                </td>
-
-                <td class="Charisma">
-                    <span> @Html.DisplayFor(modelItem => item.Charisma)</span>
-                    <input type="number" value="@item.Charisma" style="display:none" />
-                </td>
-
-                <td class="Language">
-                    <span> @Html.DisplayFor(modelItem => item.Languages) </span>
-                    <input type="text" value="@item.Languages" style="display:none" />
-                </td>
-
-                <td class="Speed">
-                    <span> @Html.DisplayFor(modelItem => item.Speed) </span>
-                    <input type="number" value="@item.Speed" style="display:none" />
-                </td>
-
-                <td class="Proficiencies">
-                    <span> @Html.DisplayFor(modelItem => item.Proficiencies) </span>
-                    <input type="text" value="@item.Proficiencies" style="display:none" />
                 </td>
 
                 <td>
+                    @Html.DisplayFor(modelItem => item.Size) 
                 </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aligment)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArmorClass)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.HitPoints)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Strength)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dexterity)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Constitution)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Intelligence)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wisdom)
+                </td>
+
+                <td>
+                     @Html.DisplayFor(modelItem => item.Charisma)
+                </td>
+
+                <td >
+                    @Html.DisplayFor(modelItem => item.Languages) 
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speed) 
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Proficiencies) 
+                   
+                </td>
+
+               
                 @*<td>
                         @Html.DisplayFor(modelItem => item.DamageResistance)
                     </td>
@@ -382,107 +342,6 @@
 
     </table>
 
-
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-    <script type="text/javascript">
-        $(function () {
-
-            if ($("#stats tr").length > 2) {
-                $("#stats tr:eq(1)").remove();
-            } else {
-                var row = $("#stats tr:last-child");
-                row.find(".Edit").hide();
-                row.find("span").html('&nbsp;');
-            }
-        });
-
-        function AppendRow(row, name) {
-
-            //Bind Name.
-            $(".Name", row).find("span").html(name);
-            $(".Name", row).find("input").val(name);
-
-
-            row.find(".Edit").show();
-            $("#stats").append(row);
-        };
-
-
-        $("body").on("click", "#stats .Edit", function () {
-            var row = $(this).closest("tr");
-            $("td", row).each(function () {
-                if ($(this).find("input").length > 0) {
-                    $(this).find("input").show();
-                    $(this).find("span").hide();
-                }
-            });
-            row.find(".Update").show();
-            row.find(".Cancel").show();
-            $(this).hide();
-        });
-
-        $("body").on("click", "#stats .Update", function () {
-            var row = $(this).closest("tr");
-            $("td", row).each(function () {
-                if ($(this).find("input").length > 0) {
-                    var span = $(this).find("span");
-                    var input = $(this).find("input");
-                    span.html(input.val());
-                    span.show();
-                    input.hide();
-                }
-            });
-            row.find(".Edit").show();
-            row.find(".Cancel").hide();
-            $(this).hide();
-
-            var item = {};
-            item.Name = row.find(".Name").find("span").html();
-            item.size = row.find(".Size").find("span").html();
-            item.type = row.find(".Type").find("span").html();
-            item.aligment = row.find(".Aligment").find("span").html();
-            item.armorclass = row.find(".ArmorClass").find("span").html();
-            item.hitpoints = row.find(".HitPoints").find("span").html();
-            item.strength = row.find(".Strength").find("span").html();
-            item.dexterity = row.find(".Dexterity").find("span").html();
-            item.constitution = row.find(".Constitution").find("span").html();
-            item.intelligence = row.find(".Intelligence").find("span").html();
-            item.wisdom = row.find(".Wisdom").find("span").html();
-            item.charisma = row.find(".Charisma").find("span").html();
-            item.languages = row.find(".Languages").find("span").html();
-            item.speed = row.find(".Speed").find("span").html();
-            item.proficiencies = row.find(".Proficiencies").find("span").html();
-            $.ajax({
-                type: "POST",
-                url: "/Saves/Game",
-                data: '{item:' + JSON.stringify(item) + '}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json"
-            });
-        });
-
-
-        $("body").on("click", "#stats .Cancel", function () {
-            var row = $(this).closest("tr");
-            $("td", row).each(function () {
-                if ($(this).find("input").length > 0) {
-                    var span = $(this).find("span");
-                    var input = $(this).find("input");
-                    input.val(span.html());
-                    span.show();
-                    input.hide();
-                }
-            });
-            row.find(".Edit").show();
-            row.find(".Update").hide();
-            $(this).hide();
-        });
-
-    </script>
-</body>
-</html>
 <table style="width:40%">
     <tr>
         <td style="text-align:center">
