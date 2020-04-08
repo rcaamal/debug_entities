@@ -5,4 +5,33 @@
     ViewBag.Title = "EquipmentInfo";
 }
 
-<h1>@ViewBag.nameeee</h1>
+
+@if (ViewBag.Success == true)
+{
+    <p>@ViewBag.name</p>
+    <p>@ViewBag.equipCategory</p>
+    <p>@ViewBag.vehicleCategory</p>
+    <p>@ViewBag.gearCategory</p>
+    <p>@ViewBag.toolCategory</p>
+    <p>@ViewBag.quantity</p>
+    <p>@ViewBag.unit</p>
+    <p>@ViewBag.weight</p>
+    <p>@ViewBag.weaponCategory</p>
+    <p>@ViewBag.weaponRange</p>
+    <p>@ViewBag.categoryRange</p>
+
+    if (ViewBag.desc == null)
+    {
+        <h4>test</h4>
+
+    }
+    else
+    {
+        foreach (var item in ViewBag.desc)
+        {
+            string description = item.ToString();
+            <h4>@description</h4>
+        }
+
+    }
+}

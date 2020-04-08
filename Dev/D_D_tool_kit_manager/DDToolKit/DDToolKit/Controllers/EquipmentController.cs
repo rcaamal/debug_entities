@@ -67,29 +67,136 @@ namespace DDToolKit.Controllers
 
             JObject data = JObject.Parse(json);
 
-            List<string> list = new List<string>();
-            //"equipment_category": "Adventuring Gear",
-            string equipCategory = (string)data["equipment_category"];
-            string quantity = (string)data["cost"]["quantity"];
-            string unit = (string)data["cost"]["unit"];
-            /*
-             * "_id": "5e7ba0810b1bb138c5324f43",
-	"index": "abacus",
-	"name": "Abacus",
-	"equipment_category": "Adventuring Gear",
-	"gear_category": "Standard Gear",
-	"cost": {
-		"quantity": 2,
-		"unit": "gp"
-	},
-	"weight": 2,
-             */
+           // string name;
+            string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit, quantity,
+               weight, weaponCategory, weaponRange, categoryRange, damageDice,damageBounc, damageType,
+               rangeNormal, rangeLong, propertyUrl, propertyName, damage2hDamageDice, damage2hDamageBounc,
+               damage2hDamageType, armorCategory, armorClass, strMin, stealthDisadvantage, contents,
+               speedQuantity, speedUnit, capacity, normalThrowRange, longThrowRange;
+            
+            name = (string)data["name"];
 
-            ViewBag.nameeee = equipCategory;
+            if (data["equipment_category"] != null)
+            {
+                equipCategory = (string)data["equipment_category"];
+            }
+            else
+            {
+                equipCategory = null;
+            }
+
+            if(data["vehicle_category"] != null)
+            {
+                vehicleCategory = (string)data["vehicle_category"];
+            }
+            else
+            {
+                vehicleCategory = null;
+            }
+
+            if (data["gear_category"] != null)
+            {
+                gearCategoty = (string)data["gear_category"];
+            }
+            else
+            {
+                gearCategoty = null;
+            }
+
+            if(data["tool_category"] != null)
+            {
+                toolCategoty = (string)data["tool_category"];
+            }
+            else
+            {
+                toolCategoty = null;
+            }
+
+            if(data["cost"]["unit"] != null)
+            {
+                unit = (string)data["cost"]["unit"];
+            }
+            else
+            {
+                unit = null;
+            }
+
+            if (data["cost"]["quantity"] != null)
+            {
+                quantity = (string)data["cost"]["quantity"];
+            }
+            else
+            {
+                quantity = null;
+            }
+
+            if (data["weight"] != null)
+            {
+                weight = (string)data["weight"];
+            }
+            else
+            {
+                weight = null;
+            }
+
+            List<string> desc = new List<string>();
+            if (data["desc"] != null) 
+            {
+                
+                for (int i = 0; i < data["desc"].Count(); i++)
+                {
+                    desc.Add((string)data["desc"][i]);
+                   
+
+                }
+            }
+            else
+            {
+                desc = null;
+                
+            }
+
+            if (data["weapon_category"] != null)
+            {
+                weaponCategory = (string)data["weapon_category"];
+            }
+            else
+            {
+                weaponCategory = null;
+            }
+
+            if (data["weapon_range"] != null)
+            {
+                weaponRange = (string)data["weapon_range"];
+            }
+            else
+            {
+                weaponRange = null;
+            }
+
+            if (data["category_range"] != null)
+            {
+                categoryRange = (string)data["category_range"];
+            }
+            else
+            {
+                categoryRange = null;
+            }
+            ViewBag.name = name;
+            ViewBag.equipCategory = equipCategory;
+            ViewBag.vehicleCategory = vehicleCategory;
+            ViewBag.gearCategory = gearCategoty;
+            ViewBag.toolCategory = toolCategoty;
+            ViewBag.quantity = quantity;
+            ViewBag.unit = unit;
+            ViewBag.weight = weight;
+            ViewBag.desc = desc;
+            ViewBag.weaponCategory = weaponCategory;
+            ViewBag.weaponRange = weaponRange;
+            ViewBag.categoryRange = categoryRange;
             
 
-
-
+            ViewBag.Success = true;
 
             return View();
 
