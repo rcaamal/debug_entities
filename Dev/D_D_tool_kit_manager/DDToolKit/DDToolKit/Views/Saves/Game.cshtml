@@ -177,11 +177,36 @@
     <button onclick="toggle()">
         Toggle Monster Information
     </button>
+ 
 </div>
+<html>
 <body>
-    <table id="Stats"  class="table" cellpadding="0" cellspacing="0">
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+            .table th {
+                background-color: #F7F7F7;
+                color: #333;
+                font-weight: bold;
+            }
+
+            .table th, .table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+    </style>
+    <table id="stats" class="table" cellpadding="0" cellspacing="0">
         <tr>
-            <th style="width:150px"> Name
+            <th style="width:150px">
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th style="width:150px">
                 @Html.DisplayNameFor(model => model.Size)
@@ -238,154 +263,154 @@
                 @Html.DisplayNameFor(model => model.Proficiencies)
             </th>
 
-            <th></th>
+            <th style="width:150px"</th>
             @*<th>
-            @Html.DisplayNameFor(model => model.DamageResistance)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConditionImmunity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senses)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SpecialAbility)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Actions)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.DamageResistance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ConditionImmunity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Senses)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialAbility)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Actions)
+                </th>*@
         </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td class="Name">
-                <span> @Html.DisplayFor(modelItem => item.Name)</span>
-                <input type="text" value="@item.Name" style="display:none" />
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="Name">
+                    <span>@Html.DisplayFor(modelItem => item.Name) </span>
+                    <input type="text" value="@item.Name" style="display:none" />
 
-            </td>
-
-            <td class="Size">
-               <span> @Html.DisplayFor(modelItem => item.Size) </span>
-                <input type="number" value="@item.Size" style="display:none" />
-            </td>
-
-            <td class="Type">
-                <span> @Html.DisplayFor(modelItem => item.Type)</span>
-                <input type="text" value="@item.Type" style="display:none" />
-            </td>
-
-            <td class="Aligment">
-                <span> @Html.DisplayFor(modelItem => item.Aligment)</span>
-                <input type="number" value="@item.Aligment" style="display:none" />
-            </td>
-
-            <td class="ArmorClass">
-                <span> @Html.DisplayFor(modelItem => item.ArmorClass)</span>
-                <input type="number" value="@item.ArmorClass" style="display:none" />
-            </td>
-
-            <td class="HitPoints">
-                <span> @Html.DisplayFor(modelItem => item.HitPoints)</span>
-                <input type="number" value="@item.HitPoints" style="display:none" />
-            </td>
-
-            <td class="Strength">
-                <span> @Html.DisplayFor(modelItem => item.Strength)</span>
-                <input type="number" value="@item.Strength" style="display:none" />
-            </td>
-
-            <td class="Dexterity">
-                <span> @Html.DisplayFor(modelItem => item.Dexterity)</span>
-                <input type="number" value="@item.Dexterity" style="display:none" />
-            </td>
-
-            <td class="Constitution">
-                <span>@Html.DisplayFor(modelItem => item.Constitution)</span>
-                <input type="number" value="@item.Constitution" style="display:none" />
-            </td>
-
-            <td class="Intelligence">
-                <span> @Html.DisplayFor(modelItem => item.Intelligence)</span>
-                <input type="number" value="@item.Intelligence" style="display:none" />
-            </td>
-
-            <td class="Wisdom">
-                <span> @Html.DisplayFor(modelItem => item.Wisdom) </span>
-                <input type="number" value="@item.Wisdom" style="display:none" />
-            </td>
-
-            <td class="Charisma">
-                <span> @Html.DisplayFor(modelItem => item.Charisma)</span>
-                <input type="number" value="@item.Charisma" style="display:none" />
-            </td>
-
-            <td class="Language">
-                <span> @Html.DisplayFor(modelItem => item.Languages) </span>
-                <input type="text" value="@item.Languages" style="display:none" />
-            </td>
-
-            <td class="Speed">
-                <span> @Html.DisplayFor(modelItem => item.Speed) </span>
-                <input type="number" value="@item.Speed" style="display:none" />
-            </td>
-
-            <td class="Proficiencies">
-                <span> @Html.DisplayFor(modelItem => item.Proficiencies) </span>
-                <input type="text" value="@item.Proficiencies" style="display:none" />
-            </td>
-
-            <td>
-                <a class="Edit" href="javascript:;">Edit</a>
-                <a class="Update" href="javascript:;" style="display:none">Update</a>
-                <a class="Cancel" href="javascript:;" style="display:none">Cancel</a>
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.DamageResistance)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ConditionImmunity)
+
+                <td class="Size">
+                    <span> @Html.DisplayFor(modelItem => item.Size) </span>
+                    <input type="number" value="@item.Size" style="display:none" />
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Senses)
+
+                <td class="Type">
+                    <span> @Html.DisplayFor(modelItem => item.Type)</span>
+                    <input type="text" value="@item.Type" style="display:none" />
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SpecialAbility)
+
+                <td class="Aligment">
+                    <span> @Html.DisplayFor(modelItem => item.Aligment)</span>
+                    <input type="number" value="@item.Aligment" style="display:none" />
                 </td>
+
+                <td class="ArmorClass">
+                    <span> @Html.DisplayFor(modelItem => item.ArmorClass)</span>
+                    <input type="number" value="@item.ArmorClass" style="display:none" />
+                </td>
+
+                <td class="HitPoints">
+                    <span> @Html.DisplayFor(modelItem => item.HitPoints)</span>
+                    <input type="number" value="@item.HitPoints" style="display:none" />
+                </td>
+
+                <td class="Strength">
+                    <span> @Html.DisplayFor(modelItem => item.Strength)</span>
+                    <input type="number" value="@item.Strength" style="display:none" />
+                </td>
+
+                <td class="Dexterity">
+                    <span> @Html.DisplayFor(modelItem => item.Dexterity)</span>
+                    <input type="number" value="@item.Dexterity" style="display:none" />
+                </td>
+
+                <td class="Constitution">
+                    <span>@Html.DisplayFor(modelItem => item.Constitution)</span>
+                    <input type="number" value="@item.Constitution" style="display:none" />
+                </td>
+
+                <td class="Intelligence">
+                    <span> @Html.DisplayFor(modelItem => item.Intelligence)</span>
+                    <input type="number" value="@item.Intelligence" style="display:none" />
+                </td>
+
+                <td class="Wisdom">
+                    <span> @Html.DisplayFor(modelItem => item.Wisdom) </span>
+                    <input type="number" value="@item.Wisdom" style="display:none" />
+                </td>
+
+                <td class="Charisma">
+                    <span> @Html.DisplayFor(modelItem => item.Charisma)</span>
+                    <input type="number" value="@item.Charisma" style="display:none" />
+                </td>
+
+                <td class="Language">
+                    <span> @Html.DisplayFor(modelItem => item.Languages) </span>
+                    <input type="text" value="@item.Languages" style="display:none" />
+                </td>
+
+                <td class="Speed">
+                    <span> @Html.DisplayFor(modelItem => item.Speed) </span>
+                    <input type="number" value="@item.Speed" style="display:none" />
+                </td>
+
+                <td class="Proficiencies">
+                    <span> @Html.DisplayFor(modelItem => item.Proficiencies) </span>
+                    <input type="text" value="@item.Proficiencies" style="display:none" />
+                </td>
+
                 <td>
-                    @Html.DisplayFor(modelItem => item.Actions)
-                </td>*@
-        </tr>
-    }
-
-</table>
-
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-<script type="text/javascript">
-    $(function () {
-        if ($("#Stats tr").length > 2) {
-            $("#Stats tr:eq(1)").remove();
-        } else {
-            var row = $("#Stats tr:last-child");
-            row.find(".Edit").hide();
-            row.find("span").html('&nbsp;');
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.DamageResistance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ConditionImmunity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Senses)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialAbility)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Actions)
+                    </td>*@
+            </tr>
         }
-    });
 
-      function AppendRow(row, name,) {
-            
+    </table>
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            if ($("#stats tr").length > 2) {
+                $("#stats tr:eq(1)").remove();
+            } else {
+                var row = $("#stats tr:last-child");
+                row.find(".Edit").hide();
+                row.find("span").html('&nbsp;');
+            }
+        });
+
+        function AppendRow(row, name) {
+
             //Bind Name.
             $(".Name", row).find("span").html(name);
-          $(".Name", row).find("input").val(name);
+            $(".Name", row).find("input").val(name);
 
-          row.find(".Edit").show();
-            $("#Stats").append(row);
+
+            row.find(".Edit").show();
+            $("#stats").append(row);
         };
 
-      $("body").on("click", "#Stats .Edit", function () {
+
+        $("body").on("click", "#stats .Edit", function () {
             var row = $(this).closest("tr");
             $("td", row).each(function () {
                 if ($(this).find("input").length > 0) {
@@ -396,9 +421,9 @@
             row.find(".Update").show();
             row.find(".Cancel").show();
             $(this).hide();
-    });
+        });
 
-    $("body").on("click", "#Stats .Update", function () {
+        $("body").on("click", "#stats .Update", function () {
             var row = $(this).closest("tr");
             $("td", row).each(function () {
                 if ($(this).find("input").length > 0) {
@@ -410,11 +435,10 @@
                 }
             });
             row.find(".Edit").show();
-            row.find(".Delete").show();
             row.find(".Cancel").hide();
             $(this).hide();
- 
-        var item = {};
+
+            var item = {};
             item.Name = row.find(".Name").find("span").html();
             item.size = row.find(".Size").find("span").html();
             item.type = row.find(".Type").find("span").html();
@@ -440,7 +464,7 @@
         });
 
 
-        $("body").on("click", "#Stats .Cancel", function () {
+        $("body").on("click", "#stats .Cancel", function () {
             var row = $(this).closest("tr");
             $("td", row).each(function () {
                 if ($(this).find("input").length > 0) {
@@ -457,108 +481,108 @@
         });
 
     </script>
-    </body>
+</body>
+</html>
+<table style="width:40%">
+    <tr>
+        <td style="text-align:center">
+            Four-sided Die
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result4"></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            Six-sided Die
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result6"></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            Eight-sided Die
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result8"></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            Twelve-sided Die
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result12"></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            Twenty-sided Die
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result20"></p>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            Two Ten-sided Dice
+        </td>
+        <td style="text-align:center">
+            <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
+                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+            </href>
+        </td>
+        <td style="text-align:center">
+            <p id="result100"></p>
+        </td>
+    </tr>
+</table>
 
-    <table style="width:40%">
-        <tr>
-            <td style="text-align:center">
-                Four-sided Die
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result4"></p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                Six-sided Die
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result6"></p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                Eight-sided Die
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result8"></p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                Twelve-sided Die
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result12"></p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                Twenty-sided Die
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result20"></p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                Two Ten-sided Dice
-        </td>
-            <td style="text-align:center">
-                <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
-                    <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                </href>
-            </td>
-            <td style="text-align:center">
-                <p id="result100"></p>
-            </td>
-        </tr>
-    </table>
+<script type="text/javascript">
 
-        <script type="text/javascript">
-
-            function rollDice(max) {
+    function rollDice(max) {
         return 1 + Math.floor(Math.random() * max)
-        }
+    }
 
-        const rollDice4 = () => rollDice(4)
-        const rollDice6 = () => rollDice(6)
-        const rollDice8 = () => rollDice(8)
-        const rollDice12 = () => rollDice(12)
-        const rollDice20 = () => rollDice(20)
-        const rollDice100 = () => rollDice(100)
+    const rollDice4 = () => rollDice(4)
+    const rollDice6 = () => rollDice(6)
+    const rollDice8 = () => rollDice(8)
+    const rollDice12 = () => rollDice(12)
+    const rollDice20 = () => rollDice(20)
+    const rollDice100 = () => rollDice(100)
 
     function toggle() {
         var x = document.getElementById("monster");
         if (x.style.display === "none") {
-                x.style.display = "block";
+            x.style.display = "block";
         } else {
-                x.style.display = "none";
+            x.style.display = "none";
         }
     }
 </script>
