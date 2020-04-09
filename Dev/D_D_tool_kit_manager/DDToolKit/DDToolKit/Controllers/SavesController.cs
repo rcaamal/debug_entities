@@ -70,15 +70,15 @@ namespace DDToolKit.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Save save = db.Saves.Find(id);
-            if (save == null)
-            {
-                return HttpNotFound();
-            }
-            return View(save);
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             Save save = db.Saves.Find(id);
+             if (save == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(save);
         }
 
         // POST: Saves/Edit/5

@@ -41,10 +41,11 @@
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Monsters, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Monsters, "", new { @class = "text-danger" })
+                    
                 </div>
             </div>
 
-            <div onclick="myFunction()"  class="form-group">
+            <div onclick="myFunction()" class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save" class="btn btn-default" />
 
@@ -57,11 +58,10 @@
         @Html.ActionLink("Back to List", "Index")
     </div>
 
-
     <script>
-function myFunction() {
-  alert("Do you want to save?");
-}
+        function myFunction() {
+            alert("Do you want to save?");
+        }
     </script>
 </body>
 </html>
