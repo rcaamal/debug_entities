@@ -69,11 +69,12 @@ namespace DDToolKit.Controllers
 
            // string name;
             string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit, quantity,
-               weight, weaponCategory, weaponRange, categoryRange, damageDice,damageBounc, damageType,
-               rangeNormal, rangeLong, propertyUrl, propertyName, damage2hDamageDice, damage2hDamageBounc,
+               weight, weaponCategory, weaponRange, categoryRange, damageDice, damageTypeName, damageTypeUrl,
+                rangeLong, propertyUrl, propertyName, damage2hDamageDice, damage2hDamageBounc,
                damage2hDamageType, armorCategory, armorClass, strMin, stealthDisadvantage, contents,
                speedQuantity, speedUnit, capacity, normalThrowRange, longThrowRange;
-            
+
+            int? damageBounc, rangeNormal;
             name = (string)data["name"];
 
             if (data["equipment_category"] != null)
@@ -183,6 +184,66 @@ namespace DDToolKit.Controllers
             {
                 categoryRange = null;
             }
+
+            if (data["damage"]!= null)
+            {
+                damageDice = (string)data["damage"]["damage_dice"];
+            }
+            else
+            {
+                damageDice = null;
+            }
+
+            if (data["damage"] != null)
+            {
+                damageBounc = (int)data["damage"]["damage_bonus"];
+            }
+            else
+            {
+                damageBounc = null;
+            }
+
+            if (data["damage"] != null)
+            {
+                damageTypeName = (string)data["damage"]["damage_type"]["name"];
+            }
+            else
+            {
+                damageTypeName = null;
+            }
+
+            if (data["damage"] != null)
+            {
+                damageTypeUrl = (string)data["damage"]["damage_type"]["url"];
+            }
+            else
+            {
+                damageTypeUrl = null;
+            }
+
+            if (data["range"] != null)
+            {
+                rangeNormal = (int)data["range"]["normal"];
+            }
+            else
+            {
+                rangeNormal = null;
+            }
+
+            if (data["range"] != null)
+            {
+                rangeLong = (string)data["range"]["long"];
+            }
+            else
+            {
+                rangeLong = null;
+            }
+
+
+
+
+
+
             ViewBag.name = name;
             ViewBag.equipCategory = equipCategory;
             ViewBag.vehicleCategory = vehicleCategory;
@@ -195,7 +256,12 @@ namespace DDToolKit.Controllers
             ViewBag.weaponCategory = weaponCategory;
             ViewBag.weaponRange = weaponRange;
             ViewBag.categoryRange = categoryRange;
-            
+            ViewBag.damageDice = damageDice;
+            ViewBag.damageBounc = damageBounc;
+            ViewBag.damageTypeName = damageTypeName;
+            ViewBag.damageTypeUrl = damageTypeUrl;
+            ViewBag.rangeNormal = rangeNormal;
+            ViewBag.rangeLong = rangeLong;
 
             ViewBag.Success = true;
 

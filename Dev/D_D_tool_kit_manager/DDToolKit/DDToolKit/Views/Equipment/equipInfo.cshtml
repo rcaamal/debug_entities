@@ -8,30 +8,36 @@
 
 @if (ViewBag.Success == true)
 {
-    <p>@ViewBag.name</p>
-    <p>@ViewBag.equipCategory</p>
-    <p>@ViewBag.vehicleCategory</p>
-    <p>@ViewBag.gearCategory</p>
-    <p>@ViewBag.toolCategory</p>
-    <p>@ViewBag.quantity</p>
-    <p>@ViewBag.unit</p>
-    <p>@ViewBag.weight</p>
-    <p>@ViewBag.weaponCategory</p>
-    <p>@ViewBag.weaponRange</p>
-    <p>@ViewBag.categoryRange</p>
+    <table>
+        <tr>
+            @if (ViewBag.name != null)
+            {
+                <th>Name</th>
+            }
 
-    if (ViewBag.desc == null)
-    {
-        <h4>test</h4>
+            @if (ViewBag.equipCategory != null)
+            {
+                <th>Equip Category</th>
+            }
 
-    }
-    else
-    {
-        foreach (var item in ViewBag.desc)
-        {
-            string description = item.ToString();
-            <h4>@description</h4>
-        }
+            
+            
+                <th>Description</th>
+            
+        </tr>
+        <tr>
+            <td>@ViewBag.name</td>
+            <td>@ViewBag.equipCategory</td>
+           @if (ViewBag.desc != null)
+           {
+               foreach (var item in ViewBag.desc)
+               {
+                   string description = item.ToString();
+                <td>@description</td>
+               }
+           }
+        </tr>
+    </table>
+    
 
-    }
 }
