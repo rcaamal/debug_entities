@@ -207,6 +207,8 @@
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\drop_migrationhistory.sql" />
+    <Content Include="App_Data\MagicUp.sql" />
+    <Content Include="App_Data\MaigcDown.sql" />
     <Content Include="App_Data\Monsters.mdf" />
     <Content Include="App_Data\Monsters_log.ldf">
       <DependentUpon>Monsters.mdf</DependentUpon>
@@ -215,6 +217,7 @@
     <Content Include="App_Data\Saveup.sql" />
     <Content Include="App_Data\script.sql" />
     <Content Include="App_Data\seed.sql" />
+    <Content Include="App_Data\SeedMagic.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-reboot.css" />

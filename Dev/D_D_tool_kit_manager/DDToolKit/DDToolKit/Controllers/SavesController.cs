@@ -16,6 +16,7 @@ namespace DDToolKit.Controllers
     {
         private gameModel db = new gameModel();
         private Monsters dbMonsters = new Monsters();
+     
 
         // GET: Saves
         public ActionResult Index()
@@ -52,7 +53,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters")] Save save)
+        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters,Spells")] Save save)
         {
 
             save.OwnerID = User.Identity.GetUserId();

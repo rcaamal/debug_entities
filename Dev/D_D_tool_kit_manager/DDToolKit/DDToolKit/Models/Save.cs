@@ -19,5 +19,9 @@ namespace DDToolKit.Models
 
         [StringLength(500)]
         public string Monsters { get; set; }
+
+        [StringLength(500)]
+        public string Spells { get; set; }
+
     }
 }
