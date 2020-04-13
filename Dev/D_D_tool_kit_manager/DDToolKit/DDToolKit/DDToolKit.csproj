@@ -185,6 +185,7 @@
     <Compile Include="Controllers\CreaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Models\gameModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +209,7 @@
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\drop_migrationhistory.sql" />
+    <Content Include="App_Data\mapup.sql" />
     <Content Include="App_Data\Monsters.mdf" />
     <Content Include="App_Data\Monsters_log.ldf">
       <DependentUpon>Monsters.mdf</DependentUpon>
@@ -381,6 +384,14 @@
     <Content Include="Views\Saves\Game.cshtml" />
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
+    <Content Include="Views\Saves\MapEdit.cshtml" />
+    <Content Include="Views\Saves\MapSetup.cshtml" />
+    <Content Include="Views\Maps\Create.cshtml" />
+    <Content Include="Views\Maps\Delete.cshtml" />
+    <Content Include="Views\Maps\Details.cshtml" />
+    <Content Include="Views\Maps\Edit.cshtml" />
+    <Content Include="Views\Maps\Index.cshtml" />
+    <Content Include="Views\Maps\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />

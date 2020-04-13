@@ -1,0 +1,74 @@
+﻿@model DDToolKit.Models.Map
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Map</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapLand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapLand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapObjects)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapObjects)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
