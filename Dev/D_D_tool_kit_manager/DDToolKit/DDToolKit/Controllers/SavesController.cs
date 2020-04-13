@@ -192,10 +192,14 @@ namespace DDToolKit.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Game(int? id)
+        public ActionResult Game(int? id, int? mapid)
         {
 
             if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (mapid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -308,6 +312,10 @@ namespace DDToolKit.Controllers
                 ViewBag.legact = legactions;
             }
             ViewBag.name = monsters;
+            Map map = db.Maps.Find(mapid);
+            ViewBag.mapheight = map.MapHeight;
+            ViewBag.mapwidth = map.MapWidth;
+            ViewBag.mapland = map.MapLand;
             return View(db.Players.ToList().Where(s => s.GameID == id));
         }
         public ActionResult CreatePlayer()

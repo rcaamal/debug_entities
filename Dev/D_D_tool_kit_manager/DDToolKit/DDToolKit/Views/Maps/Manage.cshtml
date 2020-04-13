@@ -7,9 +7,6 @@
 
 <h2>Manage</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
         @*<th>
@@ -57,7 +54,7 @@
             @Html.DisplayFor(modelItem => item.MapHeight)
         </td>
         <td>
-            @Html.ActionLink("Play with this map", "Game", "Saves", new { id = gameid }, null)
+            @Html.ActionLink("Play with this map", "Game", "Saves", new { id = gameid, mapid = item.ID }, null)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.MapLand)

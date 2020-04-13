@@ -71,7 +71,7 @@ namespace DDToolKit.Controllers
             {
                 db.Maps.Add(map);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Manage/" + id.ToString());
             }
             return View(map);
         }
@@ -107,7 +107,7 @@ namespace DDToolKit.Controllers
             {
                 db.Entry(map).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Manage/" + map.GameID.ToString());
             }
             return View(map);
         }
