@@ -270,7 +270,8 @@ namespace DDToolKit.Controllers
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/spells");
             JObject data = JObject.Parse(json);
-
+            string firstName = (string)data["results"][0]["name"];
+             firstName = IsString(firstName);
             List<string> list = new List<string>();
 
             for (int i = 0; i < (int)data["count"]; i++)
@@ -293,6 +294,15 @@ namespace DDToolKit.Controllers
             ViewBag.SpellsList = list;
             ViewBag.Success = true;
             return View();
+        }
+
+        public string IsString(string name)
+        {
+            if(name == null)
+            {
+                return "Name is null";
+            }
+            return name;
         }
     }
 }
