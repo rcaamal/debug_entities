@@ -16,6 +16,7 @@ namespace DDToolKit.Controllers
     {
         private gameModel db = new gameModel();
         private Monsters dbMonsters = new Monsters();
+        private Map dbmap = new Map();
 
         // GET: Saves
         public ActionResult Index()
@@ -40,13 +41,10 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
-        public ActionResult MapIndex()
-        {
-            return View();
-        }
+      
 
         // GET: Saves/MapSetup
-        public ActionResult MapSetup()
+        public ActionResult MapSetup(int? id)
         {
             return View();
         }
@@ -56,10 +54,13 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult MapSetup(int id, [Bind(Include = "ID,MapWidth,MapHeight")] Map map)
+        public ActionResult MapSetup(int id, [Bind(Include = "ID,Name,MapWidth,MapHeight")] Map map)
         {
+            string temp = new string('1', 400);
             map.OwnerID = User.Identity.GetUserId();
             map.GameID = id;
+            map.MapLand = temp;
+            map.MapObjects = temp;
             if (ModelState.IsValid)
             {
                 db.Maps.Add(map);
@@ -69,9 +70,35 @@ namespace DDToolKit.Controllers
             return View(map);
         }
 
-        public ActionResult MapEdit()
+        public ActionResult MapEdit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Map map = db.Maps.Find(id);
+            if (map == null)
+            {
+                return HttpNotFound();
+            }
+            return View(map);
+        }
+    
+
+        // POST: Saves/MapSetup
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MapEdit([Bind(Include = "ID,Name,MapWidth,MapHeight,MapLand")] Map map)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(map).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(map);
         }
 
         // GET: Saves/Create

@@ -185,6 +185,7 @@
     <Compile Include="Controllers\CreaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
@@ -385,6 +386,12 @@
     <Content Include="Views\Saves\addMonsters.cshtml" />
     <Content Include="Views\Saves\MapEdit.cshtml" />
     <Content Include="Views\Saves\MapSetup.cshtml" />
+    <Content Include="Views\Maps\Create.cshtml" />
+    <Content Include="Views\Maps\Delete.cshtml" />
+    <Content Include="Views\Maps\Details.cshtml" />
+    <Content Include="Views\Maps\Edit.cshtml" />
+    <Content Include="Views\Maps\Index.cshtml" />
+    <Content Include="Views\Maps\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
