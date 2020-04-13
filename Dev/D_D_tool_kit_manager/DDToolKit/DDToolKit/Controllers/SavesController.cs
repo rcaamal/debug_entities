@@ -16,6 +16,7 @@ namespace DDToolKit.Controllers
     {
         private gameModel db = new gameModel();
         private Monsters dbMonsters = new Monsters();
+        private Magic dbMagic = new Magic();
      
 
         // GET: Saves
@@ -45,7 +46,9 @@ namespace DDToolKit.Controllers
         public ActionResult Create()
         {
             ViewBag.Monsters = new SelectList(dbMonsters.Creatures, "Name", "Name");
-            return View();
+            ViewBag.Magic = new SelectList(db.Magics, "Name", "Name");
+                
+             return View();
         }
 
         // POST: Saves/Create
@@ -53,7 +56,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters,Spells")] Save save)
+        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters,Magic")] Save save)
         {
 
             save.OwnerID = User.Identity.GetUserId();
@@ -138,6 +141,15 @@ namespace DDToolKit.Controllers
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Magic db3 = new Magic();
+            string magic = (from saves in db.Saves
+                            where (saves.ID == id)
+                            select saves.Magic).Single();
+            if (magic != "" && magic != null)
+            {
+                ViewBag.MagicName = magic;
             }
 
             Monsters db2 = new Monsters();

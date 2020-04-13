@@ -30,14 +30,11 @@
         </div>
     </div>
     <div class="form-group">
-      @Html.DropDownList("Spells", new List<SelectListItem>
-         {
-           new SelectListItem {Text = "Acid Arrow", Value ="1" },
-new SelectListItem {Text = "Acid Splash", Value= "2" }
-
-
-         }, "Select Spell")
-
+        @Html.LabelFor(model => model.Magic, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Magic", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Magic, "", new { @class = "text-danger" })
+        </div>
     </div>
 
 

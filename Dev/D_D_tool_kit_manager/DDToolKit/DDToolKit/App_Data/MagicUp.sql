@@ -1,4 +1,5 @@
 ﻿CREATE TABLE [dbo].[Magic] (
-	[Name] NVARCHAR(50),
+	[ID] int identity (1,1) not null,
+	[Name] NVARCHAR(50)
 
 );
