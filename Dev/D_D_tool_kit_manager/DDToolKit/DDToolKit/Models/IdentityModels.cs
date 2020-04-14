@@ -23,7 +23,8 @@ namespace DDToolKit.Models
         public ApplicationDbContext()
 
     : base("Monsters", throwIfV1Schema: false)
-    // : base("DDToolContext_Azure", throwIfV1Schema: false) 
+
+      // : base("DDToolContext_Azure", throwIfV1Schema: false) 
         {
             // Disable code-first migrations
 
