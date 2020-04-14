@@ -5,6 +5,7 @@
     var mapheight = ViewBag.mapheight;
     var mapwidth = ViewBag.mapwidth;
     var mapland = ViewBag.mapland;
+
 }
     <body onload="test()">
         <h4>Have fun!</h4>
@@ -843,6 +844,199 @@
 <script>
     function toggleObject(id) {
         var x = document.getElementById(id);
+                </th>
+        </tr>*@
+
+
+
+       
+            <tr>
+                <td>
+                <img src="/Images/plus.png" />
+                <div style="display:none">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Size
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Aligment
+                            </th>
+                            <th>
+                                ArmorClass
+                            </th>
+                            <th>
+                                HitPoints
+                            </th>
+                            <th>
+                                Strength
+                            </th>
+                            <th>
+                                Dexterity
+                            </th>
+                            <th>
+                                Constitution
+                            </th>
+                            <th>
+                                Intelligence
+                            </th>
+                            <th>
+                                Wisdom
+                            </th>
+                            <th>
+                                Charisma
+                            </th>
+                            <th>
+                                Languages
+                            </th>
+                            <th>
+                                Speed
+                            </th>
+                            <th>
+                                Proficiencies
+                            </th>
+                        </tr>
+                       @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Size
+                            </td>
+                            <td>
+                                @item.Type
+                            </td>
+                            <td>
+                                @item.Aligment
+                            </td>
+                            <td>
+                                @item.ArmorClass
+                            </td>
+                            <td>
+                                @item.HitPoints
+                            </td>
+                            <td>
+                                @item.Strength
+                            </td>
+                            <td>
+                                @item.Dexterity
+                            </td>
+                            <td>
+                                @item.Constitution
+                            </td>
+                            <td>
+                                @item.Intelligence
+                            </td>
+                            <td>
+                                @item.Wisdom
+                            </td>
+                            <td>
+                                @item.Charisma
+                            </td>
+                            <td>
+                                @item.Languages
+                            </td>
+                            <td>
+                                @item.Speed
+                            </td>
+                            <td>
+                                @item.Proficiencies
+
+                            </td>
+                            @*<td>
+                @Html.DisplayFor(modelItem => item.DamageResistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConditionImmunity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actions)
+            </td>*@
+                        </tr>
+                        }
+                    </table>
+                    </div>
+                </td>
+                <td>This Is Where You Will Be Able To See All The Players Stats That You Have Choosen</td>
+                
+</tr>
+        
+
+
+    </table>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Assign Click event to Plus Image.
+        $("body").on("click", "img[src*='plus.png']", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+            $(this).attr("src", "/images/minus.png");
+        });
+        //Assign Click event to Minus Image.
+        $("body").on("click", "img[src*='minus.png']", function () {
+            $(this).attr("src", "/images/plus.png");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
+
+</body>
+<div>
+    <button onclick="hide()">
+        Hide/Unhide
+    </button>
+</div>
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+        .Grid th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid img {
+            cursor: pointer;
+        }
+
+    .ChildGrid {
+        width: 100%;
+    }
+
+        .ChildGrid th {
+            background-color: #6C6C6C;
+            color: #fff;
+            font-weight: bold;
+        }
+</style>
+
 
         if (x.innerHTML === "&nbsp;") {
             x.innerHTML = "P1";
@@ -936,6 +1130,23 @@
             }
         }
     }
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    function hide() {
+
+         var x = document.getElementById("Stats");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    
+
+</script>
+
+<script type="text/javascript">
 
     function save() {
         document.getElementById("output").innerHTML = "";
@@ -984,8 +1195,16 @@
 </script>
 
 <style>
+<<<<<<< HEAD
     table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
     }
 </style>
+=======
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+>>>>>>> featureTerm2
