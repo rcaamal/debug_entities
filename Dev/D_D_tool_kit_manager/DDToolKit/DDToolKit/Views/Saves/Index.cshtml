@@ -35,6 +35,34 @@
     @*<td>
         @Html.ActionLink("Let's Play!", "Game", new { id = item.ID })
     </td>*@
+    <td>
+        <button onclick="myEditFunction()"  class="button button">
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+        </button>
+        <style>    
+           
+            .button {
+              display: inline-block;
+              padding: 5px 10px;
+              font-size: 9px;
+              cursor: pointer;
+              text-align: center;
+              text-decoration: none;
+              outline: none;
+              border: none;
+              border-radius: 50%;
+              box-shadow: 0 5px #999;
+            }
+
+            .button:hover {background-color: #000000}
+
+            .button:active {
+              background-color: #ffffff;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
+        </Style>
+    </td>
 </tr>
     }
 </table>
@@ -42,3 +70,8 @@
 <style>
 
 </style>
+<script>
+function myEditFunction() {
+  alert("Do you want to edit this item?");
+}
+</script>
