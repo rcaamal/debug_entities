@@ -67,14 +67,15 @@ namespace DDToolKit.Controllers
 
             JObject data = JObject.Parse(json);
 
-           // string name;
-            string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit, quantity,
-               weight, weaponCategory, weaponRange, categoryRange, damageDice, damageTypeName, damageTypeUrl,
-                rangeLong, propertyUrl, propertyName, damage2hDamageDice, damage2hDamageBounc,
-               damage2hDamageType, armorCategory, armorClass, strMin, stealthDisadvantage, contents,
-               speedQuantity, speedUnit, capacity, normalThrowRange, longThrowRange;
-
-            int? damageBounc, rangeNormal;
+            
+           
+            string name, equipCategory, vehicleCategory, gearCategoty, toolCategoty, unit, 
+                weaponCategory, weaponRange, categoryRange, damageDice, damageTypeName, damageTypeUrl,
+                 damage2hDamageDice, ArmorClassDexBonus, rangeLong, longThrowRange,
+               damage2hDamageType, armorCategory,ArmorClassMaxBonus, strMin, stealthDisadvantage, contents,
+                speedUnit, capacity;
+            
+            int? damageBounc, weight, quantity, rangeNormal, damage2hDamageBounc, armorClassBase, normalThrowRange, speedQuantity;
             name = (string)data["name"];
 
             if (data["equipment_category"] != null)
@@ -113,7 +114,7 @@ namespace DDToolKit.Controllers
                 toolCategoty = null;
             }
 
-            if(data["cost"]["unit"] != null)
+            if(data["cost"] != null)
             {
                 unit = (string)data["cost"]["unit"];
             }
@@ -122,9 +123,9 @@ namespace DDToolKit.Controllers
                 unit = null;
             }
 
-            if (data["cost"]["quantity"] != null)
+            if (data["cost"] != null)
             {
-                quantity = (string)data["cost"]["quantity"];
+                quantity = (int)data["cost"]["quantity"];
             }
             else
             {
@@ -133,7 +134,7 @@ namespace DDToolKit.Controllers
 
             if (data["weight"] != null)
             {
-                weight = (string)data["weight"];
+                weight = (int)data["weight"];
             }
             else
             {
@@ -239,6 +240,189 @@ namespace DDToolKit.Controllers
                 rangeLong = null;
             }
 
+            List<string> prepertyUrl = new List<string>();
+            if (data["properties"] != null)
+            {
+
+                for (int i = 0; i < data["properties"].Count(); i++)
+                {
+                    prepertyUrl.Add((string)data["properties"][i]["url"]);
+
+
+                }
+            }
+            else
+            {
+
+                prepertyUrl = null;
+
+            }
+
+            List<string> prepertyName = new List<string>();
+            if (data["properties"] != null)
+            {
+
+                for (int i = 0; i < data["properties"].Count(); i++)
+                {
+                    prepertyName.Add((string)data["properties"][i]["name"]);
+
+
+                }
+            }
+            else
+            {
+
+                prepertyName = null;
+
+            }
+
+            List<string> special = new List<string>();
+            if (data["special"] != null)
+            {
+
+                for (int i = 0; i < data["special"].Count(); i++)
+                {
+                    special.Add((string)data["special"][i]);
+
+
+                }
+            }
+            else
+            {
+
+                special = null;
+
+            }
+
+            if (data["2h_damage"] != null)
+            {
+                damage2hDamageDice = (string)data["2h_damage"]["damage_dice"];
+            }
+            else
+            {
+                damage2hDamageDice = null;
+            }
+
+            if (data["2h_damage"] != null)
+            {
+                damage2hDamageBounc = (int)data["2h_damage"]["damage_bonus"];
+            }
+            else
+            {
+                damage2hDamageBounc = null;
+            }
+
+            if (data["2h_damage"] != null)
+            {
+                damage2hDamageType = (string)data["2h_damage"]["damage_type"]["name"];
+            }
+            else
+            {
+                damage2hDamageType = null;
+            }
+
+            if (data["armor_category"] != null)
+            {
+                armorCategory = (string)data["armor_category"];
+            }
+            else
+            {
+                armorCategory = null;
+            }
+
+            if (data["armor_class"] != null)
+            {
+                armorClassBase = (int)data["armor_class"]["base"];
+            }
+            else
+            {
+                armorClassBase = null;
+            }
+
+            if (data["armor_class"] != null)
+            {
+                ArmorClassDexBonus = (string)data["armor_class"]["dex_bonus"];
+            }
+            else
+            {
+                ArmorClassDexBonus = null;
+            }
+
+            if (data["armor_class"] != null)
+            {
+                ArmorClassMaxBonus = (string)data["armor_class"]["max_bonus"];
+            }
+            else
+            {
+                ArmorClassMaxBonus = null;
+            }
+
+            if (data["str_minimum"] != null)
+            {
+                strMin = (string)data["str_minimum"];
+            }
+            else
+            {
+                strMin = null;
+            }
+
+            if (data["stealth_disadvantage"] != null)
+            {
+                stealthDisadvantage = (string)data["stealth_disadvantage"];
+            }
+            else
+            {
+                stealthDisadvantage = null;
+            }
+
+            if (data["speed"] != null)
+            {
+                speedQuantity = (int)data["speed"]["quantity"];
+            }
+            else
+            {
+                speedQuantity = null;
+            }
+
+            if (data["speed"] != null)
+            {
+                speedUnit = (string)data["speed"]["unit"];
+            }
+            else
+            {
+                speedUnit = null;
+            }
+
+            if (data["capacity"] != null)
+            {
+                capacity = (string)data["capacity"];
+            }
+            else
+            {
+                capacity = null;
+            }
+
+            if (data["throw_range"] != null)
+            {
+                normalThrowRange = (int)data["throw_range"]["normal"];
+            }
+            else
+            {
+                normalThrowRange = null;
+            }
+
+            if (data["throw_range"] != null)
+            {
+                longThrowRange = (string)data["throw_range"]["long"];
+            }
+            else
+            {
+                longThrowRange = null;
+            }
+
+
+
+
 
 
 
@@ -246,13 +430,14 @@ namespace DDToolKit.Controllers
 
             ViewBag.name = name;
             ViewBag.equipCategory = equipCategory;
+            ViewBag.desc = desc;
             ViewBag.vehicleCategory = vehicleCategory;
             ViewBag.gearCategory = gearCategoty;
             ViewBag.toolCategory = toolCategoty;
             ViewBag.quantity = quantity;
             ViewBag.unit = unit;
             ViewBag.weight = weight;
-            ViewBag.desc = desc;
+            
             ViewBag.weaponCategory = weaponCategory;
             ViewBag.weaponRange = weaponRange;
             ViewBag.categoryRange = categoryRange;
@@ -262,6 +447,24 @@ namespace DDToolKit.Controllers
             ViewBag.damageTypeUrl = damageTypeUrl;
             ViewBag.rangeNormal = rangeNormal;
             ViewBag.rangeLong = rangeLong;
+            ViewBag.prepertyUrl = prepertyUrl;
+
+            ViewBag.prepertyName = prepertyName;
+            ViewBag.damage2hDamageDice = damage2hDamageDice;
+            ViewBag.damage2hDamageBounc = damage2hDamageBounc;
+            ViewBag.damage2hDamageType = damage2hDamageType;
+            ViewBag.armorCategory = armorCategory;
+            ViewBag.armorClassBase = armorClassBase;
+            ViewBag.armorClassDexBonus = ArmorClassDexBonus;
+            ViewBag.ArmorClassMaxBonus = ArmorClassMaxBonus;
+            ViewBag.special = special;
+            ViewBag.strMinimum = strMin;
+            ViewBag.stealthDisadvan = stealthDisadvantage;
+            ViewBag.speedQuantity = speedQuantity;
+            ViewBag.speedUnit = speedUnit;
+            ViewBag.capacity = capacity;
+            ViewBag.normalThrowRange = normalThrowRange;
+            ViewBag.longThrowRange = longThrowRange;
 
             ViewBag.Success = true;
 
