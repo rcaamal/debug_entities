@@ -1,0 +1,26 @@
+﻿
+
+@{
+    ViewBag.Title = "Equipment";
+}
+
+@using (Html.BeginForm("Index", "Equipment", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="search">
+            @Html.TextBox("equipName", null, new { @class = "form-control", type = "text" })
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </div>
+}
+<div class="container">
+    @if (ViewBag.Success == true)
+    {
+        foreach (var item in ViewBag.EquipList)
+        {
+            string Equipment = item.ToString();
+    <h4><a href="/Equipment/equipInfo?equipName=@Equipment">@Equipment</a></h4>
+        }
+
+    }
+</div>

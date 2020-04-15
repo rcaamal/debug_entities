@@ -183,8 +183,10 @@
     <Compile Include="App_Start\TweetClient.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreaturesController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
@@ -198,7 +200,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\gameModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Magic.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +211,9 @@
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\drop_migrationhistory.sql" />
+    <Content Include="App_Data\mapup.sql" />
+    <Content Include="App_Data\MagicUp.sql" />
+    <Content Include="App_Data\MaigcDown.sql" />
     <Content Include="App_Data\Monsters.mdf" />
     <Content Include="App_Data\Monsters_log.ldf">
       <DependentUpon>Monsters.mdf</DependentUpon>
@@ -215,6 +222,7 @@
     <Content Include="App_Data\Saveup.sql" />
     <Content Include="App_Data\script.sql" />
     <Content Include="App_Data\seed.sql" />
+    <Content Include="App_Data\SeedMagic.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -223,13 +231,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\contactform.css" />
+    <Content Include="Content\image\toolkit.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\plus.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\equip.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\index.js.flow" />
@@ -381,10 +393,23 @@
     <Content Include="Views\Saves\Game.cshtml" />
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
+
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\equipInfo.cshtml" />
+    <Content Include="Views\Saves\MapEdit.cshtml" />
+    <Content Include="Views\Saves\MapSetup.cshtml" />
+    <Content Include="Views\Maps\Create.cshtml" />
+    <Content Include="Views\Maps\Delete.cshtml" />
+    <Content Include="Views\Maps\Details.cshtml" />
+    <Content Include="Views\Maps\Edit.cshtml" />
+    <Content Include="Views\Maps\Index.cshtml" />
+    <Content Include="Views\Maps\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Views\Item\" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

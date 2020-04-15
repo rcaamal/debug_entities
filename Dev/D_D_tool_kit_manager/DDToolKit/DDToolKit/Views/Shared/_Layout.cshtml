@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                    
                 </button>
-                @Html.ActionLink("The Dungeon Master's Toolkit", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="~/Home/Index" class="navbar-brand"> <img src="~/Content/image/toolkit.jpg" alt="D&D Logo" width="130" height="33" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav word-color">
@@ -33,6 +33,7 @@
                     <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
                     <li>@Html.ActionLink("Additional Resources", "ExternalLinks", "Home")</li>
                     <li>@Html.ActionLink("Tutorial", "Tutorial", "Home")</li>
+                    <li>@Html.ActionLink("Equipment", "Index","Equipment")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
 
