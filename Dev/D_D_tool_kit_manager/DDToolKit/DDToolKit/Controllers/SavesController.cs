@@ -342,7 +342,8 @@ namespace DDToolKit.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreatePlayer(int id, [Bind(Include = "ID,OwnerID,GameID,Name,Size,Type,Aligment,ArmorClass,HitPoints,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Languages,Speed,Proficiencies,DamageResistance,ConditionImmunity,Senses,SpecialAbility,Actions")] Player player)
         {
-            
+
+            player.Size = PlayerAttributeFiller(player.Size);
             player.OwnerID = User.Identity.GetUserId();
             player.GameID = id;
             if (ModelState.IsValid)
@@ -352,6 +353,15 @@ namespace DDToolKit.Controllers
                 return RedirectToAction("Index");
             }
             return View(player);
+        }
+
+        public string PlayerAttributeFiller(string current)
+        {
+            if(current == null)
+            {
+                current = "No Data";
+            }
+            return current;
         }
     }
 }
