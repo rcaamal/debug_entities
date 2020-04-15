@@ -16,6 +16,9 @@ namespace DDToolKit.Controllers
     {
         private gameModel db = new gameModel();
         private Monsters dbMonsters = new Monsters();
+        private Map dbmap = new Map();
+        private Magic dbMagic = new Magic();
+     
 
         // GET: Saves
         public ActionResult Index()
@@ -40,11 +43,73 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
+      
+
+        // GET: Saves/MapSetup
+        public ActionResult MapSetup(int? id)
+        {
+            return View();
+        }
+
+        // POST: Saves/MapSetup
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MapSetup(int id, [Bind(Include = "ID,Name,MapWidth,MapHeight")] Map map)
+        {
+            string temp = new string('1', 400);
+            map.OwnerID = User.Identity.GetUserId();
+            map.GameID = id;
+            map.MapLand = temp;
+            map.MapObjects = temp;
+            if (ModelState.IsValid)
+            {
+                db.Maps.Add(map);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(map);
+        }
+
+        public ActionResult MapEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Map map = db.Maps.Find(id);
+            if (map == null)
+            {
+                return HttpNotFound();
+            }
+            return View(map);
+        }
+    
+
+        // POST: Saves/MapSetup
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MapEdit([Bind(Include = "ID,Name,MapWidth,MapHeight,MapLand")] Map map)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(map).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(map);
+        }
+
         // GET: Saves/Create
         public ActionResult Create()
         {
             ViewBag.Monsters = new SelectList(dbMonsters.Creatures, "Name", "Name");
-            return View();
+            ViewBag.Magic = new SelectList(db.Magics, "Name", "Name");
+                
+             return View();
         }
 
         // POST: Saves/Create
@@ -52,7 +117,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters")] Save save)
+        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters,Magic")] Save save)
         {
 
             save.OwnerID = User.Identity.GetUserId();
@@ -70,15 +135,15 @@ namespace DDToolKit.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Save save = db.Saves.Find(id);
-            if (save == null)
-            {
-                return HttpNotFound();
-            }
-            return View(save);
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             Save save = db.Saves.Find(id);
+             if (save == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(save);
         }
 
         // POST: Saves/Edit/5
@@ -131,12 +196,25 @@ namespace DDToolKit.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Game(int? id)
+        public ActionResult Game(int? id, int? mapid)
         {
 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (mapid == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Magic db3 = new Magic();
+            string magic = (from saves in db.Saves
+                            where (saves.ID == id)
+                            select saves.Magic).Single();
+            if (magic != "" && magic != null)
+            {
+                ViewBag.MagicName = magic;
             }
 
             Monsters db2 = new Monsters();
@@ -247,6 +325,10 @@ namespace DDToolKit.Controllers
                 ViewBag.legact = legactions;
             }
             ViewBag.name = monsters;
+            Map map = db.Maps.Find(mapid);
+            ViewBag.mapheight = map.MapHeight;
+            ViewBag.mapwidth = map.MapWidth;
+            ViewBag.mapland = map.MapLand;
             return View(db.Players.ToList().Where(s => s.GameID == id));
         }
         public ActionResult CreatePlayer()

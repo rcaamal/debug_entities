@@ -2,7 +2,8 @@
 	[ID]		INT IDENTITY(1,1)	NOT NULL,
 	[Name]		Nvarchar(40)		NOT NULL,
 	[OwnerID]	Nvarchar(128)		,
-	[Monsters]  NvarChar(500)		,
+	[Monsters]  NvarChar(500),
+	[Magic]    Nvarchar(500)
 
 	CONSTRAINT [PK_dbo.Saves] PRIMARY KEY CLUSTERED ([ID] ASC),
 	
