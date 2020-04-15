@@ -183,6 +183,7 @@
     <Compile Include="App_Start\TweetClient.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreaturesController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapsController.cs" />
@@ -240,6 +241,7 @@
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\equip.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\index.js.flow" />
@@ -391,6 +393,9 @@
     <Content Include="Views\Saves\Game.cshtml" />
     <Content Include="Views\Saves\CreatePlayer.cshtml" />
     <Content Include="Views\Saves\addMonsters.cshtml" />
+
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\equipInfo.cshtml" />
     <Content Include="Views\Saves\MapEdit.cshtml" />
     <Content Include="Views\Saves\MapSetup.cshtml" />
     <Content Include="Views\Maps\Create.cshtml" />
@@ -400,7 +405,11 @@
     <Content Include="Views\Maps\Index.cshtml" />
     <Content Include="Views\Maps\Manage.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Views\Item\" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
