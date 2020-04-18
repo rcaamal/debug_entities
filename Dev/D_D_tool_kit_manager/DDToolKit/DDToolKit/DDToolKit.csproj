@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\TweetClient.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogPostsController.cs" />
     <Compile Include="Controllers\CreaturesController.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -406,6 +407,11 @@
     <Content Include="Views\Maps\Edit.cshtml" />
     <Content Include="Views\Maps\Index.cshtml" />
     <Content Include="Views\Maps\Manage.cshtml" />
+    <Content Include="Views\BlogPosts\Create.cshtml" />
+    <Content Include="Views\BlogPosts\Delete.cshtml" />
+    <Content Include="Views\BlogPosts\Details.cshtml" />
+    <Content Include="Views\BlogPosts\Edit.cshtml" />
+    <Content Include="Views\BlogPosts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Item\" />
