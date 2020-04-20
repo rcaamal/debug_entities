@@ -3,14 +3,69 @@
 
 
 <!DOCTYPE html>
+<style>
+    body {
+        color:#ffffff;
+    }
+    table{
+        background-color:#808080;
+        padding-bottom:inherit
+    }
 
+    h1 {
+        background-color: #808080;
+        border-style: ridge;
+        border-color: #333030;
+        border-width: thick;
+        padding-left: 35px;
+        padding-right: 35px;
+        display: inline-table;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        margin-left:435px;
+    }
+    pre.description {
+        background-color: #808080;
+        border-style: ridge;
+        border-color: #333030;
+        border-width: thick;
+        padding-left: 35px;
+        padding-right: 35px;
+      display:inline-grid;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        color:#ffffff;
+        font-size:x-small;
+    }
+</style>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    
 </head>
-<body>
+
+
+    
+
+
+<body style="background-image:url('/Content/image/postBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
+
+    <h1>  D&D Post Form</h1>
     <p>
+    <pre class="description" size="small">
+        This webagpage is created for a player to come and post thier comments
+        about what they feel about this game experience 
+        any helpful tips for those who will start the game
+        and for those who are starting with the game.
+        We would appreciate if you do not post any harmful or
+        negative comments.
+        Fill in your comments and post it.
+        Enjoy your experience.
+    </pre>
+        </p>
+    <p>
+
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table">
@@ -35,35 +90,36 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Post)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Published)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Published)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

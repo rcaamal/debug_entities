@@ -15,6 +15,7 @@ namespace DDToolKit.Controllers
         private gameModel db = new gameModel();
 
         // GET: BlogPosts
+      [Authorize]
         public ActionResult Index()
         {
             return View(db.BlogPosts.ToList());
