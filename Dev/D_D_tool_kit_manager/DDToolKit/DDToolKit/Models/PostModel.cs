@@ -8,15 +8,12 @@ namespace DDToolKit.Models
     public partial class PostModel : DbContext
     {
         public PostModel()
-            : base("name=Monsters")
-           // : base("name=DDToolContext_Azure")
-
-
+            : base("name=PostModel")
         {
         }
 
         public virtual DbSet<BlogPost> BlogPosts { get; set; }
-        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

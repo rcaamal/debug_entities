@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<DDToolKit.Models.BlogPost>
 
-
-
-<!DOCTYPE html>
 <style>
     body {
         color: #ffffff;
@@ -67,49 +64,49 @@
     </pre>
     </p>
 
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Published)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Post)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Published)
-                </th>
-                <th></th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Published)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
+                </td>
             </tr>
+        }
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Post)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Published)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
-                    </td>
-                </tr>
-            }
-
-        </table>
+    </table>
     </body>
 </html>

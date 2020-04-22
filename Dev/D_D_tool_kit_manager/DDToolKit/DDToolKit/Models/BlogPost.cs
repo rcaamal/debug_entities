@@ -10,7 +10,6 @@ namespace DDToolKit.Models
     public partial class BlogPost
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PostID { get; set; }
 
         [StringLength(128)]
