@@ -363,6 +363,44 @@ namespace DDToolKit.Controllers
             }
             return current;
         }
+
+        public ActionResult tmp()
+        {
+            List<string> options = new List<string>();
+            options.Add("Equipment");
+            options.Add("Monsters");
+            options.Add("Spells");
+
+            ViewBag.Options = new SelectList(options);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult tmp(string option, string input /*SearchModel model*/)
+        {
+            var list = "";
+            if(option == "Monsters" /*model.option*/)
+            {
+                //Go to action method and get the monsters
+                //include using ProjectName.Controllers.ControllerName;
+                //list = stuff from the monsters db
+            }
+            else if( option == "Equipment" /*model.option*/)
+            {
+                //Go to the action method and get the equipment
+                //Should be getting back the list of results from the API
+                //list = list of things from the api equipment search
+            }
+            else if(option == "Spells" /*model.option*/)
+            {
+                //Go to the action method and get spells
+                //Get back data from the API
+                //list = list of things from the API spells search
+            }
+
+            ViewBag.ListOfResults = list;
+            return View();
+        }
     }
 }
 
