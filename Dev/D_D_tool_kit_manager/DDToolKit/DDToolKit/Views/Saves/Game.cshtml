@@ -939,7 +939,7 @@
            </div>
 
            <div class="col-lg-4">
-               @using (Html.BeginForm("Index", "Equipment", FormMethod.Post))
+               @using (Html.BeginForm("Game", "Saves", FormMethod.Post))
                {
                    <div class="form-group">
                        <div class="search">
@@ -948,19 +948,22 @@
                        </div>
                    </div>
                }
-           <div class="container">
-               @if (ViewBag.Success == true)
-               {
-                   foreach (var item in ViewBag.EquipList)
+               <div class="container">
+                   @if (ViewBag.Success == true)
                    {
-                       string Equipment = item.ToString();
+                       foreach (var item in ViewBag.EquipList)
+                       {
+                           string Equipment = item.ToString();
+                            
+                           <a href="/Equipment/equipInfo?equipName=@Equipment">@Equipment </a>
+                          
 
-                       <iframe src="/Equipment/equipInfo?equipName=@Equipment" height="200" width="300">@Equipment</iframe>
+                       }
 
                    }
+               </div>
 
-               }
-           </div>
+              
 
            </div>
        </div>
