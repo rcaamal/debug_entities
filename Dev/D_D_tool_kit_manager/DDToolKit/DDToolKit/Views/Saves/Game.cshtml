@@ -948,18 +948,19 @@
                        </div>
                    </div>
                }
-               <div class="container">
-                   @if (ViewBag.Success == true)
+           <div class="container">
+               @if (ViewBag.Success == true)
+               {
+                   foreach (var item in ViewBag.EquipList)
                    {
-                       foreach (var item in ViewBag.EquipList)
-                       {
-                           string Equipment = item.ToString();
-                           
-                           <iframe src="/Equipment/equipInfo?equipName=@Equipment" height="200" width="300">@Equipment</iframe>
-                       }
+                       string Equipment = item.ToString();
+
+                       <iframe src="/Equipment/equipInfo?equipName=@Equipment" height="200" width="300">@Equipment</iframe>
 
                    }
-               </div>
+
+               }
+           </div>
 
            </div>
        </div>
