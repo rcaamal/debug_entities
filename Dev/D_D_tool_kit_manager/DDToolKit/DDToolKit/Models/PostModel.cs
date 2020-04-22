@@ -5,9 +5,9 @@ namespace DDToolKit.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class PostaModel : DbContext
+    public partial class PostModel : DbContext
     {
-        public PostaModel()
+        public PostModel()
             : base("name=Monsters")
            // : base("name=DDToolContext_Azure")
 
@@ -16,8 +16,7 @@ namespace DDToolKit.Models
         }
 
         public virtual DbSet<BlogPost> BlogPosts { get; set; }
-        public virtual DbSet<PostCategory> PostCategories { get; set; }
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

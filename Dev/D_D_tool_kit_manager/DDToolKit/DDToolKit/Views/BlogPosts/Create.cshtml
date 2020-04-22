@@ -10,12 +10,10 @@
     <title>Create</title>
 </head>
 <body>
-    <p> this is where the code will start from reforming all this</p>
-
-    @using (Html.BeginForm())
+    @using (Html.BeginForm()) 
     {
         @Html.AntiForgeryToken()
-
+        
         <div class="form-horizontal">
             <h4>BlogPost</h4>
             <hr />
@@ -27,7 +25,7 @@
                     @Html.ValidationMessageFor(model => model.PostID, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -35,7 +33,7 @@
                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -43,7 +41,7 @@
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.Post, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -51,33 +49,15 @@
                     @Html.ValidationMessageFor(model => model.Post, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Published)
-                        @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
-                    </div>
+                    @Html.EditorFor(model => model.Published, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Created, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Created, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Created, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
+    
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
@@ -85,7 +65,7 @@
             </div>
         </div>
     }
-
+    
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>

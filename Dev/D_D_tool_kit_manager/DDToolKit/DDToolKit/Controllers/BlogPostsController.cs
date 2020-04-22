@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DDToolKit.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DDToolKit.Controllers
 {
     public class BlogPostsController : Controller
     {
-        private gameModel db = new gameModel();
+        private PostModel db = new PostModel();
 
         // GET: BlogPosts
-      [Authorize]
         public ActionResult Index()
         {
+            string id = User.Identity.GetUserId();
             return View(db.BlogPosts.ToList());
         }
 
@@ -47,8 +48,15 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PostID,UserName,Title,Post,Category,Published,Created")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "PostID,UserName,Title,Post,Published")] BlogPost blogPost)
         {
+            BlogPost postDB = new BlogPost();
+            PostModel model = new PostModel();
+
+
+            var title = blogPost.Title;
+
+                     
             if (ModelState.IsValid)
             {
                 db.BlogPosts.Add(blogPost);
@@ -79,7 +87,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PostID,UserName,Title,Post,Category,Published,Created")] BlogPost blogPost)
+        public ActionResult Edit([Bind(Include = "PostID,UserName,Title,Post,Published")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
             {

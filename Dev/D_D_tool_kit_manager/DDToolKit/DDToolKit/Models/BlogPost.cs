@@ -21,12 +21,7 @@ namespace DDToolKit.Models
 
         public string Post { get; set; }
 
-        [StringLength(50)]
-        public string Category { get; set; }
-
-        public bool? Published { get; set; }
-
-        [StringLength(50)]
-        public string Created { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? Published { get; set; }
     }
 }
