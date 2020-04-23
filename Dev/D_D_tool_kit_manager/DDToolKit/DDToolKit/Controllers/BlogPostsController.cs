@@ -37,6 +37,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: BlogPosts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
