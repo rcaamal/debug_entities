@@ -423,7 +423,7 @@ namespace DDToolKit.Controllers
             return jsonString;
         }
 
-        /*public ActionResult EquipmentResults()
+        /*public ActionResult EquipName()
         {
             return View();
         }*/
