@@ -12,7 +12,7 @@ input[type=text] {
     padding-right: 35px;
     display: inline-grid;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    color: #ffffff;
+    color: black;
 }
 
 input[type=number] {
@@ -25,6 +25,24 @@ input[type=number] {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #ffffff;
 }
+
+div.col-md-12 {
+    width: 50%;
+    padding: 20px 0px;
+    margin: 5px 70px;
+    box-sizing: content-box;
+    background-color: #808080;
+    border-style: ridge;
+    border-color: #333030;
+    border-width: thick;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: inline-grid;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color:black;
+}
+
+
 
 div.col-md-11 {
     font-size: x-small;
