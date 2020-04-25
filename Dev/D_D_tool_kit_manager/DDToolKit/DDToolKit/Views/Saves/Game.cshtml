@@ -8,8 +8,14 @@
 
 }
     <body onload="test()">
-        <h4>Have fun!</h4>
-        <h1></h1>
+      <h4>Have fun!</h4>
+      
+      <div class="row">
+
+          <div class="col-lg-8">
+
+             
+       
 
         <h4 id="maplandholder" hidden>@mapland</h4>
         <table style="width: 35%;" border="1">
@@ -935,6 +941,31 @@
             </tr>
         </table>
 
+          </div>
+
+          <div class="col-lg-4">
+
+              
+              
+              
+              <div> 
+                  <button id="smallScreen" type="button" value=" show equipment"> Show Equipment</button> 
+                  <button id="midScreen" type="button" value=" mid screen"> Mid Screen</button> 
+                  <button id="LargeScreen" type="button" value=" Large Screen"> Large Screen</button> 
+
+                  <iframe id="smallFrame" src="/Equipment/index" height="300" width="300"></iframe> 
+                  <iframe id="midFrame" src="/Equipment/index" height="600" width="400"></iframe>
+                  <iframe id="LargeFrame" src="/Equipment/index" height="900" width="400"></iframe>
+                 
+                 
+
+              </div>
+              
+
+          </div>
+
+      </div>
+
     </body>
        
         
@@ -1145,3 +1176,6 @@
             }
         </style>
         
+    @section scripts{
+     <script type="text/javascript" src="~/Scripts/search.js"></script>
+   }
