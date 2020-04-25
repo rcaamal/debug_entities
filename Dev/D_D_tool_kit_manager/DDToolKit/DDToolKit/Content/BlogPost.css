@@ -45,7 +45,7 @@ div.col-md-12 {
 
 
 div.col-md-11 {
-    font-size: x-small;
+    font-size: xx-small;
     margin-left: 70px;
 }
 
@@ -59,7 +59,12 @@ input[type=datetime] {
     display: inline-grid;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #ffffff;
-    margin: 0px 57px;
+    margin: 0px 15px;
+}
+
+div.col-md-13 {
+    font-size: 9px;
+    margin-left: 50px;
 }
 
 input[type=submit] {

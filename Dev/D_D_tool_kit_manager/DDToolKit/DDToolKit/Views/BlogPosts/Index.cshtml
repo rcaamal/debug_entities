@@ -1,30 +1,6 @@
 ﻿@model IEnumerable<DDToolKit.Models.BlogPost>
 
-<style>
-    body {
-        color: #000000;
-    }
 
-    table {
-        background-color: #808080;
-    }
-
-   h1 {
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 35px;
-        padding-right: 35px;
-        display: inline-table;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 435px;
-    }
-    p{
-        color:black;
-    }
-
-</style>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -35,33 +11,33 @@
 
 
 
-<body style="background-image:url('/Content/image/postBackground.jpg');
+<body class="show" style="background-image:url('/Content/image/postBackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     ">
-
+    <link href="~/Content/blogView.css" rel="stylesheet" type="text/css" />
     <h1>  D&D Post</h1>
-   
 
-    <p>
+
+    <p class="nuevo">
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table class="table" id="blogView" >
+    <table class="Grid" id="blogView">
         <tr>
 
             <th class="comments"> Comments</th>
             @*  <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Published)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Post)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Published)
+                </th>*@
             <th></th>
         </tr>
 
@@ -76,40 +52,49 @@
                     {
                         <tr>
 
-                            <td>
-                                <p>User Name</p>
+                            <td class="showusername">
+                                <p class="username">User Name</p>
                                 @Html.DisplayFor(modelItem => item.UserName)
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p> Title</p>
+                            <td class="showtitle">
+                                <p class="titles"> Title</p>
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p> Post</p>
-                                @Html.TextAreaFor( modelItem => item.Post)
+                            <td class="showpost">
+                                <p class="posts"> Post</p>
+                                @Html.TextAreaFor(modelItem => item.Post)
+
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p> Published </p>
-                               @Html.DisplayFor(modelItem => item.Published)
+                            <td class="showpub">
+                                <p class="pub"> Published </p>
+                                @Html.DisplayFor(modelItem => item.Published)
                             </td>
                         </tr>
-                       
+
                         <tr>
-                            <td>
+                            <td class="additional">
+
+                                @("Edit") |
+                                
+                                @("Delete")
+                            
+
+
+                                @*
                                 @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.PostID })*@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                -------------------------------------------------------------------------------------
+                            <td class="sep">
+                                ----------------------------------------------------------------------------------------------------------------------
                             </td>
                         </tr>
                     }
@@ -117,10 +102,10 @@
                 </table>
 
             </td>
-            
+
 
         </tr>
-        </table>
+    </table>
 
 </body>
 </html>

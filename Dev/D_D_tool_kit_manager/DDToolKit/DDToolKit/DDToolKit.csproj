@@ -230,6 +230,7 @@
     <Content Include="App_Data\SeedMagic.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\BlogPost.css" />
+    <Content Include="Content\blogView.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-theme.css" />

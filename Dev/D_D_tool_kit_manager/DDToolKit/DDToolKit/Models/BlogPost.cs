@@ -21,6 +21,7 @@ namespace DDToolKit.Models
         public string Post { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? Published { get; set; }
     }
 }
