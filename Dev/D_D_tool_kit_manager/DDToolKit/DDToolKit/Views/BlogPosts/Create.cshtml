@@ -7,173 +7,15 @@
 
 
 
-<style>
-
-    input[type=text] {
-        width: 50%;
-        padding: 20px 0px;
-        margin: 5px 70px;
-       
-        box-sizing: content-box;
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 35px;
-        padding-right: 35px;
-
-        display: inline-grid;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-       
-    }
-    input[type=number] {
-        margin:  5px 57px;
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        display: inline-grid;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-        
-       
-    }
-
-    input[type=datetime]
-    {
-         background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-
-        padding-left: 35px;
-        padding-right: 35px;
-
-        display: inline-grid;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-        
-         margin: 0px 57px;
-    }
-
-    input[type=submit]{
-        background-color: #9d9a9a;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 35px;
-        padding-right: 35px;
-        display: inline-grid;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-        font-size: medium;
-         margin: 8px 55px;
-          
-    }
-
-    h2{
-            
-        padding-right: 55px;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 180px;
-        font-size:large;
-        color:#066380;
-    }
-
-    h3 {
-        padding-right: 55px;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 168px;
-        font-size: large;
-        color: #066380;
-    }
-
-    h4 {
-        padding-right: 55px;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 190px;
-        font-size: large;
-        color: #066380;
-    }
-
-    h5 {
-        padding-right: 55px;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 150px;
-        font-size: large;
-        color: #066380;
-    }
-
-
-    form.post {
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 50px;
-        padding-right: 25px;
-        display: inline-table;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 315px;
-    }
-
-    button.link {
-        margin-left: 1015px;
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-        font-size:medium;
-    }
-
-    body {
-        color: #ffffff;
-    }
-
-    table {
-        background-color: #808080;
-        padding-bottom: inherit
-    }
-
-    h1 {
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 35px;
-        padding-right: 35px;
-        display: inline-table;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        margin-left: 435px;
-    }
-
-    pre.description {
-        background-color: #808080;
-        border-style: ridge;
-        border-color: #333030;
-        border-width: thick;
-        padding-left: 35px;
-        padding-right: 35px;
-        display: inline-grid;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        color: #ffffff;
-        font-size: x-small;
-    }
-
-
-
-</style>
-<body style="background-image:url('/Content/image/postBackground.jpg');
+    <body style="background-image:url('/Content/image/postBackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     ">
+        <link href="~/Content/BlogPost.css" rel="stylesheet" type="text/css" />
 
-    <h1>  D&D Post Form</h1>
-    <p>
-        <pre class="description" size="small">
+        <h1>  D&D Blog Post</h1>
+        <p>
+            <pre class="description" size="small">
         This webagpage is created for a player to come and post thier comments
         about what they feel about this game experience 
         any helpful tips for those who will start the game
@@ -184,17 +26,17 @@
         Enjoy your experience.
     </pre>
 
-    </p>
-    <button class="link">
-        @Html.ActionLink("See Posts", "Index")
-    </button>
+        </p>
+        <button class="link">
+            @Html.ActionLink("See Posts", "Index")
+        </button>
 
-    <form class="post">
+
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-group">
+            <div class="blog">
 
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -202,7 +44,7 @@
 
                     <h2> PostID</h2>
 
-                    <div class="col-md-10">
+                    <div class="col-md-11">
 
                         @Html.EditorFor(model => model.PostID, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PostID, "", new { @class = "text-danger" })
@@ -249,5 +91,5 @@
                 </div>
             </div>
         }
-    </form>
-</body>
+
+    </body>
