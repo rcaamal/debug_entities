@@ -8,6 +8,10 @@
     $('#MonstermidFrame').hide();
     $('#MonsterLargeFrame').hide();
 
+    $('#SpellsmallFrame').hide();
+    $('#SpellmidFrame').hide();
+    $('#SpellLargeFrame').hide();
+
 
 
     /*$('showEquip').mouseover(function () {
@@ -73,7 +77,35 @@
         $('#MonsterLargeFrame').hide();
     });
 
+    // spells
 
+    $('#SpellsmallScreen').click(function () {
+
+        $('#SpellsmallFrame').show();
+
+    });
+
+    $('#SpellmidScreen').click(function () {
+        $('#SpellmidFrame').show();
+
+    });
+
+    $('#SpellLargeScreen').click(function () {
+        $('#SpellLargeFrame').show();
+
+    });
+
+    $('#SpellsmallScreen').dblclick(function () {
+        $('#SpellsmallFrame').hide();
+    });
+
+    $('#SpellmidScreen').dblclick(function () {
+        $('#SpellmidFrame').hide();
+    });
+
+    $('#SpellLargeScreen').dblclick(function () {
+        $('#SpellLargeFrame').hide();
+    });
 
 });
 
