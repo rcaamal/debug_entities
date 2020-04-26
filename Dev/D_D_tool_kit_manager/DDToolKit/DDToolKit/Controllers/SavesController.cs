@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DDToolKit.DAL;
+using DDToolKit.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,9 +9,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DDToolKit.DAL;
-using DDToolKit.Models;
-using Microsoft.AspNet.Identity;
 
 namespace DDToolKit.Controllers
 {
@@ -18,7 +18,7 @@ namespace DDToolKit.Controllers
         private Monsters dbMonsters = new Monsters();
         private Map dbmap = new Map();
         private Magic dbMagic = new Magic();
-     
+
 
         // GET: Saves
         public ActionResult Index()
@@ -43,7 +43,7 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
-      
+
 
         // GET: Saves/MapSetup
         public ActionResult MapSetup(int? id)
@@ -85,7 +85,7 @@ namespace DDToolKit.Controllers
             }
             return View(map);
         }
-    
+
 
         // POST: Saves/MapSetup
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -108,8 +108,8 @@ namespace DDToolKit.Controllers
         {
             ViewBag.Monsters = new SelectList(dbMonsters.Creatures, "Name", "Name");
             ViewBag.Magic = new SelectList(db.Magics, "Name", "Name");
-                
-             return View();
+
+            return View();
         }
 
         // POST: Saves/Create
@@ -135,15 +135,15 @@ namespace DDToolKit.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-             {
-                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-             }
-             Save save = db.Saves.Find(id);
-             if (save == null)
-             {
-                 return HttpNotFound();
-             }
-             return View(save);
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Save save = db.Saves.Find(id);
+            if (save == null)
+            {
+                return HttpNotFound();
+            }
+            return View(save);
         }
 
         // POST: Saves/Edit/5
@@ -221,7 +221,7 @@ namespace DDToolKit.Controllers
             string monsters = (from saves in db.Saves
                                where (saves.ID == id)
                                select saves.Monsters).Single();
-            if(monsters != "" && monsters != null)
+            if (monsters != "" && monsters != null)
             {
                 string size = (from creatures in db2.Creatures
                                where (creatures.Name == monsters)
@@ -357,7 +357,7 @@ namespace DDToolKit.Controllers
 
         public string PlayerAttributeFiller(string current)
         {
-            if(current == null)
+            if (current == null)
             {
                 current = "No Data";
             }
