@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DDToolKit.Models.BlogPost>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+
+
+
+
+
+<body class="show" style="background-image:url('/Content/image/postBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
+    <link href="~/Content/blogView.css" rel="stylesheet" type="text/css" />
+    <h1>  D&D Post</h1>
+
+
+    <p class="nuevo">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="Grid" id="blogView">
+        <tr>
+
+            <th class="comments"> Comments</th>
+            @*  <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Post)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Published)
+                </th>*@
+            <th></th>
+        </tr>
+
+
+        <tr>
+            <td>
+
+
+                <table>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="showusername">
+                                <p class="username">User Name</p>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="showtitle">
+                                <p class="titles"> Title</p>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="showpost">
+                                <p class="posts"> Post</p>
+                                @Html.TextAreaFor(modelItem => item.Post)
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="showpub">
+                                <p class="pub"> Published </p>
+                                @Html.DisplayFor(modelItem => item.Published)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="additional">
+
+                                @("Edit") |
+                                
+                                @("Delete")
+                            
+
+
+                                @*
+                                @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.PostID })*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sep">
+                                ----------------------------------------------------------------------------------------------------------------------
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+            </td>
+
+
+        </tr>
+    </table>
+
+</body>
+</html>

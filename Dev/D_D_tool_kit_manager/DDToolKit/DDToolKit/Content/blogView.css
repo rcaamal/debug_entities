@@ -1,0 +1,124 @@
+﻿body {
+    color: #000000;
+    padding-left: 435px;
+    padding-right: 435px;
+    display: initial;
+}
+
+table {
+    background-color: #808080;
+    resize: initial;
+    display: compact;
+}
+
+p.nuevo {
+    background-color: #000000;
+    border-style: ridge;
+    border-color: #333030;
+    border-width: thick;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: inline-table;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-left: 135px;
+}
+
+
+
+h1 {
+    background-color: #808080;
+    border-style: ridge;
+    border-color: #333030;
+    border-width: thick;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: inline-table;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-left: 135px;
+}
+
+p {
+    color: black;
+}
+
+th.comments {
+    padding-right: 155px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-right: 5580px;
+    font-size: large;
+    color: #066380;
+    align-content: center;
+    position: center;
+}
+
+
+p.username {
+    padding-right: 190px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-right: 50px;
+    font-size: large;
+    color: #066380;
+}
+
+
+
+td.showusername {
+    padding-left: 200px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    padding-bottom: 20px;
+    font-size: medium;
+    color: #000000
+}
+
+p.titles {
+    padding-right: 190px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-right: 70px;
+    font-size: large;
+    color: #066380;
+}
+
+td.showtitle {
+    padding-left: 200px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    padding-bottom: 20px;
+    font-size: medium;
+    color: #000000
+}
+
+
+p.posts {
+    padding-left: 90px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: large;
+    color: #066380;
+}
+
+td.showpost {
+    padding-left: 110px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: medium;
+    color: #000000;
+}
+
+
+p.pub {
+    padding-left: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-right: 70px;
+    font-size: large;
+    color: #066380;
+}
+
+
+td.showpub {
+    padding-left: 180px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    padding-bottom: 20px;
+    font-size: medium;
+    color: #000000
+}
+
+td.additional {
+    padding-left: 30px;
+}
