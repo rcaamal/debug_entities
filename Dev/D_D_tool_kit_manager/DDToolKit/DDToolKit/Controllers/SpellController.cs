@@ -152,7 +152,19 @@ namespace DDToolKit.Controllers
             {
                 desc = null;
             }
-            
+            List<string> higherlevel = new List<string>();
+            if (data["higher_level"] != null)
+            {
+                for (int i = 0; i < data["higher_level"].Count(); i++)
+                {
+                    desc.Add((string)data["higher_level"][i]);
+                }
+            }
+            else
+            {
+                desc = null;
+            }
+
             List<string> classesName = new List<string>();
             if (data["classes"] != null)
             {
