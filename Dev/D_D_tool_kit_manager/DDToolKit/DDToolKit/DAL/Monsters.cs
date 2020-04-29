@@ -9,13 +9,8 @@ namespace DDToolKit.DAL
     {
         public Monsters()
 
-<<<<<<< HEAD
             : base("name=Monsters")
         //: base("name=DDToolContext_Azure")
-=======
-            :base("name=Monsters")
-         // : base("name=DDToolContext_Azure")
->>>>>>> a2f441b95f8cd133bac3ed5991bba675018d9761
         {
         }
 
