@@ -1,0 +1,67 @@
+﻿@using System.Linq;
+
+
+@{
+    ViewBag.Title = "SpellInfo";
+}
+
+
+<h1 style="text-align:center">Spell Detail page for @ViewBag.name</h1>
+
+@if (ViewBag.Success == true)
+{
+
+    <p><h4>Name:  </h4> @ViewBag.name</p>
+
+    if (ViewBag.desc != null)
+    {
+        <p>
+            <h4>Description : </h4> @foreach (var item in ViewBag.desc)
+            {
+                string description = item.ToString();@description;
+            }
+        </p>
+    }
+    if (ViewBag.classesName != null)
+    { <p>
+            <h4>Classes: </h4> @foreach (var item in ViewBag.classesName)
+            {
+                string classesName = item.ToString() + ", ";@classesName;
+            }
+        </p> }
+    if (ViewBag.subclasses != null)
+    { <p>
+            <h4>Sub-classes: </h4> @foreach (var item in ViewBag.subclasses)
+            {
+                string subclasses = item.ToString() + ", ";@subclasses;
+            }
+        </p> }
+    if (ViewBag.components != null)
+    { <p>
+            <h4>Components: </h4> @foreach (var item in ViewBag.components)
+            {
+                string components = item.ToString() + ", ";@components;
+            }
+        </p> }
+
+
+    if (ViewBag.range != null)
+    { <p><h4>Range: </h4>   @ViewBag.range </p> }
+if (ViewBag.material != null)
+{ <p><h4>Material: </h4>  @ViewBag.material</p> }
+if (ViewBag.duration != null)
+{ <p><h4>Duration: </h4>  @ViewBag.duration </p> }
+if (ViewBag.castingTime != null)
+{ <p><h4>Casting Time: </h4> @ViewBag.castingTime</p> }
+if (ViewBag.ritual != null)
+{ <p><h4>Ritual: </h4> @ViewBag.ritual </p> }
+if (ViewBag.concentration != null)
+{ <p><h4>Concentration: </h4> @ViewBag.concentration </p> }
+if (ViewBag.level != null)
+{ <p><h4>Level: </h4> @ViewBag.level </p>}
+
+}
+
+<div>
+    @Html.ActionLink("Back to Search", "Index")
+</div>

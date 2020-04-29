@@ -5,6 +5,27 @@
     var mapheight = ViewBag.mapheight;
     var mapwidth = ViewBag.mapwidth;
     var mapland = ViewBag.mapland;
+    var monster1 = ViewBag.Mon1;
+    var monster2 = ViewBag.Mon2;
+    var monster3 = ViewBag.Mon3;
+    var monster4 = ViewBag.Mon4;
+    var monster5 = ViewBag.Mon5;
+    var monster6 = ViewBag.Mon6;
+    var monster7 = ViewBag.Mon7;
+    var monster8 = ViewBag.Mon8;
+    var monster9 = ViewBag.Mon9;
+    var monster10 = ViewBag.Mon10;
+    var monster11 = ViewBag.Mon11;
+    var monster12 = ViewBag.Mon12;
+    var monster13 = ViewBag.Mon13;
+    var monster14 = ViewBag.Mon14;
+    var monster15 = ViewBag.Mon15;
+    var monster16 = ViewBag.Mon16;
+    var monster17 = ViewBag.Mon17;
+    var monster18 = ViewBag.Mon18;
+    var monster19 = ViewBag.Mon19;
+    var monster20 = ViewBag.Mon20;
+    
 
 }
     <body onload="test()">
@@ -462,12 +483,9 @@
                 </tr>
             </tbody>
         </table>
-        <div>
-            <button onclick="toggle()">
-                Toggle Monster Information
-            </button>
-        </div>
-           <dl class="dl-horizontal" id="magic">
+              </div>
+          </div>
+        <dl class="dl-horizontal" id="magic">
             <dt>
                 Spell Name
             </dt>
@@ -475,245 +493,3593 @@
                 @ViewBag.MagicName
             </dd>
         </dl>
+        @if (monster1 != null)
+        {
+            <div>
+                <button onclick="toggle('monster1')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster1">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster1.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster1.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster1.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster1.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster1.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster1.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster1.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster1.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster1.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster1.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster1.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster1.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster1.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster1.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster1.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster1.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster1.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster1.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster1.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster1.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster1.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster1.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster1.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster1.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster1.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster1.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster1.Reactions
+                </dd>
+            </dl>
+        }
+        @if (monster2 != null)
+        {
+            <div>
+                <button onclick="toggle('monster2')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster2">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster2.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster2.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster2.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster2.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster2.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster2.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster2.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster2.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster2.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster2.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster2.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster2.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster2.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster2.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster2.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster2.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster2.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster2.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster2.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster2.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster2.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster2.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster2.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster2.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster2.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster2.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster2.Reactions
+                </dd>
+            </dl>
+        }
+        @if (monster3 != null)
+        {
+            <div>
+                <button onclick="toggle('monster3')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster3">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster3.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster3.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster3.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster3.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster3.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster3.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster3.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster3.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster3.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster3.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster3.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster3.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster3.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster3.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster3.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster3.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster3.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster3.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster3.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster3.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster3.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster3.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster3.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster3.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster3.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster3.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster3.Reactions
+                </dd>
+            </dl>
+        }
+        @if (monster4 != null)
+        {
+            <div>
+                <button onclick="toggle('monster4')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster4">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster4.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster4.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster4.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster4.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster4.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster4.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster4.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster4.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster4.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster4.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster4.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster4.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster4.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster4.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster4.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster4.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster4.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster4.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster4.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster4.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster4.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster4.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster4.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster4.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster4.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster4.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster4.Reactions
+                </dd>
+            </dl>
+        }@if (monster5 != null)
+        {
+            <div>
+                <button onclick="toggle('monster5')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster5">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster5.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster5.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster5.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster5.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster5.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster5.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster5.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster5.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster5.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster5.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster5.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster5.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster5.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster5.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster5.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster5.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster5.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster5.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster5.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster5.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster5.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster5.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster5.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster5.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster5.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster5.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster5.Reactions
+                </dd>
+            </dl>
+        }@if (monster6 != null)
+        {
+            <div>
+                <button onclick="toggle('monster6')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster6">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster6.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster6.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster6.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster6.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster6.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster6.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster6.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster6.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster6.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster6.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster6.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster6.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster6.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster6.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster6.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster6.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster6.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster6.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster6.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster6.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster6.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster6.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster6.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster6.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster6.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster6.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster6.Reactions
+                </dd>
+            </dl>
+        }@if (monster7 != null)
+        {
+            <div>
+                <button onclick="toggle('monster7')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster7">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster7.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster7.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster7.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster7.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster7.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster7.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster7.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster7.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster7.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster7.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster7.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster7.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster7.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster7.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster7.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster7.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster7.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster7.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster7.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster7.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster7.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster7.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster7.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster7.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster7.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster7.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster7.Reactions
+                </dd>
+            </dl>
+        }@if (monster8 != null)
+        {
+            <div>
+                <button onclick="toggle('monster8')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster8">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster8.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster8.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster8.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster8.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster8.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster8.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster8.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster8.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster8.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster8.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster8.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster8.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster8.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster8.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster8.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster8.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster8.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster8.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster8.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster8.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster8.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster8.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster8.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster8.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster8.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster8.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster8.Reactions
+                </dd>
+            </dl>
+        }@if (monster9 != null){
+            <div>
+                <button onclick="toggle('monster9')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster9">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster9.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster9.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster9.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster9.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster9.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster9.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster9.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster9.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster9.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster9.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster9.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster9.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster9.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster9.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster9.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster9.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster9.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster9.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster9.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster9.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster9.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster9.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster9.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster9.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster9.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster9.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster9.Reactions
+                </dd>
+            </dl>
+        }
+        @if (monster10 != null)
+        {
+            <div>
+                <button onclick="toggle('monster10')">
+                    Toggle Monster Information
+                </button>
+            </div>
+            <dl class="dl-horizontal" id="monster10">
+                <dt>
+                    Name
+                </dt>
+                <dd>
+                    @monster10.Name
+                </dd>
+                <dt>
+                    Size
+                </dt>
+                <dd>
+                    @monster10.Size
+                </dd>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+                    @monster10.Type
+                </dd>
+                <dt>
+                    Subtype
+                </dt>
+                <dd>
+                    @monster10.Subtype
+                </dd>
+                <dt>
+                    Alignment
+                </dt>
+                <dd>
+                    @monster10.Alignment
+                </dd>
+                <dt>
+                    Armor Class
+                </dt>
+                <dd>
+                    @monster10.ArmorClass
+                </dd>
+                <dt>
+                    Hit Points
+                </dt>
+                <dd>
+                    @monster10.HitPoints
+                </dd>
+                <dt>
+                    Hit Dice
+                </dt>
+                <dd>
+                    @monster10.HitDice
+                </dd>
+                <dt>
+                    Speed
+                </dt>
+                <dd>
+                    @monster10.Speed
+                </dd>
+                <dt>
+                    Strength
+                </dt>
+                <dd>
+                    @monster10.Strength
+                </dd>
+                <dt>
+                    Dexterity
+                </dt>
+                <dd>
+                    @monster10.Dexterity
+                </dd>
+                <dt>
+                    Constitution
+                </dt>
+                <dd>
+                    @monster10.Constitution
+                </dd>
+                <dt>
+                    Intelligence
+                </dt>
+                <dd>
+                    @monster10.Intelligence
+                </dd>
+                <dt>
+                    Wisdom
+                </dt>
+                <dd>
+                    @monster10.Wisdom
+                </dd>
+                <dt>
+                    Charisma
+                </dt>
+                <dd>
+                    @monster10.Charisma
+                </dd>
+                <dt>
+                    Proficiencies
+                </dt>
+                <dd>
+                    @monster10.Proficiencies
+                </dd>
+                <dt>
+                    Damage Vulnerability
+                </dt>
+                <dd>
+                    @monster10.DamageVulnerabilities
+                </dd>
+                <dt>
+                    Damage Resistance
+                </dt>
+                <dd>
+                    @monster10.DamageResistances
+                </dd>
+                <dt>
+                    Damage Immunity
+                </dt>
+                <dd>
+                    @monster10.DamageImmunities
+                </dd>
+                <dt>
+                    Condition Immunity
+                </dt>
+                <dd>
+                    @monster10.ConditionImmunities
+                </dd>
+                <dt>
+                    Senses
+                </dt>
+                <dd>
+                    @monster10.Senses
+                </dd>
+                <dt>
+                    Languages
+                </dt>
+                <dd>
+                    @monster10.Languages
+                </dd>
+                <dt>
+                    Challenge Rating
+                </dt>
+                <dd>
+                    @monster10.ChallengeRating
+                </dd>
+                <dt>
+                    Special Abilities
+                </dt>
+                <dd>
+                    @monster10.SpecialAbilities
+                </dd>
+                <dt>
+                    Actions
+                </dt>
+                <dd>
+                    @monster10.Actions
+                </dd>
+                <dt>
+                    LegendaryActions
+                </dt>
+                <dd>
+                    @monster10.LegendaryActions
+                </dd>
+                <dt>
+                    Reactions
+                </dt>
+                <dd>
+                    @monster10.Reactions
+                </dd>
+            </dl>
+        }
+        @if (monster11 != null)
+        {
+                <div>
+                    <button onclick="toggle('monster11')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster11">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster11.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster11.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster11.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster11.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster11.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster11.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster11.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster11.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster11.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster11.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster11.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster11.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster11.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster11.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster11.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster11.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster11.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster11.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster11.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster11.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster11.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster11.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster11.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster11.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster11.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster11.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster11.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster12 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster12')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster12">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster12.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster12.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster12.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster12.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster12.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster12.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster12.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster12.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster12.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster12.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster12.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster12.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster12.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster12.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster12.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster12.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster12.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster12.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster12.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster12.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster12.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster12.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster12.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster12.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster12.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster12.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster12.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster13 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster13')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster13">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster13.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster13.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster13.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster13.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster13.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster13.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster13.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster13.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster13.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster13.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster13.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster13.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster13.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster13.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster13.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster13.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster13.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster13.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster13.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster13.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster13.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster13.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster13.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster13.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster13.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster13.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster13.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster14 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster14')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster14">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster14.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster14.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster14.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster14.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster14.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster14.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster14.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster14.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster14.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster14.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster14.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster14.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster14.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster14.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster14.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster14.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster14.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster14.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster14.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster14.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster14.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster14.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster14.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster14.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster14.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster14.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster14.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster15 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster15')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster15">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster15.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster15.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster15.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster15.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster15.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster15.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster15.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster15.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster15.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster15.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster15.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster15.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster15.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster15.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster15.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster15.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster15.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster15.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster15.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster15.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster15.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster15.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster15.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster15.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster15.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster15.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster15.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster16 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster16')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster16">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster16.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster16.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster16.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster16.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster16.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster16.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster16.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster16.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster16.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster16.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster16.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster16.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster16.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster16.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster16.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster16.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster16.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster16.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster16.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster16.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster16.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster16.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster16.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster16.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster16.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster16.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster16.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster17 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster17')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster17">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster17.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster17.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster17.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster17.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster17.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster17.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster17.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster17.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster17.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster17.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster17.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster17.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster17.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster17.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster17.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster17.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster17.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster17.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster17.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster17.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster17.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster17.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster17.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster17.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster17.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster17.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster17.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster18 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster18')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster18">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster18.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster18.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster18.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster18.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster18.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster18.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster18.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster18.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster18.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster18.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster18.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster18.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster18.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster18.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster18.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster18.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster18.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster18.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster18.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster18.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster18.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster18.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster18.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster18.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster18.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster18.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster18.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster19 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster19')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster19">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster19.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster19.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster19.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster19.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster19.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster19.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster19.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster19.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster19.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster19.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster19.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster19.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster19.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster19.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster19.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster19.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster19.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster19.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster19.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster19.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster19.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster19.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster19.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster19.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster19.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster19.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster19.Reactions
+                    </dd>
+                </dl>
+            }
+            @if (monster20 != null)
+            {
+                <div>
+                    <button onclick="toggle('monster20')">
+                        Toggle Monster Information
+                    </button>
+                </div>
+                <dl class="dl-horizontal" id="monster20">
+                    <dt>
+                        Name
+                    </dt>
+                    <dd>
+                        @monster20.Name
+                    </dd>
+                    <dt>
+                        Size
+                    </dt>
+                    <dd>
+                        @monster20.Size
+                    </dd>
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        @monster20.Type
+                    </dd>
+                    <dt>
+                        Subtype
+                    </dt>
+                    <dd>
+                        @monster20.Subtype
+                    </dd>
+                    <dt>
+                        Alignment
+                    </dt>
+                    <dd>
+                        @monster20.Alignment
+                    </dd>
+                    <dt>
+                        Armor Class
+                    </dt>
+                    <dd>
+                        @monster20.ArmorClass
+                    </dd>
+                    <dt>
+                        Hit Points
+                    </dt>
+                    <dd>
+                        @monster20.HitPoints
+                    </dd>
+                    <dt>
+                        Hit Dice
+                    </dt>
+                    <dd>
+                        @monster20.HitDice
+                    </dd>
+                    <dt>
+                        Speed
+                    </dt>
+                    <dd>
+                        @monster20.Speed
+                    </dd>
+                    <dt>
+                        Strength
+                    </dt>
+                    <dd>
+                        @monster20.Strength
+                    </dd>
+                    <dt>
+                        Dexterity
+                    </dt>
+                    <dd>
+                        @monster20.Dexterity
+                    </dd>
+                    <dt>
+                        Constitution
+                    </dt>
+                    <dd>
+                        @monster20.Constitution
+                    </dd>
+                    <dt>
+                        Intelligence
+                    </dt>
+                    <dd>
+                        @monster20.Intelligence
+                    </dd>
+                    <dt>
+                        Wisdom
+                    </dt>
+                    <dd>
+                        @monster20.Wisdom
+                    </dd>
+                    <dt>
+                        Charisma
+                    </dt>
+                    <dd>
+                        @monster20.Charisma
+                    </dd>
+                    <dt>
+                        Proficiencies
+                    </dt>
+                    <dd>
+                        @monster20.Proficiencies
+                    </dd>
+                    <dt>
+                        Damage Vulnerability
+                    </dt>
+                    <dd>
+                        @monster20.DamageVulnerabilities
+                    </dd>
+                    <dt>
+                        Damage Resistance
+                    </dt>
+                    <dd>
+                        @monster20.DamageResistances
+                    </dd>
+                    <dt>
+                        Damage Immunity
+                    </dt>
+                    <dd>
+                        @monster20.DamageImmunities
+                    </dd>
+                    <dt>
+                        Condition Immunity
+                    </dt>
+                    <dd>
+                        @monster20.ConditionImmunities
+                    </dd>
+                    <dt>
+                        Senses
+                    </dt>
+                    <dd>
+                        @monster20.Senses
+                    </dd>
+                    <dt>
+                        Languages
+                    </dt>
+                    <dd>
+                        @monster20.Languages
+                    </dd>
+                    <dt>
+                        Challenge Rating
+                    </dt>
+                    <dd>
+                        @monster20.ChallengeRating
+                    </dd>
+                    <dt>
+                        Special Abilities
+                    </dt>
+                    <dd>
+                        @monster20.SpecialAbilities
+                    </dd>
+                    <dt>
+                        Actions
+                    </dt>
+                    <dd>
+                        @monster20.Actions
+                    </dd>
+                    <dt>
+                        LegendaryActions
+                    </dt>
+                    <dd>
+                        @monster20.LegendaryActions
+                    </dd>
+                    <dt>
+                        Reactions
+                    </dt>
+                    <dd>
+                        @monster20.Reactions
+                    </dd>
+                </dl>
+            }
+                <table cellpadding="0" cellspacing="0" class="Grid" id="Stats">
+                    <tr>
+                        <th></th>
+                        <th>     Players Stats                       </th>
+                    <tr>
+                        <td>
+                            <img src="/Images/plus.png" />
+                            <div style="display:none">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Size
+                                        </th>
+                                        <th>
+                                            Type
+                                        </th>
+                                        <th>
+                                            Aligment
+                                        </th>
+                                        <th>
+                                            ArmorClass
+                                        </th>
+                                        <th>
+                                            HitPoints
+                                        </th>
+                                        <th>
+                                            Strength
+                                        </th>
+                                        <th>
+                                            Dexterity
+                                        </th>
+                                        <th>
+                                            Constitution
+                                        </th>
+                                        <th>
+                                            Intelligence
+                                        </th>
+                                        <th>
+                                            Wisdom
+                                        </th>
+                                        <th>
+                                            Charisma
+                                        </th>
+                                        <th>
+                                            Languages
+                                        </th>
+                                        <th>
+                                            Speed
+                                        </th>
+                                        <th>
+                                            Proficiencies
+                                        </th>
+                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.Size
+                                            </td>
+                                            <td>
+                                                @item.Type
+                                            </td>
+                                            <td>
+                                                @item.Aligment
+                                            </td>
+                                            <td>
+                                                @item.ArmorClass
+                                            </td>
+                                            <td>
+                                                @item.HitPoints
+                                            </td>
+                                            <td>
+                                                @item.Strength
+                                            </td>
+                                            <td>
+                                                @item.Dexterity
+                                            </td>
+                                            <td>
+                                                @item.Constitution
+                                            </td>
+                                            <td>
+                                                @item.Intelligence
+                                            </td>
+                                            <td>
+                                                @item.Wisdom
+                                            </td>
+                                            <td>
+                                                @item.Charisma
+                                            </td>
+                                            <td>
+                                                @item.Languages
+                                            </td>
+                                            <td>
+                                                @item.Speed
+                                            </td>
+                                            <td>
+                                                @item.Proficiencies
 
-        <dl class="dl-horizontal" id="monster">
-            <dt>
-                Name
-            </dt>
-            <dd>
-                @ViewBag.name
-            </dd>
-            <dt>
-                Size
-            </dt>
-            <dd>
-                @ViewBag.size
-            </dd>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                @ViewBag.type
-            </dd>
-            <dt>
-                Subtype
-            </dt>
-            <dd>
-                @ViewBag.stype
-            </dd>
-            <dt>
-                Alignment
-            </dt>
-            <dd>
-                @ViewBag.Align
-            </dd>
-            <dt>
-                Armor Class
-            </dt>
-            <dd>
-                @ViewBag.ac
-            </dd>
-            <dt>
-                Hit Points
-            </dt>
-            <dd>
-                @ViewBag.hp
-            </dd>
-            <dt>
-                Hit Dice
-            </dt>
-            <dd>
-                @ViewBag.hd
-            </dd>
-            <dt>
-                Strength
-            </dt>
-            <dd>
-                @ViewBag.str
-            </dd>
-            <dt>
-                Dexterity
-            </dt>
-            <dd>
-                @ViewBag.dex
-            </dd>
-            <dt>
-                Constitution
-            </dt>
-            <dd>
-                @ViewBag.con
-            </dd>
-            <dt>
-                Dexterity
-            </dt>
-            <dd>
-                @ViewBag.name
-            </dd>
-            <dt>
-                Inteligence
-            </dt>
-            <dd>
-                @ViewBag.intel
-            </dd>
-            <dt>
-                Wisdom
-            </dt>
-            <dd>
-                @ViewBag.wis
-            </dd>
-            <dt>
-                Charisma
-            </dt>
-            <dd>
-                @ViewBag.cha
-            </dd>
-            <dt>
-                Languages
-            </dt>
-            <dd>
-                @ViewBag.lang
-            </dd>
-            <dt>
-                Challenge Rating
-            </dt>
-            <dd>
-                @ViewBag.chal
-            </dd>
-            <dt>
-                Speed
-            </dt>
-            <dd>
-                @ViewBag.speed
-            </dd>
-            <dt>
-                Proficiencies
-            </dt>
-            <dd>
-                @ViewBag.prof
-            </dd>
-            <dt>
-                DamageResistance
-            </dt>
-            <dd>
-                @ViewBag.resist
-            </dd>
-            <dt>
-                DamageVulnerability
-            </dt>
-            <dd>
-                @ViewBag.vuln
-            </dd>
-            <dt>
-                DamageImmunity
-            </dt>
-            <dd>
-                @ViewBag.immune
-            </dd>
-            <dt>
-                ConditionImmunity
-            </dt>
-            <dd>
-                @ViewBag.invuln
-            </dd>
-            <dt>
-                Special Abilities
-            </dt>
-            <dd>
-                @ViewBag.special
-            </dd>
-            <dt>
-                SpecialAbility
-            </dt>
-            <dd>
-                @ViewBag.special
-            </dd>
-            <dt>
-                Actions
-            </dt>
-            <dd>
-                @ViewBag.actions
-            </dd>
-            <dt>
-                LegendaryActions
-            </dt>
-            <dd>
-                @ViewBag.legactions
-            </dd>
-        </dl>
+                                            </td>
+                                            @*<td>
+                                                @Html.DisplayFor(modelItem => item.DamageResistance)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ConditionImmunity)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Senses)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.SpecialAbility)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Actions)
+                                            </td>*@
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </td>
+                        <td>This Is Where You Will Be Able To See All The Players Stats That You Have Choosen</td>
 
-
-        <table cellpadding="0" cellspacing="0" class="Grid" id="Stats">
-            <tr>
-                <th></th>
-                <th>     Players Stats                       </th>
-                @* <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Size)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Type)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Aligment)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ArmorClass)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.HitPoints)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Strength)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Dexterity)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Constitution)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Intelligence)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Wisdom)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Charisma)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Languages)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Speed)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Proficiencies)
-                    </th>
-                    @*<th>
-                            @Html.DisplayNameFor(model => model.DamageResistance)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ConditionImmunity)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Senses)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.SpecialAbility)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Actions)
-                        </th>
-                </tr>*@
+                    </tr>
 
 
 
+                </table>
 
-              <tr>
-                <td>
-                    <img src="/Images/plus.png" />
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                <script type="text/javascript">
+                    //Assign Click event to Plus Image.
+                    $("body").on("click", "img[src*='plus.png']", function () {
+                        $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+                        $(this).attr("src", "/images/minus.png");
+                    });
+                    //Assign Click event to Minus Image.
+                    $("body").on("click", "img[src*='minus.png']", function () {
+                        $(this).attr("src", "/images/plus.png");
+                        $(this).closest("tr").next().remove();
+                    });
+                </script>
+
+                <div>
+                    <button onclick="hide()">
+                        Hide/Unhide
+                    </button>
+                </div>
+        <img src="/Images/plus.png" />
                     <div style="display:none">
                         <table cellpadding="0" cellspacing="0">
                             <tr>
@@ -810,139 +4176,100 @@
                                     </td>
                                     <td>
                                         @item.Proficiencies
-
                                     </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.DamageResistance)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ConditionImmunity)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Senses)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SpecialAbility)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Actions)
-                                    </td>*@
                                 </tr>
                             }
-                        </table>
-                    </div>
-                </td>
-                <td>This Is Where You Will Be Able To See All The Players Stats That You Have Choosen</td>
+                            </table>
+                        </div>
+                    <
+                <table style="width:40%">
+                    <tr>
+                        <td style="text-align:center">
+                            Four-sided Die
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result4"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            Six-sided Die
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result6"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            Eight-sided Die
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result8"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            Twelve-sided Die
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result12"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            Twenty-sided Die
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result20"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            Two Ten-sided Dice
+                        </td>
+                        <td style="text-align:center">
+                            <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
+                                <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
+                            </href>
+                        </td>
+                        <td style="text-align:center">
+                            <p id="result100"></p>
+                        </td>
+                    </tr>
+                </table>
+</body>
 
-            </tr>
-
-
-
-        </table>
-
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript">
-            //Assign Click event to Plus Image.
-            $("body").on("click", "img[src*='plus.png']", function () {
-                $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
-                $(this).attr("src", "/images/minus.png");
-            });
-            //Assign Click event to Minus Image.
-            $("body").on("click", "img[src*='minus.png']", function () {
-                $(this).attr("src", "/images/plus.png");
-                $(this).closest("tr").next().remove();
-            });
-        </script>
-
-        <div>
-            <button onclick="hide()">
-                Hide/Unhide
-            </button>
-        </div>
-
-        <table style="width:40%">
-            <tr>
-                <td style="text-align:center">
-                    Four-sided Die
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result4').innerHTML = rollDice(4)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result4"></p>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center">
-                    Six-sided Die
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result6').innerHTML = rollDice(6)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result6"></p>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center">
-                    Eight-sided Die
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result8').innerHTML = rollDice(8)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result8"></p>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center">
-                    Twelve-sided Die
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result12').innerHTML = rollDice(12)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result12"></p>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center">
-                    Twenty-sided Die
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result20').innerHTML = rollDice(20)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result20"></p>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center">
-                    Two Ten-sided Dice
-                </td>
-                <td style="text-align:center">
-                    <href onclick="document.getElementById('result100').innerHTML = (rollDice(100)-1)">
-                        <img src="https://www.wizards.com/dnd/dice/images/roll1.jpg" />
-                    </href>
-                </td>
-                <td style="text-align:center">
-                    <p id="result100"></p>
-                </td>
-            </tr>
-        </table>
-
-          </div>
-
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+</style>
           <div class="col-lg-5">
 
               <h4>Single click to display the window and double click to hide it</h4>
@@ -1022,9 +4349,85 @@
 
           </div>
 
-      </div>
 
-    </body>
+          <div class="col-lg-5">
+
+              <h4>Single click to display the window and double click to hide it</h4>
+              
+              
+              <div class="row"> 
+
+                  <h1>To View Equioment</h1>
+
+                  <div class="col-lg-6">
+                      <button id="smallScreen" type="button" value=" show equipment"> Show equipment in small window</button> 
+                      <button id="midScreen" type="button" value=" mid screen">Show equipment in Mid window</button> 
+                      <button id="LargeScreen" type="button" value=" Large Screen"> show equipment in Large window</button> 
+                  </div>
+                  
+
+                  
+                  <div class="col-lg-6">
+
+                      <iframe id="smallFrame" src="/Equipment/index" height="300" width="300"></iframe> 
+                      <iframe id="midFrame" src="/Equipment/index" height="600" width="400"></iframe>
+                      <iframe id="LargeFrame" src="/Equipment/index" height="800" width="400"></iframe>
+
+                  </div>
+                  
+
+                  
+                 
+              </div>
+
+              <div class="row">
+
+                  <h1>To View Monsters</h1>
+
+                  <div class="col-lg-6">
+                      <button id="MonstersmallScreen" type="button" value=" show Monsters"> Show Monsters in small Window</button> 
+                      <button id="MonstermidScreen" type="button" value="Monster mid screen"> Show Monsters in mid Window</button> 
+                      <button id="MonsterLargeScreen" type="button" value="Monster Large Screen"> Show Monsters in large Window</button>
+                  </div>
+                  
+
+                  <div class="col-lg-6">
+
+                      <iframe id="MonstersmallFrame" src="/Creatures/index" height="300" width="300"></iframe> 
+                      <iframe id="MonstermidFrame" src="/Creatures/index" height="600" width="400"></iframe>
+                      <iframe id="MonsterLargeFrame" src="/Creatures/index" height="800" width="400"></iframe>
+
+                  </div>
+                  
+
+              </div>
+
+              <div class="row">
+                  
+                  <h1>To View Spells</h1>
+
+                  <div class="col-lg-6">
+                      <button id="SpellsmallScreen" type="button" value=" show spells"> Show spells in small Window</button> 
+                      <button id="SpellmidScreen" type="button" value="spells mid screen"> Show spells in mid Window</button> 
+                      <button id="SpellLargeScreen" type="button" value="spells Large Screen"> Show spells in large Window</button>
+                  </div>
+                  
+
+                  <div class="col-lg-6">
+
+                      <iframe id="SpellsmallFrame" src="/Creatures/Spells" height="300" width="300"></iframe> 
+                      <iframe id="SpellmidFrame" src="/Creatures/Spells" height="600" width="400"></iframe>
+                      <iframe id="SpellLargeFrame" src="/Creatures/Spells" height="800" width="400"></iframe>
+
+                  </div>
+
+
+              </div>
+
+              
+              
+
+          </div>
        
         
         <style type="text/css">
@@ -1033,39 +4436,39 @@
                 font-size: 10pt;
             }
 
-            .Grid {
-                border: 1px solid #fff;
-                border-collapse: collapse;
-                background-color: #fff;
-            }
+    .Grid {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
 
-                .Grid th {
-                    background-color: #B8DBFD;
-                    color: #333;
-                    font-weight: bold;
-                }
+        .Grid th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+        }
 
-                .Grid th, .Grid td {
-                    padding: 5px;
-                    border: 1px solid #ccc;
-                }
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
 
-                .Grid img {
-                    cursor: pointer;
-                }
+        .Grid img {
+            cursor: pointer;
+        }
 
-            .ChildGrid {
-                width: 100%;
-            }
+    .ChildGrid {
+        width: 100%;
+    }
 
-                .ChildGrid th {
-                    background-color: #6C6C6C;
-                    color: #fff;
-                    font-weight: bold;
-                }
-        </style>
+        .ChildGrid th {
+            background-color: #6C6C6C;
+            color: #fff;
+            font-weight: bold;
+        }
+</style>
 
-      <script>
+<script>
             function toggleObject(id) {
 
         var x = document.getElementById(id);
@@ -1138,7 +4541,7 @@
         var xaxis = @mapwidth;
         var yaxis = @mapheight;
 
-       
+
         function test() {
         var temp;
         var count1;
@@ -1200,18 +4603,18 @@
             const rollDice20 = () => rollDice(20)
             const rollDice100 = () => rollDice(100)
 
-            function toggle() {
-                var x = document.getElementById("monster");
+            function toggle(id) {
+                var x = document.getElementById(id);
                 if (x.style.display === "none") {
                     x.style.display = "block";
                 } else {
                     x.style.display = "none";
                 }
             }
-        </script>
+</script>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
 
             function hide() {
 
@@ -1224,15 +4627,16 @@
             }
 
 
-        </script>
+</script>
 
-        <style>
+<style>
 
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-        </style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
         
     @section scripts{
      <script type="text/javascript" src="~/Scripts/search.js"></script>
