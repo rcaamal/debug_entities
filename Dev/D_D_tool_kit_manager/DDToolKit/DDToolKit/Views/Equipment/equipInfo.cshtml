@@ -5,58 +5,141 @@
     ViewBag.Title = "EquipmentInfo";
 }
 
+@Styles.Render("~/Content/Equip.css")
 
-<h1 style="text-align:center">Equipment Detail page for @ViewBag.name</h1>
+    <body style="background-image: url(https://storage.needpix.com/rsynced_images/black-wood-1403902_1280.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+">
+    </body>
+
+<h1 class="h1Details">Equipment Detail page for @ViewBag.name</h1>
 
 @if (ViewBag.Success == true)
 {
-    
-    <p><h4>Name:  </h4> @ViewBag.name</p>
-    <p><h4>Equipment Category: </h4> @ViewBag.equipCategory</p>
-    if(ViewBag.desc != null)
-    {
-        <p><h4>Description : </h4> @foreach (var item in ViewBag.desc) { string description = item.ToString(); @description;} </p>
-    }
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Name: </h4><p>@ViewBag.name</p>
 
-    if(ViewBag.special != null) { <p><h4>Special : </h4> @foreach (var item in ViewBag.special) { string special = item.ToString(); @special;} </p> }
+            <h4>Equipment Category: </h4> <p class="resultName">@ViewBag.equipCategory</p>
 
-    if (ViewBag.vehicleCategory != null) { <p><h4>Vehicle Category: </h4>   @ViewBag.vehicleCategory </p> }
-    if (ViewBag.armorCategory != null) { <p><h4>Armor Category: </h4>  @ViewBag.armorCategory</p> }
-    if (ViewBag.gearCategory != null) { <p><h4>Gear Category: </h4>  @ViewBag.gearCategory </p> }
-    if (ViewBag.toolCategory != null) { <p><h4>Tool Category: </h4> @ViewBag.toolCategory</p> }
-    if(ViewBag.quantity != null) { <p><h4>Quantity Cost: </h4> @ViewBag.quantity </p> }
-    if(ViewBag.unit != null) { <p><h4>Unit Cost: </h4> @ViewBag.unit </p> }
-    if(ViewBag.weight != null) { <p><h4>Weight: </h4> @ViewBag.weight </p> }
-    if (ViewBag.weaponCategory != null) { <p><h4>Weapon Category:</h4>  @ViewBag.weaponCategory </p> }
-    if (ViewBag.weaponRange != null) { <p><h4>Weapon Range: </h4> @ViewBag.weaponRange</p> }
-    if (ViewBag.categoryRange != null) { <p><h4>Category Range:</h4>  @ViewBag.categoryRange </p> }
-    if (ViewBag.damageDice != null) { <p><h4>Damage Dice: </h4>   @ViewBag.damageDice</p> }
-    if (ViewBag.damageBounc != null) { <p><h4>Damage Bounc: </h4>  @ViewBag.damageBounc </p> }
-    if (ViewBag.damageTypeName != null) { <p><h4>Damage Name Type: </h4>  @ViewBag.damageTypeName </p> }
-    if (ViewBag.damageTypeUrl != null) { <p><h4>Damge Type Url: </h4>  @ViewBag.damageTypeUrl</p> }
-    if (ViewBag.rangeNormal != null) { <p><h4>Normal Range: </h4>  @ViewBag.rangeNormal</p>}
-    if (ViewBag.rangeLong != null) { <p><h4>Long Range: </h4>  @ViewBag.rangeLong</p> }
-    if (ViewBag.prepertyUrl != null) { <p><h4>Property url(s):</h4>  @foreach (var item in ViewBag.prepertyUrl) { string propUrl = item.ToString();<h6>@propUrl;</h6>} </p> }
-    if (ViewBag.prepertyName != null) { <p><h4>Property Name(s):</h4>  @foreach (var item in ViewBag.prepertyName) { string propName = item.ToString();<h6>@propName;</h6>} </p> }
-    if (ViewBag.damage2hDamageDice != null) { <p><h4>2h_Damage Dice: </h4> @ViewBag.damage2hDamageDice</p> }
-    if (ViewBag.damage2hDamageBounc != null) { <p><h4>2h_Damage Bounc: </h4>  @ViewBag.damage2hDamageBounc </p> }
-    if (ViewBag.damage2hDamageType != null) { <p><h4>2h_Damage Name Type: </h4>  @ViewBag.damage2hDamageType </p>}
-    if (ViewBag.armorClassBase != null) { <p><h4>Armor Class Base: </h4>  @ViewBag.armorClassBase </p>}
-    if (ViewBag.armorClassDexBonus != null) { <p><h4>Armor Class Dex Bonus: </h4>  @ViewBag.armorClassDexBonus </p>}
-    if (ViewBag.strMinimum != null) { <p><h4>Str Minimum: </h4>  @ViewBag.strMinimum </p>}
-    if (ViewBag.stealthDisadvan != null) { <p><h4>Stealth Disadvantage: </h4>  @ViewBag.stealthDisadvan </p>}
-    if (ViewBag.speedQuantity != null) { <p><h4>Speed Quantity: </h4>  @ViewBag.speedQuantity </p>}
-    if (ViewBag.speedUnit != null) { <p><h4>Speed Unit: </h4>  @ViewBag.speedUnit </p>}
-    if (ViewBag.capacity != null) { <p><h4>Capacity: </h4>  @ViewBag.capacity </p>}
-    if (ViewBag.normalThrowRange != null) { <p><h4>Normal Throw Range: </h4>  @ViewBag.normalThrowRange </p>}
-    if (ViewBag.longThrowRange != null) { <p><h4>Long Throw Range: </h4>  @ViewBag.longThrowRange </p>}
+            @if (ViewBag.special != null)
+            {
+                <h4>Special : </h4>
+                <p>
+                    @foreach (var item in ViewBag.special)
+                    {
+                        string special = item.ToString();@special;
+                    }
+                </p>}
+
+            @if (ViewBag.vehicleCategory != null)
+            {
+                <h4>Vehicle Category: </h4>
+                <p> @ViewBag.vehicleCategory </p>}
+
+            @if (ViewBag.armorCategory != null)
+            { <h4>Armor Category: </h4><p>@ViewBag.armorCategory</p>}
+            @if (ViewBag.gearCategory != null)
+            { <h4>Gear Category: </h4><p>@ViewBag.gearCategory </p>}
+            @if (ViewBag.toolCategory != null)
+            { <h4>Tool Category: </h4><p>@ViewBag.toolCategory</p>}
+            @if (ViewBag.quantity != null)
+            { <h4>Quantity Cost: </h4><p>@ViewBag.quantity </p>}
+            @if (ViewBag.unit != null)
+            { <h4>Unit Cost: </h4><p>@ViewBag.unit </p>}
+            @if (ViewBag.weight != null)
+            { <h4>Weight: </h4><p>@ViewBag.weight </p>}
+            @if (ViewBag.weaponCategory != null)
+            { <h4>Weapon Category:</h4><p> @ViewBag.weaponCategory </p>}
+            @if (ViewBag.weaponRange != null)
+            { <h4>Weapon Range: </h4><p>@ViewBag.weaponRange</p>}
+            @if (ViewBag.categoryRange != null)
+            {<h4>Category Range:</h4><p>@ViewBag.categoryRange </p>}
+            @if (ViewBag.damageDice != null)
+            { <h4>Damage Dice: </h4><p>@ViewBag.damageDice</p>}
+            @if (ViewBag.damageBounc != null)
+            { <h4>Damage Bounc: </h4><p>@ViewBag.damageBounc </p>}
+            @if (ViewBag.damageTypeName != null)
+            {<h4>Damage Name Type: </h4><p>@ViewBag.damageTypeName </p>}
+
+        </div>
+
+        <div class="col-lg-6">
+
+            @if (ViewBag.damageTypeUrl != null)
+            {<h4>Damge Type Url: </h4><p>@ViewBag.damageTypeUrl</p>}
+            @if (ViewBag.rangeNormal != null)
+            {<h4>Normal Range: </h4><p>@ViewBag.rangeNormal</p>}
+            @if (ViewBag.rangeLong != null)
+            {<h4>Long Range: </h4><p>@ViewBag.rangeLong</p>}
+            @if (ViewBag.prepertyUrl != null)
+            {<h4>Property url(s):</h4>
+                <p>
+                    @foreach (var item in ViewBag.prepertyUrl)
+                    {
+                        string propUrl = item.ToString();<h6>@propUrl;</h6>}
+                </p>}
+            @if (ViewBag.prepertyName != null)
+            {<h4>Property Name(s):</h4>
+                <p>
+                    @foreach (var item in ViewBag.prepertyName)
+                    {
+                        string propName = item.ToString();<h6>@propName;</h6>}
+                </p>}
+            @if (ViewBag.damage2hDamageDice != null)
+            {<h4>2h_Damage Dice: </h4><p>@ViewBag.damage2hDamageDice</p>}
+            @if (ViewBag.damage2hDamageBounc != null)
+            {<h4>2h_Damage Bounc: </h4><p>@ViewBag.damage2hDamageBounc </p>}
+            @if (ViewBag.damage2hDamageType != null)
+            {<h4>2h_Damage Name Type: </h4><p>@ViewBag.damage2hDamageType </p>}
+            @if (ViewBag.armorClassBase != null)
+            {<h4>Armor Class Base: </h4><p>@ViewBag.armorClassBase </p>}
+            @if (ViewBag.armorClassDexBonus != null)
+            {<h4>Armor Class Dex Bonus: </h4><p>@ViewBag.armorClassDexBonus </p>}
+            @if (ViewBag.strMinimum != null)
+            {<h4>Str Minimum: </h4> <p>@ViewBag.strMinimum </p>}
+            @if (ViewBag.stealthDisadvan != null)
+            {<h4>Stealth Disadvantage: </h4><p>@ViewBag.stealthDisadvan </p>}
+            @if (ViewBag.speedQuantity != null)
+            {<h4>Speed Quantity: </h4><p>@ViewBag.speedQuantity </p>}
+            @if (ViewBag.speedUnit != null)
+            {<h4>Speed Unit: </h4><p>@ViewBag.speedUnit </p>}
+            @if (ViewBag.capacity != null)
+            {<h4>Capacity: </h4><p>@ViewBag.capacity </p>}
+            @if (ViewBag.normalThrowRange != null)
+            {<h4>Normal Throw Range: </h4><p>@ViewBag.normalThrowRange </p>}
+            @if (ViewBag.longThrowRange != null)
+            {<h4>Long Throw Range: </h4> <p>@ViewBag.longThrowRange </p>}
+        </div>
+    </div>
 
 
-    
-    
+
+
+
+    <div class="row">
+
+        @if (ViewBag.desc != null)
+        {
+            <h4>Description : </h4>
+            <p>
+                @foreach (var item in ViewBag.desc)
+                {
+                    string description = item.ToString();@description;
+                }
+            </p>
+        }
+
+    </div>
+
+
+
+
+
+
 }
-          
+
 <div>
     @Html.ActionLink("Back to Search", "Index")
-</div>        
-            
+</div>
