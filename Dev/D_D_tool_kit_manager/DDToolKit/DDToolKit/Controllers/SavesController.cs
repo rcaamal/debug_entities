@@ -5,10 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace DDToolKit.Controllers
 {
@@ -27,7 +29,6 @@ namespace DDToolKit.Controllers
             return View(db.Saves.Where(s => s.OwnerID.Contains(id)).ToList());
         }
 
-
         // GET: Saves/Details/5
         public ActionResult Details(int? id)
         {
@@ -43,72 +44,11 @@ namespace DDToolKit.Controllers
             return View(save);
         }
 
-
-
-        // GET: Saves/MapSetup
-        public ActionResult MapSetup(int? id)
-        {
-            return View();
-        }
-
-        // POST: Saves/MapSetup
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult MapSetup(int id, [Bind(Include = "ID,Name,MapWidth,MapHeight")] Map map)
-        {
-            string temp = new string('1', 400);
-            map.OwnerID = User.Identity.GetUserId();
-            map.GameID = id;
-            map.MapLand = temp;
-            map.MapObjects = temp;
-            if (ModelState.IsValid)
-            {
-                db.Maps.Add(map);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(map);
-        }
-
-        public ActionResult MapEdit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Map map = db.Maps.Find(id);
-            if (map == null)
-            {
-                return HttpNotFound();
-            }
-            return View(map);
-        }
-
-
-        // POST: Saves/MapSetup
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult MapEdit([Bind(Include = "ID,Name,MapWidth,MapHeight,MapLand")] Map map)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(map).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(map);
-        }
-
         // GET: Saves/Create
         public ActionResult Create()
         {
             ViewBag.Monsters = new SelectList(dbMonsters.Creatures, "Name", "Name");
             ViewBag.Magic = new SelectList(db.Magics, "Name", "Name");
-
             return View();
         }
 
@@ -117,7 +57,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monsters,Magic")] Save save)
+        public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monster1,Monster2,Monster3,Monster4,Monster5,Monster6,Monster7,Monster8,Monster9,Monster10,Monster11,Monster12,Monster13,Monster14,Monster15,Monster16,Monster17,Monster18,Monster19,Monster20,Magic")] Save save)
         {
 
             save.OwnerID = User.Identity.GetUserId();
@@ -134,6 +74,8 @@ namespace DDToolKit.Controllers
         // GET: Saves/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.Monsters = new SelectList(dbMonsters.Creatures, "Name", "Name");
+            ViewBag.Magic = new SelectList(db.Magics, "Name", "Name");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -151,8 +93,9 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,OwnerID,Monsters,Magic")] Save save)
+        public ActionResult Edit([Bind(Include = "ID,Name,OwnerID,Monster1,Monster2,Monster3,Monster4,Monster5,Monster6,Monster7,Monster8,Monster9,Monster10,Monster11,Monster12,Monster13,Monster14,Monster15,Monster16,Monster17,Monster18,Monster19,Monster20,Magic")] Save save)
         {
+            save.OwnerID = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Entry(save).State = EntityState.Modified;
@@ -196,141 +139,47 @@ namespace DDToolKit.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Game(int? id, int? mapid)
+        // GET: Saves/MapSetup
+        public ActionResult MapSetup(int? id)
         {
+            return View();
+        }
 
+        // POST: Saves/MapSetup
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MapSetup(int id, [Bind(Include = "ID,Name,MapWidth,MapHeight")] Map map)
+        {
+            string temp = new string('1', 400);
+            map.OwnerID = User.Identity.GetUserId();
+            map.GameID = id;
+            map.MapLand = temp;
+            map.MapObjects = temp;
+            if (ModelState.IsValid)
+            {
+                db.Maps.Add(map);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(map);
+        }
+
+        public ActionResult MapEdit(int? id)
+        {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (mapid == null)
+            Map map = db.Maps.Find(id);
+            if (map == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return HttpNotFound();
             }
-
-            Magic db3 = new Magic();
-            string magic = (from saves in db.Saves
-                            where (saves.ID == id)
-                            select saves.Magic).Single();
-            if (magic != "" && magic != null)
-            {
-                ViewBag.MagicName = magic;
-            }
-
-            Monsters db2 = new Monsters();
-            string monsters = (from saves in db.Saves
-                               where (saves.ID == id)
-                               select saves.Monsters).Single();
-            if (monsters != "" && monsters != null)
-            {
-                string size = (from creatures in db2.Creatures
-                               where (creatures.Name == monsters)
-                               select creatures.Size).Single();
-                string type = (from creatures in db2.Creatures
-                               where (creatures.Name == monsters)
-                               select creatures.Type).Single();
-                string stype = (from creatures in db2.Creatures
-                                where (creatures.Name == monsters)
-                                select creatures.Subtype).Single();
-                string Align = (from creatures in db2.Creatures
-                                where (creatures.Name == monsters)
-                                select creatures.Alignment).Single();
-                int? ac = (from creatures in db2.Creatures
-                           where (creatures.Name == monsters)
-                           select creatures.ArmorClass).Single();
-                int? hp = (from creatures in db2.Creatures
-                           where (creatures.Name == monsters)
-                           select creatures.HitPoints).Single();
-                string hd = (from creatures in db2.Creatures
-                             where (creatures.Name == monsters)
-                             select creatures.HitDice).Single();
-                int? str = (from creatures in db2.Creatures
-                            where (creatures.Name == monsters)
-                            select creatures.Strength).Single();
-                int? dex = (from creatures in db2.Creatures
-                            where (creatures.Name == monsters)
-                            select creatures.Dexterity).Single();
-                int? con = (from creatures in db2.Creatures
-                            where (creatures.Name == monsters)
-                            select creatures.Constitution).Single();
-                int? intel = (from creatures in db2.Creatures
-                              where (creatures.Name == monsters)
-                              select creatures.Intelligence).Single();
-                int? wis = (from creatures in db2.Creatures
-                            where (creatures.Name == monsters)
-                            select creatures.Wisdom).Single();
-                int? cha = (from creatures in db2.Creatures
-                            where (creatures.Name == monsters)
-                            select creatures.Charisma).Single();
-                string lang = (from creatures in db2.Creatures
-                               where (creatures.Name == monsters)
-                               select creatures.Languages).Single();
-                decimal? chalrating = (from creatures in db2.Creatures
-                                       where (creatures.Name == monsters)
-                                       select creatures.ChallengeRating).Single();
-                string speed = (from creatures in db2.Creatures
-                                where (creatures.Name == monsters)
-                                select creatures.Speed).Single();
-                string prof = (from creatures in db2.Creatures
-                               where (creatures.Name == monsters)
-                               select creatures.Proficiencies).Single();
-                string Dresist = (from creatures in db2.Creatures
-                                  where (creatures.Name == monsters)
-                                  select creatures.DamageResistances).Single();
-                string Dvuln = (from creatures in db2.Creatures
-                                where (creatures.Name == monsters)
-                                select creatures.DamageVulnerabilities).Single();
-                string Dinvuln = (from creatures in db2.Creatures
-                                  where (creatures.Name == monsters)
-                                  select creatures.DamageImmunities).Single();
-                string Cinvuln = (from creatures in db2.Creatures
-                                  where (creatures.Name == monsters)
-                                  select creatures.ConditionImmunities).Single();
-                string senses = (from creatures in db2.Creatures
-                                 where (creatures.Name == monsters)
-                                 select creatures.Senses).Single();
-                string special = (from creatures in db2.Creatures
-                                  where (creatures.Name == monsters)
-                                  select creatures.SpecialAbilities).Single();
-                string actions = (from creatures in db2.Creatures
-                                  where (creatures.Name == monsters)
-                                  select creatures.Actions).Single();
-                string legactions = (from creatures in db2.Creatures
-                                     where (creatures.Name == monsters)
-                                     select creatures.LegendaryActions).Single();
-                ViewBag.size = size;
-                ViewBag.type = type;
-                ViewBag.stype = stype;
-                ViewBag.Align = Align;
-                ViewBag.ac = ac;
-                ViewBag.hp = hp;
-                ViewBag.hd = hd;
-                ViewBag.str = str;
-                ViewBag.dex = dex;
-                ViewBag.con = con;
-                ViewBag.intel = intel;
-                ViewBag.wis = wis;
-                ViewBag.cha = cha;
-                ViewBag.lang = lang;
-                ViewBag.chal = chalrating;
-                ViewBag.speed = speed;
-                ViewBag.prof = prof;
-                ViewBag.resist = Dresist;
-                ViewBag.vuln = Dvuln;
-                ViewBag.immune = Dinvuln;
-                ViewBag.invuln = Cinvuln;
-                ViewBag.senses = senses;
-                ViewBag.special = special;
-                ViewBag.actions = actions;
-                ViewBag.legact = legactions;
-            }
-            ViewBag.name = monsters;
-            Map map = db.Maps.Find(mapid);
-            ViewBag.mapheight = map.MapHeight;
-            ViewBag.mapwidth = map.MapWidth;
-            ViewBag.mapland = map.MapLand;
-            return View(db.Players.ToList().Where(s => s.GameID == id));
+            return View(map);
         }
+
         public ActionResult CreatePlayer()
         {
             return View();
@@ -363,6 +212,139 @@ namespace DDToolKit.Controllers
             }
             return current;
         }
+
+        public ActionResult Game(int? id, int? mapid)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Save save = db.Saves.Find(id);
+            if (save == null)
+            {
+                return HttpNotFound();
+            }
+            if (mapid == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Map map = db.Maps.Find(mapid);
+            if (map == null)
+            {
+                return HttpNotFound();
+            }
+
+            //Passing in monster data from saves through viewbags.
+            int temp;
+            if (save.Monster1 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster1) select creatures.ID).Single(); ViewBag.mon1 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster2 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster2) select creatures.ID).Single(); ViewBag.mon2 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster3 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster3) select creatures.ID).Single(); ViewBag.mon3 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster4 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster4) select creatures.ID).Single(); ViewBag.mon4 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster5 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster5) select creatures.ID).Single(); ViewBag.mon5 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster6 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster6) select creatures.ID).Single(); ViewBag.mon6 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster7 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster7) select creatures.ID).Single(); ViewBag.mon7 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster8 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster8) select creatures.ID).Single(); ViewBag.mon8 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster9 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster9) select creatures.ID).Single(); ViewBag.mon9 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster10 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster10) select creatures.ID).Single(); ViewBag.mon10 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster11 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster11) select creatures.ID).Single(); ViewBag.mon11 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster12 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster12) select creatures.ID).Single(); ViewBag.mon12 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster13 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster13) select creatures.ID).Single(); ViewBag.mon13 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster14 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster14) select creatures.ID).Single(); ViewBag.mon14 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster15 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster15) select creatures.ID).Single(); ViewBag.mon15 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster16 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster16) select creatures.ID).Single(); ViewBag.mon16 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster17 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster17) select creatures.ID).Single(); ViewBag.mon17 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster18 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster18) select creatures.ID).Single(); ViewBag.mon18 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster19 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster19) select creatures.ID).Single(); ViewBag.mon19 = dbMonsters.Creatures.Find(temp); }
+            if (save.Monster20 != null) { temp = (from creatures in dbMonsters.Creatures where (creatures.Name == save.Monster20) select creatures.ID).Single(); ViewBag.mon20 = dbMonsters.Creatures.Find(temp); }
+
+            ViewBag.mapheight = map.MapHeight;
+            ViewBag.mapwidth = map.MapWidth;
+            ViewBag.mapland = map.MapLand;
+            return View(db.Players.ToList().Where(s => s.GameID == id));
+        }
+        public ActionResult tmp()
+        {
+            List<string> options = new List<string>();
+            options.Add("Equipment");
+            options.Add("Monsters");
+            options.Add("Spells");
+
+            ViewBag.Options = new SelectList(options);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult tmp(string option, string input /*SearchModel model*/)
+        {
+            var list = "";
+            if(option == "Monsters" /*model.option*/)
+            {
+                //Go to action method and get the monsters
+                //include using ProjectName.Controllers.ControllerName;
+                //list = stuff from the monsters db
+            }
+            else if( option == "Equipment" /*model.option*/)
+            {
+                //Go to the action method and get the equipment
+                //Should be getting back the list of results from the API
+                //list = list of things from the api equipment search
+            }
+            else if(option == "Spells" /*model.option*/)
+            {
+                //Go to the action method and get spells
+                //Get back data from the API
+                //list = list of things from the API spells search
+            }
+
+            ViewBag.ListOfResults = list;
+            return View();
+        }
+        private string SendRequest(string uri)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            //request.Headers.Add("Authorization", "token " + credentials);
+            //request.UserAgent = username;       // Required, see: https://developer.github.com/v3/#user-agent-required
+            request.Accept = "application/json";
+
+            string jsonString = null;
+            // TODO: You should handle exceptions here
+            using (WebResponse response = request.GetResponse())
+            {
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream);
+                jsonString = reader.ReadToEnd();
+                reader.Close();
+                stream.Close();
+            }
+            return jsonString;
+        }
+
+        /*public ActionResult EquipName()
+        {
+            return View();
+        }*/
+
+        [HttpPost]
+        public ActionResult Game(string equipName)
+        {
+            string json = SendRequest("https://www.dnd5eapi.co/api/equipment");
+            JObject data = JObject.Parse(json);
+
+            List<string> list = new List<string>();
+
+            for (int i = 0; i < (int)data["count"]; i++)
+            {
+                string current = (string)data["results"][i]["name"];
+                if (current.Contains(equipName) == true)
+                {
+                    list.Add((string)data["results"][i]["index"]);
+                }
+            }
+
+            ViewBag.EquipList = list;
+            ViewBag.Success = true;
+            return View();
+        }
+
     }
 }
-

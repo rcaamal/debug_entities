@@ -9,10 +9,10 @@ namespace DDToolKit.Models
     {
         public gameModel()
 
-            : base("name=Monsters")
+           : base("name=Monsters")
 
 
-           //: base("name=DDToolContext_Azure")
+        // : base("name=DDToolContext_Azure")
 
 
         {
@@ -28,5 +28,7 @@ namespace DDToolKit.Models
         }
 
         public System.Data.Entity.DbSet<DDToolKit.Models.Map> Maps { get; set; }
+
+        public System.Data.Entity.DbSet<DDToolKit.Models.BlogPost> BlogPosts { get; set; }
     }
 }

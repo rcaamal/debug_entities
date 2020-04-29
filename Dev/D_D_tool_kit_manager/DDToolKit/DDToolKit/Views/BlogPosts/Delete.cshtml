@@ -1,4 +1,4 @@
-﻿@model DDToolKit.Models.Save
+﻿@model DDToolKit.Models.BlogPost
 
 @{
     ViewBag.Title = "Delete";
@@ -8,39 +8,39 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Save</h4>
+    <h4>BlogPost</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.UserName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.UserName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.OwnerID)
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.OwnerID)
+            @Html.DisplayFor(model => model.Title)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Monsters)
+            @Html.DisplayNameFor(model => model.Post)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Monsters)
+            @Html.DisplayFor(model => model.Post)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Magic)
+            @Html.DisplayNameFor(model => model.Published)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Magic)
+            @Html.DisplayFor(model => model.Published)
         </dd>
 
     </dl>
