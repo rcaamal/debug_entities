@@ -28,5 +28,7 @@ namespace DDToolKit.Models
         }
 
         public System.Data.Entity.DbSet<DDToolKit.Models.Map> Maps { get; set; }
+
+        public System.Data.Entity.DbSet<DDToolKit.Models.BlogPost> BlogPosts { get; set; }
     }
 }
