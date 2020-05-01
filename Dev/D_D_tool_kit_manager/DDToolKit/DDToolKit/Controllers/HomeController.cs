@@ -20,6 +20,7 @@ namespace DDToolKit.Controllers
             ViewBag.Message2 = "Goals";
             ViewBag.Message3 = "What we want to Achieve";
             ViewBag.Message4 = "More Information";
+            ViewBag.Message5 = "Developers";
 
             return View();
         }
