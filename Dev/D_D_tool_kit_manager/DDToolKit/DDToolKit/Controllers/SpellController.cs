@@ -32,7 +32,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Spell
-
+        //[Authorize]
         public ActionResult Index()
         {
             return View();

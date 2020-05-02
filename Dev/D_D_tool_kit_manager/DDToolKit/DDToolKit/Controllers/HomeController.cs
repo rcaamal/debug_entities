@@ -13,7 +13,7 @@ namespace DDToolKit.Controllers
         {
             return View();
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Vision Statement.";
@@ -24,7 +24,7 @@ namespace DDToolKit.Controllers
 
             return View();
         }
-
+        //[Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Welcome";
@@ -39,7 +39,7 @@ namespace DDToolKit.Controllers
 
             return View();
         }
-
+       // [Authorize]
         public ActionResult ExternalLinks()
         {
 
