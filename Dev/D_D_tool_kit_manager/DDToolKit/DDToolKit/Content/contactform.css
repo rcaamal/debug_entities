@@ -17,6 +17,7 @@ body {
     line-height: 30px;
     color: #000;
     background: #0CF;
+   
 }
 
 .wrapper #error_message{
@@ -31,23 +32,37 @@ body {
 }
 
 #contact {
-    background: #F9F9F9;
     padding: 25px;
     margin: 300px 0;
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
     position: relative;
+    border: double;
+    border-width:thick;
+    border-color: #0CF;
+    background-color: silver;
 }
-
+h5 {
+    background-color: silver;
+    border: double;
+    border-width: thick;
+    border-color: #0CF;
+    display: inline-block;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #057490;
+    font-size:x-large;
+}
     #contact h3 {
-        color: #F96;
+        color: #057490;
         display: block;
         font-size: 30px;
         font-weight: 400;
+      
     }
 
     #contact h4 {
+        color: #057490;
         margin: 5px 0 15px;
         display: block;
         font-size: 13px;
@@ -91,7 +106,9 @@ fieldset {
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
+    
 }
+
 
     #contact button[type="submit"]:hover {
         background: #09C;

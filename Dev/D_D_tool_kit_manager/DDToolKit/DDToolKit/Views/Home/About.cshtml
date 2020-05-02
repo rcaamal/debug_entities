@@ -5,27 +5,57 @@
 <head>
     <style>
         P {
-            border: 7px solid black;
+            border: double;
             padding: 20px;
+            background-color: #2d2a2a;
+            border-color: blue;
+            border-width: thick;
+            color: white;
+            font-family: Verdana;
+            border-top-color: silver;
+            border-bottom-color: silver;
         }
 
-        pre{
-            border: 7px solid black;
+        pre {
+            border: double;
             padding: 20px;
+            background-color: #2d2a2a;
+            border-color: blue;
+            border-width: thick;
+            color: white;
+            font-family: Verdana;
+            font-size: small;
+            display: inline-block;
+            border-top-color: silver;
+            border-bottom-color: silver;
         }
 
         h1, h3 {
             font-family: cursive;
+            color: white;
+            background-color: #2d2a2a;
+            border: ridge;
+            border-width: thick;
+            display: inline-grid;
+            border-color: blue;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top-color: silver;
+            border-bottom-color: silver;
         }
     </style>
 </head>
-<body>
+<body class="aboutStyle" style="background-image:url('/Content/image/aboutpage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
 
     <h1>@ViewBag.Title</h1>
+    <div>
     <h3>
         @ViewBag.Message
     </h3>
-
+        </div>
     <p>
         For those who are interested in D&D and whom want to have a more accessible and
         streamlined experience, the Debug Entities website is both a tool kit and
@@ -44,8 +74,8 @@
         Debug Entities Goals for the D&D Tool Kit & Manager is to be able to have
         a working website that will be useful for other users that play D&D. This
         will have its tools of ability to search for certain aspects of the database
-        that we will implement in this website, like monsters and spells. This way
-        a user is capable to of going through books full of monsters so they can look
+        that we will implement in this website, like monsters, spells, and equipment. This way
+        a user is capable of going through books full of monsters, spells, and equiment so they can look
         it up faster for their information instead of passing through tons of books
         to find what they want for their game. We want to change their experience of D&D than
         their previous moments in other D&D gaming. Due to our experience we want to make it
@@ -57,19 +87,24 @@
     </p>
 
     <h3>@ViewBag.Message5</h3>
+    <div>
     <pre>Randy Caamal-
         I am a senior at Western Oregon University and I am a hispanic.
         After college I want to be able to find a work that is in health care,
         that uses my computer science degreee. With that intent I want be a clinical analyst 
-        Here is a link to all the work I have done in my computer science course. <a href="https://github.com/rcaamal">Git Hub</a>  </pre>
-
+        Here is a link to all the work I have done in my computer science course. <a href="https://github.com/rcaamal">Git Hub</a> 
+ </pre>
+        </div>
+    <div>
     <pre>Zaid Alsuwayyigh-
-        <a href="https://github.com/ZeedAlsuwayyigh">Git Hub</a>  </pre>
-    
+        <a href="https://github.com/ZeedAlsuwayyigh">Git Hub</a>
+  </pre>
+    </div>    
+    <div>
     <pre>Ian Oberst-
          <a href="https://github.com/Ioberst17">Git Hub</a>  </pre>
 
-
+        </div>
 
 
 
