@@ -251,7 +251,9 @@
     <Content Include="Content\contactform.css" />
     <Content Include="Content\Equip.css" />
     <Content Include="Content\image\aboutpage.jpg" />
+    <Content Include="Content\image\additionBack.jpg" />
     <Content Include="Content\image\contact.jpg" />
+    <Content Include="Content\image\FAQBack.jpg" />
     <Content Include="Content\image\home.jpg" />
     <Content Include="Content\image\loginBackground.jpg" />
     <Content Include="Content\image\postBackground.jpg" />
