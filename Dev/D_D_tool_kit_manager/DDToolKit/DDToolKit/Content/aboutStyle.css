@@ -1,0 +1,39 @@
+﻿P {
+    border: double;
+    padding: 20px;
+    background-color: #2d2a2a;
+    border-color: blue;
+    border-width: thick;
+    color: white;
+    font-family: Verdana;
+    border-top-color: silver;
+    border-bottom-color: silver;
+}
+
+pre {
+    border: double;
+    padding: 20px;
+    background-color: #2d2a2a;
+    border-color: blue;
+    border-width: thick;
+    color: white;
+    font-family: Verdana;
+    font-size: small;
+    display: inline-block;
+    border-top-color: silver;
+    border-bottom-color: silver;
+}
+
+h1, h3 {
+    font-family: cursive;
+    color: white;
+    background-color: #2d2a2a;
+    border: ridge;
+    border-width: thick;
+    display: inline-grid;
+    border-color: blue;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-color: silver;
+    border-bottom-color: silver;
+}
