@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DDToolKit.Model.Magic>
+﻿@model  DDToolKit.Models.Magic
 
 @{
     ViewBag.Title = "Spells";
@@ -9,6 +9,7 @@
     <div class="form-group">
         <div class="search">
             @Html.TextBox("spellName", null, new { @class = "form-control", type = "text" })
+          
 
             <button class="btn btn-primary" type="submit">Search</button>
         </div>
@@ -25,3 +26,7 @@
 
     }
 </div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/autoCompleteSpells.js"></script>
+}
