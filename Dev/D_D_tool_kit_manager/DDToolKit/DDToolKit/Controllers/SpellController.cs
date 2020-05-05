@@ -6,11 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DDToolKit.Models;
 
 namespace DDToolKit.Controllers
 {
     public class SpellController : Controller
     {
+        private gameModel db = new gameModel();
+        private Magic dbMagic = new Magic();
+
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -223,6 +227,15 @@ namespace DDToolKit.Controllers
             ViewBag.Success = true;
 
             return View();
+
+        }
+        [HttpPost]
+        public JsonResult index(string Prefix)
+        {
+            //List<string> names = new List<string>();
+            var SpellNames = (from N in db.Magics where N.Name.StartsWith(Prefix) select new { N.Name });
+
+            return Json(SpellNames,JsonRequestBehavior.AllowGet);
 
         }
 

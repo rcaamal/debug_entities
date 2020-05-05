@@ -259,6 +259,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\minus.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Scripts\autoCompleteSpells.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
