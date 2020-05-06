@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<DDToolKit.Models.Player>
-
 @{
     ViewBag.Title = "Game view";
     var mapheight = ViewBag.mapheight;
@@ -25,20 +24,12 @@
     var monster18 = ViewBag.Mon18;
     var monster19 = ViewBag.Mon19;
     var monster20 = ViewBag.Mon20;
-    
-
 }
     <body onload="test()">
       <h4>Have fun!</h4>
-      
       <div class="row">
-
           <div class="col-lg-7">
-
-             
-       
-
-        <h4 id="maplandholder" hidden>@mapland</h4>
+              <h4 id="maplandholder" hidden>@mapland</h4>
         <table style="width: 35%;" border="1">
             <tbody>
                 <tr>
@@ -4030,37 +4021,16 @@
                                             </td>
                                             <td>
                                                 @item.Proficiencies
-
                                             </td>
-                                            @*<td>
-                                                @Html.DisplayFor(modelItem => item.DamageResistance)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.ConditionImmunity)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Senses)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.SpecialAbility)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Actions)
-                                            </td>*@
                                         </tr>
                                     }
                                 </table>
                             </div>
                         </td>
                         <td>This Is Where You Will Be Able To See All The Players Stats That You Have Choosen</td>
-
                     </tr>
-
-
-
                 </table>
-
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
                 <script type="text/javascript">
                     //Assign Click event to Plus Image.
                     $("body").on("click", "img[src*='plus.png']", function () {
@@ -4073,10 +4043,7 @@
                         $(this).closest("tr").next().remove();
                     });
                 </script>
-
-            
-        
-                <table style="width:40%">
+        <table style="width:40%">
                     <tr>
                         <td style="text-align:center">
                             Four-sided Die
@@ -4164,89 +4131,49 @@
         font-size: 10pt;
     }
 </style>
-
-
-          <div class="col-lg-5">
-
-              <h4>Single click to display the window and double click to hide it</h4>
-              
-              
-              <div class="row"> 
-
-                  <h1>To View Equioment</h1>
-
-                  <div class="col-lg-6">
-                      <button id="smallScreen" type="button" value=" show equipment"> Show equipment in small window</button> 
-                      <button id="midScreen" type="button" value=" mid screen">Show equipment in Mid window</button> 
-                      <button id="LargeScreen" type="button" value=" Large Screen"> show equipment in Large window</button> 
-                  </div>
-                  
-
-                  
-                  <div class="col-lg-6">
-
-                      <iframe id="smallFrame" src="/Equipment/index" height="300" width="300"></iframe> 
-                      <iframe id="midFrame" src="/Equipment/index" height="600" width="400"></iframe>
-                      <iframe id="LargeFrame" src="/Equipment/index" height="800" width="400"></iframe>
-
-                  </div>
-                  
-
-                  
-                 
-              </div>
-
-              <div class="row">
-
-                  <h1>To View Monsters</h1>
-
-                  <div class="col-lg-6">
-                      <button id="MonstersmallScreen" type="button" value=" show Monsters"> Show Monsters in small Window</button> 
-                      <button id="MonstermidScreen" type="button" value="Monster mid screen"> Show Monsters in mid Window</button> 
-                      <button id="MonsterLargeScreen" type="button" value="Monster Large Screen"> Show Monsters in large Window</button>
-                  </div>
-                  
-
-                  <div class="col-lg-6">
-
-                      <iframe id="MonstersmallFrame" src="/Creatures/index" height="300" width="300"></iframe> 
-                      <iframe id="MonstermidFrame" src="/Creatures/index" height="600" width="400"></iframe>
-                      <iframe id="MonsterLargeFrame" src="/Creatures/index" height="800" width="400"></iframe>
-
-                  </div>
-                  
-
-              </div>
-
-              <div class="row">
-                  
-                  <h1>To View Spells</h1>
-
-                  <div class="col-lg-6">
-                      <button id="SpellsmallScreen" type="button" value=" show spells"> Show spells in small Window</button> 
-                      <button id="SpellmidScreen" type="button" value="spells mid screen"> Show spells in mid Window</button> 
-                      <button id="SpellLargeScreen" type="button" value="spells Large Screen"> Show spells in large Window</button>
-                  </div>
-                  
-
-                  <div class="col-lg-6">
-
-                      <iframe id="SpellsmallFrame" src="/Creatures/Spells" height="300" width="300"></iframe> 
-                      <iframe id="SpellmidFrame" src="/Creatures/Spells" height="600" width="400"></iframe>
-                      <iframe id="SpellLargeFrame" src="/Creatures/Spells" height="800" width="400"></iframe>
-
-                  </div>
-
-
-              </div>
-
-              
-              
-
-          </div>
-       
-        
-        <style type="text/css">
+<div class="col-lg-5">
+    <h4>Single click to display the window and double click to hide it</h4>
+    <div class="row">
+        <h1>To View Equioment</h1>
+        <div class="col-lg-6">
+            <button id="smallScreen" type="button" value=" show equipment"> Show equipment in small window</button>
+            <button id="midScreen" type="button" value=" mid screen">Show equipment in Mid window</button>
+            <button id="LargeScreen" type="button" value=" Large Screen"> show equipment in Large window</button>
+        </div>
+        <div class="col-lg-6">
+            <iframe id="smallFrame" src="/Equipment/index" height="300" width="300"></iframe>
+            <iframe id="midFrame" src="/Equipment/index" height="600" width="400"></iframe>
+            <iframe id="LargeFrame" src="/Equipment/index" height="800" width="400"></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <h1>To View Monsters</h1>
+        <div class="col-lg-6">
+            <button id="MonstersmallScreen" type="button" value=" show Monsters"> Show Monsters in small Window</button>
+            <button id="MonstermidScreen" type="button" value="Monster mid screen"> Show Monsters in mid Window</button>
+            <button id="MonsterLargeScreen" type="button" value="Monster Large Screen"> Show Monsters in large Window</button>
+        </div>
+        <div class="col-lg-6">
+            <iframe id="MonstersmallFrame" src="/Creatures/index" height="300" width="300"></iframe>
+            <iframe id="MonstermidFrame" src="/Creatures/index" height="600" width="400"></iframe>
+            <iframe id="MonsterLargeFrame" src="/Creatures/index" height="800" width="400"></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <h1>To View Spells</h1>
+        <div class="col-lg-6">
+            <button id="SpellsmallScreen" type="button" value=" show spells"> Show spells in small Window</button>
+            <button id="SpellmidScreen" type="button" value="spells mid screen"> Show spells in mid Window</button>
+            <button id="SpellLargeScreen" type="button" value="spells Large Screen"> Show spells in large Window</button>
+        </div>
+        <div class="col-lg-6">
+            <iframe id="SpellsmallFrame" src="/Creatures/Spells" height="300" width="300"></iframe>
+            <iframe id="SpellmidFrame" src="/Creatures/Spells" height="600" width="400"></iframe>
+            <iframe id="SpellLargeFrame" src="/Creatures/Spells" height="800" width="400"></iframe>
+        </div>
+    </div>
+</div>
+<style type="text/css">
             body {
                 font-family: Arial;
                 font-size: 10pt;
@@ -4428,7 +4355,6 @@
                 }
             }
 </script>
-
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
 
