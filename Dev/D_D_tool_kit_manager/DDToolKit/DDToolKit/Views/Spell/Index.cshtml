@@ -1,5 +1,6 @@
 ﻿@model  DDToolKit.Models.Magic
 
+
 @{
     ViewBag.Title = "Spells";
 }
@@ -8,8 +9,10 @@
 {
     <div class="form-group">
         <div class="search">
-            @Html.TextBox("spellName", null, new { @class = "form-control", type = "text" })
-          
+            @Html.TextBox("spellName", null, new { @class = "form-control", type = "text", id = "SmartSpell" })
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+           
+
 
             <button class="btn btn-primary" type="submit">Search</button>
         </div>

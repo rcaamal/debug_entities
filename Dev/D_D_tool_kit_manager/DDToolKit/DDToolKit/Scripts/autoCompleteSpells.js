@@ -1,20 +1,21 @@
 ﻿$(document).ready(function () {
-    $("#Name").autocomplete({
-        source: function (request, response) {
+
+    $("#SmartSpell").on("change"
+         function (request, response) {
             $.ajax({
-                url: "/Spell/Index",
-                type: "POST",
-                datatype: "json",
-                data: { Prefix: request.term },
+                url: "/Spell/smartSearch",
+                dataType: "json",
+                data: { search: $("#SmartSpell").val() },
                 success: function (data) {
-                    response($.map(data, function (data) {
-                        return { label: item.Name, value: item.Name };
-                    }))
+                    response($.map(data, function (item) {
+                        return {label: item.Name, value: item.Name};
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("error");
                 }
-            })
-        },
-        messages: {
-            noResults: "", results: ""
-        }
-    });
-})
+            });
+         }
+    );
+
+});

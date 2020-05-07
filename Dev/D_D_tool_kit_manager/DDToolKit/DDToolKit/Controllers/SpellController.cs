@@ -47,7 +47,7 @@ namespace DDToolKit.Controllers
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/spells");
             JObject data = JObject.Parse(json);
-
+            
             List<string> list = new List<string>();
 
             for (int i = 0; i < (int)data["count"]; i++)
@@ -58,7 +58,7 @@ namespace DDToolKit.Controllers
                     list.Add((string)data["results"][i]["index"]);
                 }
             }
-
+            
             ViewBag.SpellList = list;
             ViewBag.Success = true;
             return View();
@@ -230,12 +230,15 @@ namespace DDToolKit.Controllers
 
         }
         [HttpPost]
-        public JsonResult index(string Prefix)
+        public JsonResult smartSearch(string search)
         {
-            //List<string> names = new List<string>();
-            var SpellNames = (from N in db.Magics where N.Name.StartsWith(Prefix) select new { N.Name });
+            List<Magic> magicName = db.Magics.Where(x => x.Name.Contains(search)).Select(x => new Magic
+            {
+                ID = x.ID,
+                Name = x.Name
+            }).ToList();
 
-            return Json(SpellNames,JsonRequestBehavior.AllowGet);
+            return new JsonResult { Data = magicName, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
         }
 
