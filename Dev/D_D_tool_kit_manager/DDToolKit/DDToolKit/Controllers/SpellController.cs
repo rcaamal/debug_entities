@@ -39,6 +39,7 @@ namespace DDToolKit.Controllers
 
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -229,19 +230,15 @@ namespace DDToolKit.Controllers
             return View();
 
         }
-        [HttpPost]
+        
         public JsonResult smartSearch(string search)
         {
-            List<Magic> magicName = db.Magics.Where(x => x.Name.Contains(search)).Select(x => new Magic
-            {
-                ID = x.ID,
-                Name = x.Name
-            }).ToList();
+            
 
-            return new JsonResult { Data = magicName, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var magicName = db.Magics.Where(x => x.Name.Contains(search)).Select(x => new { ID = x.ID, Name = x.Name }).ToList();
 
+            string temp = "We got your search : " + search;
+            return Json(magicName, JsonRequestBehavior.AllowGet);
         }
-
-
     }
 }
