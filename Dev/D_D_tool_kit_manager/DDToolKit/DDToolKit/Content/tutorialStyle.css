@@ -41,12 +41,14 @@ p {
     margin-left: 25px;
 }
 
-button {
-    border-style: ridge;
-    border-color: #ed941c;
-    border-width: 8px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
+    button.styleButton {
+        border-style: ridge;
+        display: inline-grid;
+        border-color: #ed941c;
+        border-width: 8px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color:#dadada;
+    }

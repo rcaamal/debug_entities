@@ -252,6 +252,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\contactform.css" />
     <Content Include="Content\Equip.css" />
+    <Content Include="Content\everywhere.css" />
     <Content Include="Content\faqStyle.css" />
     <Content Include="Content\homeStyle.css" />
     <Content Include="Content\image\aboutpage.jpg" />
