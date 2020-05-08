@@ -211,6 +211,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\gameModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Magic.cs" />
@@ -227,6 +228,9 @@
     <Content Include="App_Data\BlogUp.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\drop_migrationhistory.sql" />
+    <Content Include="App_Data\EquipDown.sql" />
+    <Content Include="App_Data\EquipSeed.sql" />
+    <Content Include="App_Data\EquipUp.sql" />
     <Content Include="App_Data\mapup.sql" />
     <Content Include="App_Data\MagicUp.sql" />
     <Content Include="App_Data\MaigcDown.sql" />
@@ -259,11 +263,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\minus.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Scripts\autocompleteSmartMonster.js" />
     <Content Include="Scripts\autoCompleteSpells.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\equip.js" />
+    <Content Include="Scripts\EquipSmartSearch.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\index.js.flow" />

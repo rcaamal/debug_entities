@@ -22,6 +22,7 @@ namespace DDToolKit.Models
         public virtual DbSet<Save> Saves { get; set; }
 
         public virtual DbSet<Magic> Magics { get; set; }
+        public virtual DbSet<Equipment> Equipments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

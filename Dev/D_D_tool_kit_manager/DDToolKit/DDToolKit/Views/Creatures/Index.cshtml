@@ -18,8 +18,8 @@
 {
     <p>
         <div class="Searchable">
-            @Html.TextBox("SearchName")
-            <input type="submit" value="Search"/>
+            @Html.TextBox("SearchName", null, new { @class = "form-control", type = "text", placeholder = "Search for a Monster name", id = "smartCreature" })
+            <input type="submit" value="Search" />
             <br />
         </div>
     </p>
@@ -46,5 +46,10 @@
 </table>
 
 
+@section scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/autocompleteSmartMonster.js"></script>
 
+}
 

@@ -6,11 +6,11 @@
 
 @Styles.Render("~/Content/Equip.css")
 
-    <body style="background-image: url(https://storage.needpix.com/rsynced_images/wood-1759566_1280.jpg);
+<body style="background-image: url(https://storage.needpix.com/rsynced_images/wood-1759566_1280.jpg);
         background-repeat: no-repeat;
         background-size: cover;
 ">
-    </body>
+</body>
 
 
 
@@ -26,7 +26,7 @@
         <div class="col-lg-4">
             <div class="form-group">
                 <div class="search text-center">
-                    @Html.TextBox("equipName", null, new { @class = "form-control", type = "text", placeholder = "Search for an equipment name" })
+                    @Html.TextBox("equipName", null, new { @class = "form-control", type = "text", placeholder = "Search for an equipment name", id = "smartEquip" })
                     <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </div>
@@ -55,3 +55,10 @@
 
     }
 </div>
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/EquipSmartSearch.js"></script>
+
+}

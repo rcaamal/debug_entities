@@ -6,11 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
+using DDToolKit.Models;
 
 namespace DDToolKit.Controllers
 {
     public class EquipmentController : Controller
     {
+        private gameModel db = new gameModel();
+
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -35,8 +39,10 @@ namespace DDToolKit.Controllers
 
         public ActionResult Index()
         {
+           
             return View();
         }
+        
 
         [HttpPost]
         public ActionResult Index(string equipName)
@@ -470,6 +476,16 @@ namespace DDToolKit.Controllers
 
             return View();
 
+        }
+
+        public JsonResult smartSearch(string search)
+        {
+
+
+            var magicName = db.Equipments.Where(x => x.Name.Contains(search)).Select(x => new { ID = x.ID, Name = x.Name }).ToList();
+
+            //string temp = "We got your search : " + search;
+            return Json(magicName, JsonRequestBehavior.AllowGet);
         }
 
 
