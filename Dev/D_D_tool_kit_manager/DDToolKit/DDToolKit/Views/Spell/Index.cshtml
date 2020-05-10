@@ -5,25 +5,27 @@
     ViewBag.Title = "Spells";
 }
 
+@Styles.Render("~/Content/Spell.css")
+
 @using (Html.BeginForm("Index", "Spell", FormMethod.Post))
 {
     <div class="row">
-        <h2>Wlcome to the spell Page!</h2>
+        <h2 class="SpellIndex">Wlcome to the spell Page!</h2>
         <div class="col-lg-4">
 
         </div>
         <div class="col-lg-4">
-                <div class="form-group ">
-                    <div class="search text-center">
-                        @Html.TextBox("spellName", null, new { @class = "form-control", type = "text", placeholder = "Search for a spell name", id = "SmartSpell" })
-                    </div>  
+            <div class="form-group ">
+                <div class="search text-center">
+                    @Html.TextBox("spellName", null, new { @class = "form-control", type = "text", placeholder = "Search for a spell name", id = "SmartSpell" })
                 </div>
+            </div>
         </div>
         <div class="col-lg-4">
             <button class="btn btn-primary" type="submit"> Search </button>
         </div>
-        
-        
+
+
     </div>
 
 }
@@ -33,7 +35,7 @@
         foreach (var item in ViewBag.spellList)
         {
             string Spell = item.ToString();
-    <h4 style="text-align:center"><a style="color:black" href="/Spell/spellInfo?spellName=@Spell">@Spell</a></h4>
+            <h4 class="SpellResult"><a class="linkColor" href="/Spell/spellInfo?spellName=@Spell">@Spell</a></h4>
         }
 
     }

@@ -257,6 +257,7 @@
     <Content Include="Content\image\loginBackground.jpg" />
     <Content Include="Content\image\postBackground.jpg" />
     <Content Include="Content\image\toolkit.jpg" />
+    <Content Include="Content\Spell.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -16,34 +16,57 @@
 
 @using (Html.BeginForm("Index", "Creatures", FormMethod.Post))
 {
-    <p>
-        <div class="Searchable">
-            @Html.TextBox("SearchName", null, new { @class = "form-control", type = "text", placeholder = "Search for a Monster name", id = "smartCreature" })
-            <input type="submit" value="Search" />
-            <br />
-        </div>
-    </p>
+<div class="row">
+
+
+
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-4">
+
+        <p>
+            <div class="Searchable">
+                @Html.TextBox("SearchName", null, new { @class = "form-control", type = "text", placeholder = "Search for a Monster name", id = "smartCreature" })
+            </div>
+        </p>
+
+    </div>
+    <div class="col-lg-4">
+        <input type="submit" value="Search" />
+    </div>
+</div>
+    
 }
 
+<div class="row">
+    <div class="col-lg-6">
+        <button id="Monsters" type="button" value="Monsters"> Hide/Show Monsters </button>
+    </div>
+    <div id="hideTable" class="col-lg-6">
 
-<table class="Silver">
-    <tr class="Silver">
-        <th class="Silver">
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+        <table class="Silver">
+            <tr class="Silver">
+                <th class="Silver">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+
+    </div>
+</div>
+
 
 
 @section scripts{

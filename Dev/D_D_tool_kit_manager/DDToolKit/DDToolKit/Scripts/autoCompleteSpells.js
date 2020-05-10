@@ -23,7 +23,7 @@
                 data: { search: $("#SmartSpell").val() },
                 success: function (data) {
                     response($.map(data, function (item) {
-                        return { label: item.Name/*, value: item.Name*/ };
+                        return { label: item.Name, value: item.Name };
 
                     }));
                 },
