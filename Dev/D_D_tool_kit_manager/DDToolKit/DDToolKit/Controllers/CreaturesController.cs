@@ -103,7 +103,7 @@ namespace DDToolKit.Controllers
 
 
         // GET: Creatures
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Creatures.ToList());

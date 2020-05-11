@@ -24,7 +24,7 @@ namespace DDToolKit.Controllers
 
             return View();
         }
-        //[Authorize]
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Welcome, this is a form" +
@@ -45,7 +45,7 @@ namespace DDToolKit.Controllers
 
             return View();
         }
-       // [Authorize]
+        [Authorize]
         public ActionResult ExternalLinks()
         {
 

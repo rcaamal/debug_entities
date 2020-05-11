@@ -32,7 +32,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Equipment
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             return View();
