@@ -1,8 +1,7 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
 * {
-    margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -12,9 +11,9 @@
 
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 30px;
+
+    font-size: 10px;
+   
     color: #000;
     background: #0CF;
    
@@ -43,7 +42,7 @@ body {
     border-color: #0CF;
     background-color: silver;
 }
-h5 {
+h1 {
     background-color: silver;
     border: double;
     border-width: thick;

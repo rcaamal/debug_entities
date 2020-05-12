@@ -9,14 +9,6 @@
     @*@Styles.Render("~/Content/css/Site.css")*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    @* <a target="_blank" href="https://icons8.com/icons/set/plus--v1">Plus icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-        <a target="_blank" href="https://icons8.com/icons/set/minus--v2">Minus icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-
-    *@
-
            
 
 
@@ -42,26 +34,27 @@
                 <a href="~/Home/Index" class="navbar-brand"> <img src="~/Content/image/toolkit.jpg" alt="D&D Logo" width="130" height="33" /></a>
             </div>
                 </ul>*@
-        <ul>
-            <li> @Html.ActionLink("Home", "Index", "Home")</li>
-            <li>@Html.ActionLink("About", "About", "Home")</li>
-            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            <li>@Html.ActionLink("Blog Post", "Create", "BlogPosts")</li>
-            <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
-            <li>@Html.ActionLink("Additional Resources", "ExternalLinks", "Home")</li>
-            <li>@Html.ActionLink("Tutorial", "Tutorial", "Home")</li>
+    <ul>
+        <li> @Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Blog Post", "Create", "BlogPosts")</li>
+        <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+        <li>@Html.ActionLink("Additional Resources", "ExternalLinks", "Home")</li>
+        <li>@Html.ActionLink("Tutorial", "Tutorial", "Home")</li>
+        <li>@Html.ActionLink("Acknowledgement", "Acknowledgement", "Home")</li>
 
-            <div class="dropdown">
-                <button class="dropbtn">Search Engines</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>@Html.ActionLink("Monsters", "Index", "Creatures")</li>
-                        <li>@Html.ActionLink("Spells", "Index", "Spell")</li>
-                        <li>@Html.ActionLink("Equipment", "Index", "Equipment")</li>
-                    </ul>
-                </div>
+        <div class="dropdown">
+            <button class="dropbtn">Search Engines</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li>@Html.ActionLink("Monsters", "Index", "Creatures")</li>
+                    <li>@Html.ActionLink("Spells", "Index", "Spell")</li>
+                    <li>@Html.ActionLink("Equipment", "Index", "Equipment")</li>
+                </ul>
             </div>
-        </ul>
+        </div>
+    </ul>
         <ul class="nav navbar-nav">
             @Html.Partial("_LoginPartial")
         </ul>
