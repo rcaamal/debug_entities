@@ -5,62 +5,96 @@
     ViewBag.Title = "SpellInfo";
 }
 
+    <body style="background-image: url(https://storage.needpix.com/rsynced_images/wood-1700562_1280.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    ">
+    </body>
 
-<h1 style="text-align:center">Spell Detail page for @ViewBag.name</h1>
+@Styles.Render("~/Content/Spell.css")
+
+
+<h1 class="h1Details">Spell Detail page for @ViewBag.name</h1>
 
 @if (ViewBag.Success == true)
 {
+<div class="row">
+    <div class="col-lg-6">
 
-    <p><h4>Name:  </h4> @ViewBag.name</p>
+        <h4>Name:  </h4><p> @ViewBag.name</p>
 
-    if (ViewBag.desc != null)
-    {
+
+        @if (ViewBag.classesName != null)
+        {
+        <h4>Classes: </h4>
         <p>
-            <h4>Description : </h4> @foreach (var item in ViewBag.desc)
-            {
-                string description = item.ToString();@description;
-            }
-        </p>
-    }
-    if (ViewBag.classesName != null)
-    { <p>
-            <h4>Classes: </h4> @foreach (var item in ViewBag.classesName)
+            @foreach (var item in ViewBag.classesName)
             {
                 string classesName = item.ToString() + ", ";@classesName;
             }
         </p> }
-    if (ViewBag.subclasses != null)
-    { <p>
-            <h4>Sub-classes: </h4> @foreach (var item in ViewBag.subclasses)
+        @if (ViewBag.subclasses != null)
+        {
+        <h4>Sub-classes: </h4>
+        <p>
+            @foreach (var item in ViewBag.subclasses)
             {
                 string subclasses = item.ToString() + ", ";@subclasses;
             }
         </p> }
-    if (ViewBag.components != null)
-    { <p>
-            <h4>Components: </h4> @foreach (var item in ViewBag.components)
+        @if (ViewBag.components != null)
+        {
+        <h4>Components: </h4>
+        <p>
+            @foreach (var item in ViewBag.components)
             {
                 string components = item.ToString() + ", ";@components;
             }
         </p> }
 
 
-    if (ViewBag.range != null)
-    { <p><h4>Range: </h4>   @ViewBag.range </p> }
-if (ViewBag.material != null)
-{ <p><h4>Material: </h4>  @ViewBag.material</p> }
-if (ViewBag.duration != null)
-{ <p><h4>Duration: </h4>  @ViewBag.duration </p> }
-if (ViewBag.castingTime != null)
-{ <p><h4>Casting Time: </h4> @ViewBag.castingTime</p> }
-if (ViewBag.ritual != null)
-{ <p><h4>Ritual: </h4> @ViewBag.ritual </p> }
-if (ViewBag.concentration != null)
-{ <p><h4>Concentration: </h4> @ViewBag.concentration </p> }
-if (ViewBag.level != null)
-{ <p><h4>Level: </h4> @ViewBag.level </p>}
+        @if (ViewBag.range != null)
+        { <h4>Range: </h4> <p>@ViewBag.range </p> }
 
-}
+    </div>
+    <div class="col-lg-6">
+
+        @if (ViewBag.material != null)
+        { <h4>Material: </h4> <p>@ViewBag.material</p> }
+        @if (ViewBag.duration != null)
+        { <h4>Duration: </h4><p>@ViewBag.duration </p> }
+        @if (ViewBag.castingTime != null)
+        { <h4>Casting Time: </h4><p>@ViewBag.castingTime</p> }
+        @if (ViewBag.ritual != null)
+        { <h4>Ritual: </h4><p>@ViewBag.ritual </p> }
+        @if (ViewBag.concentration != null)
+        { <h4>Concentration: </h4><p>@ViewBag.concentration </p> }
+        @if (ViewBag.level != null)
+        { <h4>Level: </h4> <p>@ViewBag.level </p>}
+
+        
+
+    </div>
+</div>
+
+    
+
+
+<div class="row">
+
+    @if (ViewBag.desc != null)
+    {
+    <h4>Description : </h4>
+    <p>
+        @foreach (var item in ViewBag.desc)
+        {
+            string description = item.ToString();@description;
+        }
+    </p>
+    }
+
+</div>
+ }
 
 <div>
     @Html.ActionLink("Back to Search", "Index")

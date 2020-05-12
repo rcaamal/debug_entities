@@ -9,10 +9,12 @@ namespace DDToolKit.Models
     {
         public gameModel()
 
+
           : base("name=Monsters")
 
 
        // : base("name=DDToolContext_Azure")
+
 
 
         {
@@ -22,6 +24,7 @@ namespace DDToolKit.Models
         public virtual DbSet<Save> Saves { get; set; }
 
         public virtual DbSet<Magic> Magics { get; set; }
+        public virtual DbSet<Equipment> Equipments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
