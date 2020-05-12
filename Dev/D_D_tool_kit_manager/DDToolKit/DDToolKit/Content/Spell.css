@@ -6,13 +6,15 @@
     color: white;
 }
 
-#smartEquip {
+#SmartSpell {
     font-size: 16px;
-    color: Black;
+    color: darkred;
 }
 
-.equipResult {
+.SpellResult {
     font-family: 'Arabic Typesetting';
+
+
 }
 
 .linkColor {
@@ -22,6 +24,7 @@
 
 .container {
     text-align: center;
+    
 }
 
 .h1Details {
@@ -40,4 +43,8 @@ p {
     text-align: center;
     font-family: 'Times New Roman';
     color: white;
+}
+
+.search{
+    color:yellow;
 }
