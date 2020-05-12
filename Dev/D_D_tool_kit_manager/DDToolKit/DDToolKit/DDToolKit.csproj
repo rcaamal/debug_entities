@@ -244,6 +244,8 @@
     <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\SeedMagic.sql" />
     <Content Include="App_Data\up.sql" />
+    <Content Include="Content\aboutStyle.css" />
+    <Content Include="Content\arStyle.css" />
     <Content Include="Content\BlogPost.css" />
     <Content Include="Content\blogView.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -254,11 +256,25 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\contactform.css" />
     <Content Include="Content\Equip.css" />
+    <Content Include="Content\everywhere.css" />
+    <Content Include="Content\faqStyle.css" />
+    <Content Include="Content\homeStyle.css" />
+    <Content Include="Content\image\aboutpage.jpg" />
+    <Content Include="Content\image\additionBack.jpg" />
+    <Content Include="Content\image\contact.jpg" />
+    <Content Include="Content\image\FAQBack.jpg" />
+    <Content Include="Content\image\home.jpg" />
     <Content Include="Content\image\loginBackground.jpg" />
     <Content Include="Content\image\postBackground.jpg" />
     <Content Include="Content\image\toolkit.jpg" />
+
     <Content Include="Content\Spell.css" />
+
+    <Content Include="Content\image\tutorial.jpg" />
+    <Content Include="Content\tutorialStyle.css" />
+
     <Content Include="favicon.ico" />
+    <Content Include="favicon1.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

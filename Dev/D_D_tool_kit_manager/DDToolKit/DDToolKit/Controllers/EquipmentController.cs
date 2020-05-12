@@ -36,7 +36,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Equipment
-
+        [Authorize]
         public ActionResult Index()
         {
            
