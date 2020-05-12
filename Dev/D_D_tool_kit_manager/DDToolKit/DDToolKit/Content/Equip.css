@@ -3,7 +3,7 @@
 .equipIndex{
     text-align:center;
     font-family: Algerian;
-    color:white;
+    color:black;
 }
 
 #smartEquip{
@@ -14,10 +14,11 @@
 
 .equipResult {
     font-family: 'Arabic Typesetting';
+    color:black;
 }
 
 .linkColor{
-    color:white;
+    color:black;
     font-size:30px;
 }
 

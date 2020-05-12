@@ -50,5 +50,11 @@ namespace DDToolKit.Controllers
 
             return View();
         }
+
+        public ActionResult Acknowledgement()
+        {
+
+            return View();
+        }
     }
 }

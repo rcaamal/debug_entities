@@ -3,22 +3,23 @@
 .SpellIndex {
     text-align: center;
     font-family: Algerian;
-    color: white;
+    color: black;
 }
 
 #SmartSpell {
-    font-size: 16px;
-    color: darkred;
+    font-size: 14px;
+   
 }
 
 .SpellResult {
     font-family: 'Arabic Typesetting';
+    color:black;
 
 
 }
 
 .linkColor {
-    color: white;
+    color: black;
     font-size: 30px;
 }
 
@@ -45,6 +46,4 @@ p {
     color: white;
 }
 
-.search{
-    color:yellow;
-}
+
