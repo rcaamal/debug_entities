@@ -152,7 +152,7 @@ namespace DDToolKit.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult MapSetup(int id, [Bind(Include = "ID,Name,MapWidth,MapHeight")] Map map)
         {
-            string temp = new string('1', 400);
+            string temp = new string('0', 400);
             map.OwnerID = User.Identity.GetUserId();
             map.GameID = id;
             map.MapLand = temp;

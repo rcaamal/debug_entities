@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DDToolKit.Models.Player>
+﻿
+@model IEnumerable<DDToolKit.Models.Player>
 @{
     ViewBag.Title = "Game view";
     var mapheight = ViewBag.mapheight;
@@ -3981,6 +3982,7 @@
                                     </tr>
                                     @foreach (var item in Model)
                                     {
+                                        
                                         <tr>
                                             <td>
                                                 @item.Name
@@ -3995,28 +3997,36 @@
                                                 @item.Aligment
                                             </td>
                                             <td>
-                                                @item.ArmorClass
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.ArmorClass">
+                                                <p>Base Value:@item.ArmorClass</p>
                                             </td>
                                             <td>
-                                                @item.HitPoints
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.HitPoints">
+                                                <p>Base Value:@item.HitPoints</p>
                                             </td>
                                             <td>
-                                                @item.Strength
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Strength">
+                                                <p>Base Value:@item.Strength</p>
                                             </td>
                                             <td>
-                                                @item.Dexterity
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Dexterity">
+                                                <p>Base Value:@item.Dexterity</p>
                                             </td>
                                             <td>
-                                                @item.Constitution
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Constitution">
+                                                <p>Base Value:@item.Constitution</p>
                                             </td>
                                             <td>
-                                                @item.Intelligence
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Intelligence">
+                                                <p>Base Value:@item.Intelligence</p>
                                             </td>
                                             <td>
-                                                @item.Wisdom
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Wisdom">
+                                                <p>Base Value:@item.Wisdom</p>
                                             </td>
                                             <td>
-                                                @item.Charisma
+                                                <input style="width:50px" type="number" min="-20" max="200" value="@item.Charisma">
+                                                <p>Base Value:@item.Charisma</p>
                                             </td>
                                             <td>
                                                 @item.Languages
@@ -4059,7 +4069,7 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result4"></p>
+                            <p id="result4" style="width:35px"></p>
                         </td>
                     </tr>
                     <tr>
@@ -4072,7 +4082,7 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result6"></p>
+                            <p id="result6" style="width:35px"></p>
                         </td>
                     </tr>
                     <tr>
@@ -4085,7 +4095,7 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result8"></p>
+                            <p id="result8" style="width:35px"></p>
                         </td>
                     </tr>
                     <tr>
@@ -4098,7 +4108,7 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result12"></p>
+                            <p id="result12" style="width:35px"></p>
                         </td>
                     </tr>
                     <tr>
@@ -4111,7 +4121,7 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result20"></p>
+                            <p id="result20" style="width:35px"></p>
                         </td>
                     </tr>
                     <tr>
@@ -4124,18 +4134,13 @@
                             </href>
                         </td>
                         <td style="text-align:center">
-                            <p id="result100"></p>
+                            <p id="result100" style="width:35px"></p>
                         </td>
                     </tr>
                 </table>
 </body>
 
-<style type="text/css">
-    body {
-        font-family: Arial;
-        font-size: 10pt;
-    }
-</style>
+
 <div class="col-lg-5">
     <h4>Single click to display the window and double click to hide it</h4>
     <div class="row">
@@ -4179,10 +4184,10 @@
     </div>
 </div>
 <style type="text/css">
-            body {
-                font-family: Arial;
-                font-size: 10pt;
-            }
+     body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
 
     .Grid {
         border: 1px solid #fff;
@@ -4214,6 +4219,10 @@
             color: #fff;
             font-weight: bold;
         }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
 </style>
 
 <script>
@@ -4377,10 +4386,7 @@ function toggleall() {
 
 <style>
 
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
+    
 </style>
 
         

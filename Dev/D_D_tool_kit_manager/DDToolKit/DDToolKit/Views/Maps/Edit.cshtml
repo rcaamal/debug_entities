@@ -6,6 +6,7 @@
     var mapland = Html.ViewData.Model.MapLand;
     var width = Html.ViewData.Model.MapWidth;
     var height = Html.ViewData.Model.MapHeight;
+     Layout = "/Views/Shared/_Layout.cshtml";
 }
     <body onload="test()">
         <h2>Edit</h2>
@@ -15,7 +16,6 @@
 
             <div class="form-horizontal">
                 <h4 id="maplandholder" hidden>@mapland</h4>
-                <h4 id="tester"></h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.ID)
@@ -26,7 +26,7 @@
                 <input id="MapLandtest" name="MapLand" type="hidden" value="" />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.MapObjects)
-                
+
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.MapWidth, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.MapWidth, new { htmlAttributes = new { @class = "form-control" }, min=1, max=20 })
+                        @Html.EditorFor(model => model.MapWidth, new { htmlAttributes = new { @class = "form-control" }, min = 1, max = 20 })
                         @Html.ValidationMessageFor(model => model.MapWidth, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.MapHeight, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.MapHeight, new { htmlAttributes = new { @class = "form-control" }, min=1, max=20 })
+                        @Html.EditorFor(model => model.MapHeight, new { htmlAttributes = new { @class = "form-control" }, min = 1, max = 20 })
                         @Html.ValidationMessageFor(model => model.MapHeight, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -58,450 +58,447 @@
                 </div>
             </div>
         }
-        @{
-            Layout = "/Views/Shared/_Layout.cshtml";
-        }
-        <table  border="1">
+        <table border="1">
             <tbody>
                 <tr>
-                    <td id="a1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a1')"></td>
-                    <td id="a2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a2')"></td>
-                    <td id="a3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a3')"></td>
-                    <td id="a4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a4')"></td>
-                    <td id="a5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a5')"></td>
-                    <td id="a6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a6')"></td>
-                    <td id="a7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a7')"></td>
-                    <td id="a8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a8')"></td>
-                    <td id="a9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a9')"></td>
-                    <td id="a10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a10')"></td>
-                    <td id="a11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a11')"></td>
-                    <td id="a12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a12')"></td>
-                    <td id="a13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a13')"></td>
-                    <td id="a14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a14')"></td>
-                    <td id="a15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a15')"></td>
-                    <td id="a16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a16')"></td>
-                    <td id="a17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a17')"></td>
-                    <td id="a18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a18')"></td>
-                    <td id="a19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a19')"></td>
-                    <td id="a20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('a20')"></td>
+                    <td id="a1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a1')"></td>
+                    <td id="a2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a2')"></td>
+                    <td id="a3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a3')"></td>
+                    <td id="a4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a4')"></td>
+                    <td id="a5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a5')"></td>
+                    <td id="a6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a6')"></td>
+                    <td id="a7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a7')"></td>
+                    <td id="a8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a8')"></td>
+                    <td id="a9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a9')"></td>
+                    <td id="a10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a10')"></td>
+                    <td id="a11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a11')"></td>
+                    <td id="a12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a12')"></td>
+                    <td id="a13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a13')"></td>
+                    <td id="a14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a14')"></td>
+                    <td id="a15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a15')"></td>
+                    <td id="a16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a16')"></td>
+                    <td id="a17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a17')"></td>
+                    <td id="a18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a18')"></td>
+                    <td id="a19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a19')"></td>
+                    <td id="a20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('a20')"></td>
                 </tr>
                 <tr>
-                    <td id="b1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b1')"></td>
-                    <td id="b2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b2')"></td>
-                    <td id="b3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b3')"></td>
-                    <td id="b4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b4')"></td>
-                    <td id="b5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b5')"></td>
-                    <td id="b6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b6')"></td>
-                    <td id="b7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b7')"></td>
-                    <td id="b8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b8')"></td>
-                    <td id="b9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b9')"></td>
-                    <td id="b10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b10')"></td>
-                    <td id="b11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b11')"></td>
-                    <td id="b12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b12')"></td>
-                    <td id="b13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b13')"></td>
-                    <td id="b14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b14')"></td>
-                    <td id="b15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b15')"></td>
-                    <td id="b16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b16')"></td>
-                    <td id="b17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b17')"></td>
-                    <td id="b18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b18')"></td>
-                    <td id="b19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b19')"></td>
-                    <td id="b20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('b20')"></td>
+                    <td id="b1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b1')"></td>
+                    <td id="b2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b2')"></td>
+                    <td id="b3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b3')"></td>
+                    <td id="b4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b4')"></td>
+                    <td id="b5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b5')"></td>
+                    <td id="b6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b6')"></td>
+                    <td id="b7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b7')"></td>
+                    <td id="b8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b8')"></td>
+                    <td id="b9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b9')"></td>
+                    <td id="b10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b10')"></td>
+                    <td id="b11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b11')"></td>
+                    <td id="b12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b12')"></td>
+                    <td id="b13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b13')"></td>
+                    <td id="b14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b14')"></td>
+                    <td id="b15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b15')"></td>
+                    <td id="b16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b16')"></td>
+                    <td id="b17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b17')"></td>
+                    <td id="b18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b18')"></td>
+                    <td id="b19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b19')"></td>
+                    <td id="b20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('b20')"></td>
                 </tr>
                 <tr>
-                    <td id="c1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c1')"></td>
-                    <td id="c2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c2')"></td>
-                    <td id="c3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c3')"></td>
-                    <td id="c4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c4')"></td>
-                    <td id="c5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c5')"></td>
-                    <td id="c6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c6')"></td>
-                    <td id="c7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c7')"></td>
-                    <td id="c8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c8')"></td>
-                    <td id="c9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c9')"></td>
-                    <td id="c10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c10')"></td>
-                    <td id="c11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c11')"></td>
-                    <td id="c12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c12')"></td>
-                    <td id="c13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c13')"></td>
-                    <td id="c14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c14')"></td>
-                    <td id="c15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c15')"></td>
-                    <td id="c16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c16')"></td>
-                    <td id="c17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c17')"></td>
-                    <td id="c18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c18')"></td>
-                    <td id="c19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c19')"></td>
-                    <td id="c20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('c20')"></td>
+                    <td id="c1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c1')"></td>
+                    <td id="c2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c2')"></td>
+                    <td id="c3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c3')"></td>
+                    <td id="c4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c4')"></td>
+                    <td id="c5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c5')"></td>
+                    <td id="c6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c6')"></td>
+                    <td id="c7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c7')"></td>
+                    <td id="c8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c8')"></td>
+                    <td id="c9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c9')"></td>
+                    <td id="c10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c10')"></td>
+                    <td id="c11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c11')"></td>
+                    <td id="c12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c12')"></td>
+                    <td id="c13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c13')"></td>
+                    <td id="c14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c14')"></td>
+                    <td id="c15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c15')"></td>
+                    <td id="c16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c16')"></td>
+                    <td id="c17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c17')"></td>
+                    <td id="c18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c18')"></td>
+                    <td id="c19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c19')"></td>
+                    <td id="c20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('c20')"></td>
                 </tr>
                 <tr>
-                    <td id="d1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d1')"></td>
-                    <td id="d2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d2')"></td>
-                    <td id="d3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d3')"></td>
-                    <td id="d4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d4')"></td>
-                    <td id="d5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d5')"></td>
-                    <td id="d6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d6')"></td>
-                    <td id="d7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d7')"></td>
-                    <td id="d8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d8')"></td>
-                    <td id="d9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d9')"></td>
-                    <td id="d10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d10')"></td>
-                    <td id="d11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d11')"></td>
-                    <td id="d12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d12')"></td>
-                    <td id="d13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d13')"></td>
-                    <td id="d14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d14')"></td>
-                    <td id="d15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d15')"></td>
-                    <td id="d16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d16')"></td>
-                    <td id="d17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d17')"></td>
-                    <td id="d18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d18')"></td>
-                    <td id="d19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d19')"></td>
-                    <td id="d20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('d20')"></td>
+                    <td id="d1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d1')"></td>
+                    <td id="d2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d2')"></td>
+                    <td id="d3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d3')"></td>
+                    <td id="d4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d4')"></td>
+                    <td id="d5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d5')"></td>
+                    <td id="d6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d6')"></td>
+                    <td id="d7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d7')"></td>
+                    <td id="d8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d8')"></td>
+                    <td id="d9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d9')"></td>
+                    <td id="d10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d10')"></td>
+                    <td id="d11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d11')"></td>
+                    <td id="d12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d12')"></td>
+                    <td id="d13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d13')"></td>
+                    <td id="d14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d14')"></td>
+                    <td id="d15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d15')"></td>
+                    <td id="d16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d16')"></td>
+                    <td id="d17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d17')"></td>
+                    <td id="d18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d18')"></td>
+                    <td id="d19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d19')"></td>
+                    <td id="d20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('d20')"></td>
                 </tr>
                 <tr>
-                    <td id="e1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e1')"></td>
-                    <td id="e2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e2')"></td>
-                    <td id="e3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e3')"></td>
-                    <td id="e4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e4')"></td>
-                    <td id="e5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e5')"></td>
-                    <td id="e6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e6')"></td>
-                    <td id="e7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e7')"></td>
-                    <td id="e8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e8')"></td>
-                    <td id="e9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e9')"></td>
-                    <td id="e10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e10')"></td>
-                    <td id="e11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e11')"></td>
-                    <td id="e12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e12')"></td>
-                    <td id="e13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e13')"></td>
-                    <td id="e14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e14')"></td>
-                    <td id="e15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e15')"></td>
-                    <td id="e16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e16')"></td>
-                    <td id="e17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e17')"></td>
-                    <td id="e18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e18')"></td>
-                    <td id="e19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e19')"></td>
-                    <td id="e20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('e20')"></td>
+                    <td id="e1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e1')"></td>
+                    <td id="e2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e2')"></td>
+                    <td id="e3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e3')"></td>
+                    <td id="e4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e4')"></td>
+                    <td id="e5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e5')"></td>
+                    <td id="e6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e6')"></td>
+                    <td id="e7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e7')"></td>
+                    <td id="e8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e8')"></td>
+                    <td id="e9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e9')"></td>
+                    <td id="e10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e10')"></td>
+                    <td id="e11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e11')"></td>
+                    <td id="e12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e12')"></td>
+                    <td id="e13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e13')"></td>
+                    <td id="e14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e14')"></td>
+                    <td id="e15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e15')"></td>
+                    <td id="e16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e16')"></td>
+                    <td id="e17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e17')"></td>
+                    <td id="e18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e18')"></td>
+                    <td id="e19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e19')"></td>
+                    <td id="e20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('e20')"></td>
                 </tr>
                 <tr>
-                    <td id="f1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f1')"></td>
-                    <td id="f2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f2')"></td>
-                    <td id="f3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f3')"></td>
-                    <td id="f4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f4')"></td>
-                    <td id="f5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f5')"></td>
-                    <td id="f6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f6')"></td>
-                    <td id="f7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f7')"></td>
-                    <td id="f8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f8')"></td>
-                    <td id="f9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f9')"></td>
-                    <td id="f10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f10')"></td>
-                    <td id="f11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f11')"></td>
-                    <td id="f12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f12')"></td>
-                    <td id="f13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f13')"></td>
-                    <td id="f14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f14')"></td>
-                    <td id="f15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f15')"></td>
-                    <td id="f16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f16')"></td>
-                    <td id="f17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f17')"></td>
-                    <td id="f18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f18')"></td>
-                    <td id="f19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f19')"></td>
-                    <td id="f20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('f20')"></td>
+                    <td id="f1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f1')"></td>
+                    <td id="f2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f2')"></td>
+                    <td id="f3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f3')"></td>
+                    <td id="f4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f4')"></td>
+                    <td id="f5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f5')"></td>
+                    <td id="f6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f6')"></td>
+                    <td id="f7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f7')"></td>
+                    <td id="f8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f8')"></td>
+                    <td id="f9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f9')"></td>
+                    <td id="f10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f10')"></td>
+                    <td id="f11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f11')"></td>
+                    <td id="f12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f12')"></td>
+                    <td id="f13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f13')"></td>
+                    <td id="f14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f14')"></td>
+                    <td id="f15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f15')"></td>
+                    <td id="f16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f16')"></td>
+                    <td id="f17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f17')"></td>
+                    <td id="f18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f18')"></td>
+                    <td id="f19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f19')"></td>
+                    <td id="f20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('f20')"></td>
                 </tr>
                 <tr>
-                    <td id="g1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g1')"></td>
-                    <td id="g2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g2')"></td>
-                    <td id="g3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g3')"></td>
-                    <td id="g4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g4')"></td>
-                    <td id="g5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g5')"></td>
-                    <td id="g6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g6')"></td>
-                    <td id="g7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g7')"></td>
-                    <td id="g8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g8')"></td>
-                    <td id="g9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g9')"></td>
-                    <td id="g10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g10')"></td>
-                    <td id="g11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g11')"></td>
-                    <td id="g12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g12')"></td>
-                    <td id="g13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g13')"></td>
-                    <td id="g14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g14')"></td>
-                    <td id="g15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g15')"></td>
-                    <td id="g16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g16')"></td>
-                    <td id="g17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g17')"></td>
-                    <td id="g18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g18')"></td>
-                    <td id="g19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g19')"></td>
-                    <td id="g20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('g20')"></td>
+                    <td id="g1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g1')"></td>
+                    <td id="g2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g2')"></td>
+                    <td id="g3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g3')"></td>
+                    <td id="g4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g4')"></td>
+                    <td id="g5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g5')"></td>
+                    <td id="g6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g6')"></td>
+                    <td id="g7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g7')"></td>
+                    <td id="g8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g8')"></td>
+                    <td id="g9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g9')"></td>
+                    <td id="g10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g10')"></td>
+                    <td id="g11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g11')"></td>
+                    <td id="g12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g12')"></td>
+                    <td id="g13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g13')"></td>
+                    <td id="g14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g14')"></td>
+                    <td id="g15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g15')"></td>
+                    <td id="g16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g16')"></td>
+                    <td id="g17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g17')"></td>
+                    <td id="g18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g18')"></td>
+                    <td id="g19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g19')"></td>
+                    <td id="g20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('g20')"></td>
                 </tr>
                 <tr>
-                    <td id="h1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h1')"></td>
-                    <td id="h2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h2')"></td>
-                    <td id="h3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h3')"></td>
-                    <td id="h4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h4')"></td>
-                    <td id="h5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h5')"></td>
-                    <td id="h6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h6')"></td>
-                    <td id="h7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h7')"></td>
-                    <td id="h8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h8')"></td>
-                    <td id="h9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h9')"></td>
-                    <td id="h10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h10')"></td>
-                    <td id="h11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h11')"></td>
-                    <td id="h12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h12')"></td>
-                    <td id="h13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h13')"></td>
-                    <td id="h14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h14')"></td>
-                    <td id="h15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h15')"></td>
-                    <td id="h16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h16')"></td>
-                    <td id="h17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h17')"></td>
-                    <td id="h18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h18')"></td>
-                    <td id="h19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h19')"></td>
-                    <td id="h20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('h20')"></td>
+                    <td id="h1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h1')"></td>
+                    <td id="h2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h2')"></td>
+                    <td id="h3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h3')"></td>
+                    <td id="h4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h4')"></td>
+                    <td id="h5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h5')"></td>
+                    <td id="h6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h6')"></td>
+                    <td id="h7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h7')"></td>
+                    <td id="h8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h8')"></td>
+                    <td id="h9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h9')"></td>
+                    <td id="h10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h10')"></td>
+                    <td id="h11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h11')"></td>
+                    <td id="h12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h12')"></td>
+                    <td id="h13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h13')"></td>
+                    <td id="h14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h14')"></td>
+                    <td id="h15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h15')"></td>
+                    <td id="h16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h16')"></td>
+                    <td id="h17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h17')"></td>
+                    <td id="h18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h18')"></td>
+                    <td id="h19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h19')"></td>
+                    <td id="h20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('h20')"></td>
                 </tr>
                 <tr>
-                    <td id="i1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i1')"></td>
-                    <td id="i2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i2')"></td>
-                    <td id="i3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i3')"></td>
-                    <td id="i4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i4')"></td>
-                    <td id="i5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i5')"></td>
-                    <td id="i6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i6')"></td>
-                    <td id="i7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i7')"></td>
-                    <td id="i8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i8')"></td>
-                    <td id="i9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i9')"></td>
-                    <td id="i10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i10')"></td>
-                    <td id="i11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i11')"></td>
-                    <td id="i12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i12')"></td>
-                    <td id="i13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i13')"></td>
-                    <td id="i14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i14')"></td>
-                    <td id="i15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i15')"></td>
-                    <td id="i16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i16')"></td>
-                    <td id="i17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i17')"></td>
-                    <td id="i18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i18')"></td>
-                    <td id="i19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i19')"></td>
-                    <td id="i20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('i20')"></td>
+                    <td id="i1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i1')"></td>
+                    <td id="i2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i2')"></td>
+                    <td id="i3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i3')"></td>
+                    <td id="i4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i4')"></td>
+                    <td id="i5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i5')"></td>
+                    <td id="i6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i6')"></td>
+                    <td id="i7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i7')"></td>
+                    <td id="i8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i8')"></td>
+                    <td id="i9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i9')"></td>
+                    <td id="i10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i10')"></td>
+                    <td id="i11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i11')"></td>
+                    <td id="i12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i12')"></td>
+                    <td id="i13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i13')"></td>
+                    <td id="i14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i14')"></td>
+                    <td id="i15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i15')"></td>
+                    <td id="i16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i16')"></td>
+                    <td id="i17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i17')"></td>
+                    <td id="i18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i18')"></td>
+                    <td id="i19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i19')"></td>
+                    <td id="i20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('i20')"></td>
                 </tr>
                 <tr>
-                    <td id="j1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j1')"></td>
-                    <td id="j2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j2')"></td>
-                    <td id="j3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j3')"></td>
-                    <td id="j4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j4')"></td>
-                    <td id="j5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j5')"></td>
-                    <td id="j6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j6')"></td>
-                    <td id="j7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j7')"></td>
-                    <td id="j8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j8')"></td>
-                    <td id="j9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j9')"></td>
-                    <td id="j10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j10')"></td>
-                    <td id="j11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j11')"></td>
-                    <td id="j12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j12')"></td>
-                    <td id="j13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j13')"></td>
-                    <td id="j14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j14')"></td>
-                    <td id="j15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j15')"></td>
-                    <td id="j16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j16')"></td>
-                    <td id="j17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j17')"></td>
-                    <td id="j18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j18')"></td>
-                    <td id="j19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j19')"></td>
-                    <td id="j20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('j20')"></td>
+                    <td id="j1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j1')"></td>
+                    <td id="j2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j2')"></td>
+                    <td id="j3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j3')"></td>
+                    <td id="j4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j4')"></td>
+                    <td id="j5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j5')"></td>
+                    <td id="j6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j6')"></td>
+                    <td id="j7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j7')"></td>
+                    <td id="j8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j8')"></td>
+                    <td id="j9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j9')"></td>
+                    <td id="j10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j10')"></td>
+                    <td id="j11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j11')"></td>
+                    <td id="j12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j12')"></td>
+                    <td id="j13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j13')"></td>
+                    <td id="j14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j14')"></td>
+                    <td id="j15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j15')"></td>
+                    <td id="j16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j16')"></td>
+                    <td id="j17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j17')"></td>
+                    <td id="j18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j18')"></td>
+                    <td id="j19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j19')"></td>
+                    <td id="j20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('j20')"></td>
                 </tr>
                 <tr>
-                    <td id="k1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k1')"></td>
-                    <td id="k2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k2')"></td>
-                    <td id="k3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k3')"></td>
-                    <td id="k4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k4')"></td>
-                    <td id="k5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k5')"></td>
-                    <td id="k6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k6')"></td>
-                    <td id="k7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k7')"></td>
-                    <td id="k8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k8')"></td>
-                    <td id="k9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k9')"></td>
-                    <td id="k10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k10')"></td>
-                    <td id="k11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k11')"></td>
-                    <td id="k12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k12')"></td>
-                    <td id="k13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k13')"></td>
-                    <td id="k14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k14')"></td>
-                    <td id="k15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k15')"></td>
-                    <td id="k16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k16')"></td>
-                    <td id="k17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k17')"></td>
-                    <td id="k18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k18')"></td>
-                    <td id="k19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k19')"></td>
-                    <td id="k20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('k20')"></td>
+                    <td id="k1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k1')"></td>
+                    <td id="k2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k2')"></td>
+                    <td id="k3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k3')"></td>
+                    <td id="k4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k4')"></td>
+                    <td id="k5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k5')"></td>
+                    <td id="k6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k6')"></td>
+                    <td id="k7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k7')"></td>
+                    <td id="k8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k8')"></td>
+                    <td id="k9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k9')"></td>
+                    <td id="k10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k10')"></td>
+                    <td id="k11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k11')"></td>
+                    <td id="k12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k12')"></td>
+                    <td id="k13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k13')"></td>
+                    <td id="k14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k14')"></td>
+                    <td id="k15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k15')"></td>
+                    <td id="k16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k16')"></td>
+                    <td id="k17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k17')"></td>
+                    <td id="k18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k18')"></td>
+                    <td id="k19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k19')"></td>
+                    <td id="k20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('k20')"></td>
                 </tr>
                 <tr>
-                    <td id="l1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l1')"></td>
-                    <td id="l2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l2')"></td>
-                    <td id="l3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l3')"></td>
-                    <td id="l4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l4')"></td>
-                    <td id="l5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l5')"></td>
-                    <td id="l6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l6')"></td>
-                    <td id="l7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l7')"></td>
-                    <td id="l8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l8')"></td>
-                    <td id="l9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l9')"></td>
-                    <td id="l10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l10')"></td>
-                    <td id="l11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l11')"></td>
-                    <td id="l12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l12')"></td>
-                    <td id="l13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l13')"></td>
-                    <td id="l14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l14')"></td>
-                    <td id="l15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l15')"></td>
-                    <td id="l16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l16')"></td>
-                    <td id="l17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l17')"></td>
-                    <td id="l18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l18')"></td>
-                    <td id="l19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l19')"></td>
-                    <td id="l20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('l20')"></td>
+                    <td id="l1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l1')"></td>
+                    <td id="l2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l2')"></td>
+                    <td id="l3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l3')"></td>
+                    <td id="l4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l4')"></td>
+                    <td id="l5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l5')"></td>
+                    <td id="l6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l6')"></td>
+                    <td id="l7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l7')"></td>
+                    <td id="l8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l8')"></td>
+                    <td id="l9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l9')"></td>
+                    <td id="l10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l10')"></td>
+                    <td id="l11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l11')"></td>
+                    <td id="l12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l12')"></td>
+                    <td id="l13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l13')"></td>
+                    <td id="l14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l14')"></td>
+                    <td id="l15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l15')"></td>
+                    <td id="l16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l16')"></td>
+                    <td id="l17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l17')"></td>
+                    <td id="l18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l18')"></td>
+                    <td id="l19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l19')"></td>
+                    <td id="l20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('l20')"></td>
                 </tr>
                 <tr>
-                    <td id="m1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m1')"></td>
-                    <td id="m2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m2')"></td>
-                    <td id="m3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m3')"></td>
-                    <td id="m4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m4')"></td>
-                    <td id="m5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m5')"></td>
-                    <td id="m6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m6')"></td>
-                    <td id="m7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m7')"></td>
-                    <td id="m8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m8')"></td>
-                    <td id="m9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m9')"></td>
-                    <td id="m10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m10')"></td>
-                    <td id="m11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m11')"></td>
-                    <td id="m12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m12')"></td>
-                    <td id="m13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m13')"></td>
-                    <td id="m14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m14')"></td>
-                    <td id="m15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m15')"></td>
-                    <td id="m16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m16')"></td>
-                    <td id="m17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m17')"></td>
-                    <td id="m18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m18')"></td>
-                    <td id="m19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m19')"></td>
-                    <td id="m20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('m20')"></td>
+                    <td id="m1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m1')"></td>
+                    <td id="m2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m2')"></td>
+                    <td id="m3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m3')"></td>
+                    <td id="m4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m4')"></td>
+                    <td id="m5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m5')"></td>
+                    <td id="m6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m6')"></td>
+                    <td id="m7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m7')"></td>
+                    <td id="m8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m8')"></td>
+                    <td id="m9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m9')"></td>
+                    <td id="m10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m10')"></td>
+                    <td id="m11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m11')"></td>
+                    <td id="m12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m12')"></td>
+                    <td id="m13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m13')"></td>
+                    <td id="m14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m14')"></td>
+                    <td id="m15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m15')"></td>
+                    <td id="m16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m16')"></td>
+                    <td id="m17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m17')"></td>
+                    <td id="m18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m18')"></td>
+                    <td id="m19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m19')"></td>
+                    <td id="m20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('m20')"></td>
                 </tr>
                 <tr>
-                    <td id="n1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n1')"></td>
-                    <td id="n2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n2')"></td>
-                    <td id="n3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n3')"></td>
-                    <td id="n4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n4')"></td>
-                    <td id="n5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n5')"></td>
-                    <td id="n6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n6')"></td>
-                    <td id="n7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n7')"></td>
-                    <td id="n8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n8')"></td>
-                    <td id="n9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n9')"></td>
-                    <td id="n10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n10')"></td>
-                    <td id="n11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n11')"></td>
-                    <td id="n12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n12')"></td>
-                    <td id="n13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n13')"></td>
-                    <td id="n14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n14')"></td>
-                    <td id="n15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n15')"></td>
-                    <td id="n16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n16')"></td>
-                    <td id="n17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n17')"></td>
-                    <td id="n18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n18')"></td>
-                    <td id="n19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n19')"></td>
-                    <td id="n20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('n20')"></td>
+                    <td id="n1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n1')"></td>
+                    <td id="n2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n2')"></td>
+                    <td id="n3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n3')"></td>
+                    <td id="n4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n4')"></td>
+                    <td id="n5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n5')"></td>
+                    <td id="n6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n6')"></td>
+                    <td id="n7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n7')"></td>
+                    <td id="n8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n8')"></td>
+                    <td id="n9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n9')"></td>
+                    <td id="n10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n10')"></td>
+                    <td id="n11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n11')"></td>
+                    <td id="n12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n12')"></td>
+                    <td id="n13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n13')"></td>
+                    <td id="n14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n14')"></td>
+                    <td id="n15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n15')"></td>
+                    <td id="n16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n16')"></td>
+                    <td id="n17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n17')"></td>
+                    <td id="n18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n18')"></td>
+                    <td id="n19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n19')"></td>
+                    <td id="n20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('n20')"></td>
                 </tr>
                 <tr>
-                    <td id="o1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o1')"></td>
-                    <td id="o2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o2')"></td>
-                    <td id="o3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o3')"></td>
-                    <td id="o4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o4')"></td>
-                    <td id="o5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o5')"></td>
-                    <td id="o6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o6')"></td>
-                    <td id="o7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o7')"></td>
-                    <td id="o8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o8')"></td>
-                    <td id="o9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o9')"></td>
-                    <td id="o10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o10')"></td>
-                    <td id="o11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o11')"></td>
-                    <td id="o12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o12')"></td>
-                    <td id="o13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o13')"></td>
-                    <td id="o14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o14')"></td>
-                    <td id="o15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o15')"></td>
-                    <td id="o16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o16')"></td>
-                    <td id="o17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o17')"></td>
-                    <td id="o18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o18')"></td>
-                    <td id="o19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o19')"></td>
-                    <td id="o20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('o20')"></td>
+                    <td id="o1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o1')"></td>
+                    <td id="o2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o2')"></td>
+                    <td id="o3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o3')"></td>
+                    <td id="o4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o4')"></td>
+                    <td id="o5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o5')"></td>
+                    <td id="o6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o6')"></td>
+                    <td id="o7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o7')"></td>
+                    <td id="o8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o8')"></td>
+                    <td id="o9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o9')"></td>
+                    <td id="o10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o10')"></td>
+                    <td id="o11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o11')"></td>
+                    <td id="o12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o12')"></td>
+                    <td id="o13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o13')"></td>
+                    <td id="o14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o14')"></td>
+                    <td id="o15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o15')"></td>
+                    <td id="o16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o16')"></td>
+                    <td id="o17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o17')"></td>
+                    <td id="o18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o18')"></td>
+                    <td id="o19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o19')"></td>
+                    <td id="o20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('o20')"></td>
                 </tr>
                 <tr>
-                    <td id="p1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p1')"></td>
-                    <td id="p2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p2')"></td>
-                    <td id="p3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p3')"></td>
-                    <td id="p4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p4')"></td>
-                    <td id="p5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p5')"></td>
-                    <td id="p6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p6')"></td>
-                    <td id="p7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p7')"></td>
-                    <td id="p8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p8')"></td>
-                    <td id="p9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p9')"></td>
-                    <td id="p10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p10')"></td>
-                    <td id="p11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p11')"></td>
-                    <td id="p12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p12')"></td>
-                    <td id="p13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p13')"></td>
-                    <td id="p14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p14')"></td>
-                    <td id="p15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p15')"></td>
-                    <td id="p16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p16')"></td>
-                    <td id="p17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p17')"></td>
-                    <td id="p18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p18')"></td>
-                    <td id="p19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p19')"></td>
-                    <td id="p20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('p20')"></td>
+                    <td id="p1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p1')"></td>
+                    <td id="p2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p2')"></td>
+                    <td id="p3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p3')"></td>
+                    <td id="p4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p4')"></td>
+                    <td id="p5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p5')"></td>
+                    <td id="p6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p6')"></td>
+                    <td id="p7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p7')"></td>
+                    <td id="p8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p8')"></td>
+                    <td id="p9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p9')"></td>
+                    <td id="p10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p10')"></td>
+                    <td id="p11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p11')"></td>
+                    <td id="p12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p12')"></td>
+                    <td id="p13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p13')"></td>
+                    <td id="p14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p14')"></td>
+                    <td id="p15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p15')"></td>
+                    <td id="p16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p16')"></td>
+                    <td id="p17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p17')"></td>
+                    <td id="p18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p18')"></td>
+                    <td id="p19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p19')"></td>
+                    <td id="p20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('p20')"></td>
                 </tr>
                 <tr>
-                    <td id="q1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q1')"></td>
-                    <td id="q2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q2')"></td>
-                    <td id="q3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q3')"></td>
-                    <td id="q4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q4')"></td>
-                    <td id="q5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q5')"></td>
-                    <td id="q6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q6')"></td>
-                    <td id="q7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q7')"></td>
-                    <td id="q8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q8')"></td>
-                    <td id="q9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q9')"></td>
-                    <td id="q10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q10')"></td>
-                    <td id="q11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q11')"></td>
-                    <td id="q12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q12')"></td>
-                    <td id="q13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q13')"></td>
-                    <td id="q14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q14')"></td>
-                    <td id="q15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q15')"></td>
-                    <td id="q16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q16')"></td>
-                    <td id="q17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q17')"></td>
-                    <td id="q18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q18')"></td>
-                    <td id="q19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q19')"></td>
-                    <td id="q20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('q20')"></td>
+                    <td id="q1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q1')"></td>
+                    <td id="q2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q2')"></td>
+                    <td id="q3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q3')"></td>
+                    <td id="q4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q4')"></td>
+                    <td id="q5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q5')"></td>
+                    <td id="q6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q6')"></td>
+                    <td id="q7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q7')"></td>
+                    <td id="q8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q8')"></td>
+                    <td id="q9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q9')"></td>
+                    <td id="q10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q10')"></td>
+                    <td id="q11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q11')"></td>
+                    <td id="q12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q12')"></td>
+                    <td id="q13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q13')"></td>
+                    <td id="q14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q14')"></td>
+                    <td id="q15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q15')"></td>
+                    <td id="q16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q16')"></td>
+                    <td id="q17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q17')"></td>
+                    <td id="q18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q18')"></td>
+                    <td id="q19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q19')"></td>
+                    <td id="q20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('q20')"></td>
                 </tr>
                 <tr>
-                    <td id="r1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r1')"></td>
-                    <td id="r2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r2')"></td>
-                    <td id="r3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r3')"></td>
-                    <td id="r4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r4')"></td>
-                    <td id="r5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r5')"></td>
-                    <td id="r6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r6')"></td>
-                    <td id="r7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r7')"></td>
-                    <td id="r8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r8')"></td>
-                    <td id="r9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r9')"></td>
-                    <td id="r10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r10')"></td>
-                    <td id="r11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r11')"></td>
-                    <td id="r12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r12')"></td>
-                    <td id="r13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r13')"></td>
-                    <td id="r14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r14')"></td>
-                    <td id="r15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r15')"></td>
-                    <td id="r16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r16')"></td>
-                    <td id="r17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r17')"></td>
-                    <td id="r18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r18')"></td>
-                    <td id="r19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r19')"></td>
-                    <td id="r20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('r20')"></td>
+                    <td id="r1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r1')"></td>
+                    <td id="r2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r2')"></td>
+                    <td id="r3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r3')"></td>
+                    <td id="r4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r4')"></td>
+                    <td id="r5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r5')"></td>
+                    <td id="r6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r6')"></td>
+                    <td id="r7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r7')"></td>
+                    <td id="r8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r8')"></td>
+                    <td id="r9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r9')"></td>
+                    <td id="r10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r10')"></td>
+                    <td id="r11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r11')"></td>
+                    <td id="r12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r12')"></td>
+                    <td id="r13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r13')"></td>
+                    <td id="r14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r14')"></td>
+                    <td id="r15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r15')"></td>
+                    <td id="r16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r16')"></td>
+                    <td id="r17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r17')"></td>
+                    <td id="r18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r18')"></td>
+                    <td id="r19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r19')"></td>
+                    <td id="r20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('r20')"></td>
                 </tr>
                 <tr>
-                    <td id="s1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s1')"></td>
-                    <td id="s2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s2')"></td>
-                    <td id="s3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s3')"></td>
-                    <td id="s4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s4')"></td>
-                    <td id="s5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s5')"></td>
-                    <td id="s6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s6')"></td>
-                    <td id="s7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s7')"></td>
-                    <td id="s8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s8')"></td>
-                    <td id="s9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s9')"></td>
-                    <td id="s10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s10')"></td>
-                    <td id="s11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s11')"></td>
-                    <td id="s12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s12')"></td>
-                    <td id="s13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s13')"></td>
-                    <td id="s14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s14')"></td>
-                    <td id="s15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s15')"></td>
-                    <td id="s16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s16')"></td>
-                    <td id="s17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s17')"></td>
-                    <td id="s18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s18')"></td>
-                    <td id="s19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s19')"></td>
-                    <td id="s20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('s20')"></td>
+                    <td id="s1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s1')"></td>
+                    <td id="s2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s2')"></td>
+                    <td id="s3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s3')"></td>
+                    <td id="s4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s4')"></td>
+                    <td id="s5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s5')"></td>
+                    <td id="s6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s6')"></td>
+                    <td id="s7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s7')"></td>
+                    <td id="s8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s8')"></td>
+                    <td id="s9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s9')"></td>
+                    <td id="s10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s10')"></td>
+                    <td id="s11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s11')"></td>
+                    <td id="s12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s12')"></td>
+                    <td id="s13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s13')"></td>
+                    <td id="s14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s14')"></td>
+                    <td id="s15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s15')"></td>
+                    <td id="s16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s16')"></td>
+                    <td id="s17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s17')"></td>
+                    <td id="s18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s18')"></td>
+                    <td id="s19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s19')"></td>
+                    <td id="s20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('s20')"></td>
                 </tr>
                 <tr>
-                    <td id="t1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t1')"></td>
-                    <td id="t2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t2')"></td>
-                    <td id="t3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t3')"></td>
-                    <td id="t4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t4')"></td>
-                    <td id="t5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t5')"></td>
-                    <td id="t6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t6')"></td>
-                    <td id="t7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t7')"></td>
-                    <td id="t8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t8')"></td>
-                    <td id="t9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t9')"></td>
-                    <td id="t10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t10')"></td>
-                    <td id="t11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t11')"></td>
-                    <td id="t12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t12')"></td>
-                    <td id="t13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t13')"></td>
-                    <td id="t14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t14')"></td>
-                    <td id="t15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t15')"></td>
-                    <td id="t16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t16')"></td>
-                    <td id="t17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t17')"></td>
-                    <td id="t18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t18')"></td>
-                    <td id="t19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t19')"></td>
-                    <td id="t20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleColor('t20')"></td>
+                    <td id="t1" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t1')"></td>
+                    <td id="t2" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t2')"></td>
+                    <td id="t3" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t3')"></td>
+                    <td id="t4" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t4')"></td>
+                    <td id="t5" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t5')"></td>
+                    <td id="t6" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t6')"></td>
+                    <td id="t7" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t7')"></td>
+                    <td id="t8" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t8')"></td>
+                    <td id="t9" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t9')"></td>
+                    <td id="t10" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t10')"></td>
+                    <td id="t11" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t11')"></td>
+                    <td id="t12" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t12')"></td>
+                    <td id="t13" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t13')"></td>
+                    <td id="t14" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t14')"></td>
+                    <td id="t15" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t15')"></td>
+                    <td id="t16" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t16')"></td>
+                    <td id="t17" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t17')"></td>
+                    <td id="t18" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t18')"></td>
+                    <td id="t19" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t19')"></td>
+                    <td id="t20" style="background-image: url('/Content/image/Plains.png');width:35px;height:35px; display:none" onclick="toggleImage('t20')"></td>
                 </tr>
             </tbody>
         </table>
@@ -511,7 +508,7 @@
     </body>
 
 <script>
-    function toggleColor(id) {
+    function toggleImage(id) {
         var x = document.getElementById(id);
         if (x.style.backgroundImage === 'url("/Content/image/Plains.png")') {
             x.style.backgroundImage = 'url("/Content/image/Water.png")';
@@ -579,6 +576,7 @@
     }
 
     function save() {
+        saveState = "";
         var temp;
         var count1;
         var count2;
@@ -591,19 +589,19 @@
                     saveState = saveState + '1';
                 } else if (temp.style.backgroundImage == 'url("/Content/image/Forest.png")') {
                     saveState = saveState + '2';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/Mountain.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/Mountain.png")') {
                     saveState = saveState + '3';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/pavement.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/pavement.png")') {
                     saveState = saveState + '4';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/Crag.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/Crag.png")') {
                     saveState = saveState + '5';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/armory.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/armory.png")') {
                     saveState = saveState + '6';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/chest.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/chest.png")') {
                     saveState = saveState + '7';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/house.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/house.png")') {
                     saveState = saveState + '8';
-                } else if (temp.style.backgroundColor == 'url("/Content/image/fort.png")') {
+                } else if (temp.style.backgroundImage == 'url("/Content/image/fort.png")') {
                     saveState = saveState + '9';
                 }
             }
@@ -612,7 +610,6 @@
         saveState = "";
         document.getElementById("MapLandtest").value = seed;
     }
-
 </script>
 
 

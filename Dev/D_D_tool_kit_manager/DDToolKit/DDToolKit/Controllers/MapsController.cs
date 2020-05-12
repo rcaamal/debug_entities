@@ -101,8 +101,6 @@ namespace DDToolKit.Controllers
         {
             map.OwnerID = User.Identity.GetUserId();
             map.GameID = map.GameID;
-            //map.MapLand = "0000";
-            //map.MapObjects = "0000";
             if (ModelState.IsValid)
             {
                 db.Entry(map).State = EntityState.Modified;
