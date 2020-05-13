@@ -26,7 +26,7 @@
     var monster19 = ViewBag.Mon19;
     var monster20 = ViewBag.Mon20;
 }
-    <body onload="test()">
+    <body onload="test()" style="background-color:antiquewhite">
         <h4>Have fun!</h4>
         <div id="testing"></div>
         @Html.ActionLink("Back to List", "Index")
@@ -4059,7 +4059,7 @@
                 $(this).closest("tr").next().remove();
             });
         </script>
-        <table style="width:40%">
+        <table style="width:100%">
             <tr>
                 <td style="text-align:center">
                     Four-sided Die
@@ -4178,9 +4178,9 @@
             <button id="SpellLargeScreen" type="button" value="spells Large Screen"> Show spells in large Window</button>
         </div>
         <div class="col-lg-6">
-            <iframe id="SpellsmallFrame" src="/Creatures/Spells" height="300" width="300"></iframe>
-            <iframe id="SpellmidFrame" src="/Creatures/Spells" height="600" width="400"></iframe>
-            <iframe id="SpellLargeFrame" src="/Creatures/Spells" height="800" width="400"></iframe>
+            <iframe id="SpellsmallFrame" src="/Spell/index" height="300" width="300"></iframe>
+            <iframe id="SpellmidFrame" src="/Spell/index" height="600" width="400"></iframe>
+            <iframe id="SpellLargeFrame" src="/Spell/index" height="800" width="400"></iframe>
         </div>
     </div>
 </div>
