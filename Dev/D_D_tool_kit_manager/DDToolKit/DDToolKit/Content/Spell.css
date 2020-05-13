@@ -1,34 +1,36 @@
 ﻿
 
-.equipIndex{
-    text-align:center;
+.SpellIndex {
+    text-align: center;
     font-family: Algerian;
-    color:black;
+    color: black;
 }
 
-#smartEquip{
-
-    font-size:16px;
-    color: Black;
+#SmartSpell {
+    font-size: 14px;
+   
 }
 
-.equipResult {
+.SpellResult {
     font-family: 'Arabic Typesetting';
     color:black;
+
+
 }
 
-.linkColor{
-    color:black;
-    font-size:30px;
+.linkColor {
+    color: black;
+    font-size: 30px;
 }
 
 .container {
     text-align: center;
+    
 }
 
-.h1Details{
-    text-align:center;
-    color:white;
+.h1Details {
+    text-align: center;
+    color: white;
 }
 
 h4 {
@@ -43,4 +45,5 @@ p {
     font-family: 'Times New Roman';
     color: white;
 }
+
 

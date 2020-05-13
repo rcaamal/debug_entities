@@ -1,0 +1,70 @@
+﻿h1 {
+    border: double;
+    border-color: #023f05;
+    border-width: 20px;
+    padding: 5px;
+    background-color: #49563b;
+    display: inline-table;
+    color: #4a83c8;
+    font-family: fantasy;
+}
+
+h3 {
+    border: double;
+    border-color: #023f05;
+    border-width: 20px;
+    padding: 5px;
+    background-color: #49563b;
+    display: inline-grid;
+    color: #4a83c8;
+    font-family: fantasy;
+}
+
+div.aboutUS {
+    border: dotted;
+    border-color: #023f05;
+    border-width: medium;
+    background-color: #49563b;
+    display: inline-grid;
+    color: #4a83c8;
+    font-family: 'Traditional Arabic';
+    font-size: medium;
+}
+
+div.site {
+    border: dotted;
+    border-color: #023f05;
+    border-width: medium;
+    background-color: #49563b;
+    display: inline-grid;
+    color: #4a83c8;
+    font-family: 'Traditional Arabic';
+    font-size: medium;
+    padding: 5px;
+}
+
+
+div.ddBlock {
+    border: dotted;
+    border-color: #023f05;
+    border-width: medium;
+    background-color: #49563b;
+    display: inline-grid;
+    color: #4a83c8;
+    font-family: 'Traditional Arabic';
+    font-size: medium;
+    padding: 5px;
+}
+
+
+div.claim {
+    border: dotted;
+    border-color: #023f05;
+    border-width: medium;
+    background-color: #49563b;
+    display: inline-grid;
+    color: #4a83c8;
+    font-family: 'Traditional Arabic';
+    font-size: medium;
+    padding: 5px;
+}

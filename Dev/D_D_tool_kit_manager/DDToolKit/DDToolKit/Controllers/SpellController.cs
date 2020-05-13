@@ -6,11 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DDToolKit.Models;
 
 namespace DDToolKit.Controllers
 {
     public class SpellController : Controller
     {
+        private gameModel db = new gameModel();
+        private Magic dbMagic = new Magic();
+
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -32,9 +36,10 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Spell
-
+        [Authorize]
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -43,7 +48,7 @@ namespace DDToolKit.Controllers
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/spells");
             JObject data = JObject.Parse(json);
-
+            
             List<string> list = new List<string>();
 
             for (int i = 0; i < (int)data["count"]; i++)
@@ -54,7 +59,7 @@ namespace DDToolKit.Controllers
                     list.Add((string)data["results"][i]["index"]);
                 }
             }
-
+            
             ViewBag.SpellList = list;
             ViewBag.Success = true;
             return View();
@@ -225,7 +230,15 @@ namespace DDToolKit.Controllers
             return View();
 
         }
+        
+        public JsonResult smartSearch(string search)
+        {
+            
 
+            var magicName = db.Magics.Where(x => x.Name.Contains(search)).Select(x => new { ID = x.ID, Name = x.Name }).ToList();
 
+            string temp = "We got your search : " + search;
+            return Json(magicName, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -16,30 +16,30 @@
     background-size: cover;
     ">
     <link href="~/Content/blogView.css" rel="stylesheet" type="text/css" />
-    <h1>  D&D Post</h1>
+    <h1>  D&D Comments</h1>
 
 
     <p class="nuevo">
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="Grid" id="blogView">
-        <tr>
+               @* <tr>
 
-            <th class="comments"> Comments</th>
-            @*  <th>
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Post)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Published)
-                </th>*@
-            <th></th>
-        </tr>
+                    <p class="comments"> Comments</th>
+                    <th>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Post)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Published)
+                        </th>
+                    <th></th>
+                </tr>*@
 
 
         <tr>
@@ -77,24 +77,24 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td class="additional">
+                                    @* <tr>
+                        <td class="additional">
 
-                                @("Edit") |
-                                
-                                @("Delete")
-                            
+                            @("Edit") |
+
+                            @("Delete")
 
 
-                                @*
-                                @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.PostID })*@
-                            </td>
-                        </tr>
+
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
+                        </td>
+                                    </tr>*@
                         <tr>
                             <td class="sep">
-                                ----------------------------------------------------------------------------------------------------------------------
+                                --------------------------------------------------------------------------------------------
                             </td>
                         </tr>
                     }
@@ -104,7 +104,6 @@
             </td>
 
 
-        </tr>
     </table>
 
 </body>
