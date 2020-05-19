@@ -198,6 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapsController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="Controllers\SpellController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
@@ -496,6 +497,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Item\" />
+    <Folder Include="Views\Quiz\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
