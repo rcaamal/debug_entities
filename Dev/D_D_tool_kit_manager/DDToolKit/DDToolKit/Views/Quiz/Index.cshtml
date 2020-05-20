@@ -1,0 +1,45 @@
+﻿@using (Html.BeginForm("index", "Home", FormMethod.Post))
+{
+    
+    <div class="row">
+        <h3>what it your name?</h3>
+        <div>
+            @Html.RadioButton("Ans1", "1", true) @Html.Label("", "zaid", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans1", "2") @Html.Label("", "zzz", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans1", "3") @Html.Label("", "zza", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans1", "4") @Html.Label("", "vfv", new { @class = "answer-label" })
+        </div>
+
+        <h3>what it your name?</h3>
+        <div>
+            @Html.RadioButton("Ans2", "1") @Html.Label("", "zaid", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans2", "2") @Html.Label("", "zzz", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans2", "3", true) @Html.Label("", "zza", new { @class = "answer-label" })
+        </div>
+        <div>
+            @Html.RadioButton("Ans2", "4") @Html.Label("", "vfv", new { @class = "answer-label" })
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary quiz-submit" type="submit" id="q1-submit" value="Finish Quiz..." />
+        </div>
+
+    </div>
+
+    <div class="item">
+        <div class="row"> <h4>QUIZ RESULTS</h4></div>
+    </div>
+
+
+
+        }
