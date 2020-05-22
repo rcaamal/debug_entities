@@ -495,7 +495,7 @@
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Web_deploy.config" />
     <Content Include="Views\Home\Acknowledgement.cshtml" />
-    <Content Include="Views\Quiz\Index.cshtml" />
+    <Content Include="Views\Quiz\Questions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Item\" />

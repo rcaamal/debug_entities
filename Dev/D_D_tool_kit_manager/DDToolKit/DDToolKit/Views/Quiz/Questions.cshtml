@@ -1,0 +1,384 @@
+﻿
+
+
+    <div class="container information-paragraphs dark-bkr">
+        @using (Html.BeginForm("Questions", "Quiz", FormMethod.Post))
+        {
+
+            <div class="container-fluid planets-btn-grp">
+                <div class="btn-group btn-group-justified" role="group">
+                    <a href="#" class="btn planets-btn active" data-target="#quiz1-carousel" data-slide-to="0">Start</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="1">1</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="2">2</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="3">3</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="4">4</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="5">5</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="6">6</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="7">7</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="8">8</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="9">9</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="10">10</a>
+                    <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="10" onclick="calculateQuiz1Score()">Finish</a>
+                </div>
+            </div>
+
+
+            <div class="container-fluid carousel-container">
+                <div id="quiz1-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner" style="height:600px">
+                        <div class="item active">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Quiz: DnD Game Questions</h2>
+                                    <h3> This page will test your knowledge about the game and about the website.</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 1</h2>
+                                    <h3>Can you cast underwater?</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/f29ada6d-3d56-4bdb-9fd4-faa6b2165dbe.jpg" alt="Alternate Text" />
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <div>
+                                            @Html.RadioButton("a1", "1", true) @Html.Label("", "Yes", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a1", "2") @Html.Label("", "No", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a1", "3") @Html.Label("", "Yes,but fire spells deal no damage", new { @class = "answer-label" })
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 2</h2>
+                                    <h3>Is there alignment restriction for classes in Player's Handbook?</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/d5d32e32-0107-43e5-973b-3acc74a5f76d.jpg" alt="Alternate Text" />
+                                    </div>
+                                    <div class="col-lg-7 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a2", "1", true) No </label>
+                                        </div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a2", "2") Yes </label>
+                                        </div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a2", "3") Yes, paladin must be good and monk lawful</label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 3</h2>
+                                    <h3>Can you knock a creature out with a melee spell attack?</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/1be15517-b12e-461a-a6d3-e60823f63970.jpg" alt="Alternate Text" />
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a3", "1", true) @Html.Label("Yes", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a3", "2") @Html.Label("No, only with a melee weapon", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a3", "3") @Html.Label("Only with spell sniper feat", new { @class = "answer-label" })
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 4</h2>
+                                    <h3>Can you use a shield with Mage Armor spell?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/be192522-c786-4e27-8d74-28258b9f0c44.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a4", "1", true) @Html.Label("Yes, mage armor spells works with a sheild", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a4", "2") @Html.Label("No, they do not stack", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a4", "3") @Html.Label("Only with a light sheild or buckler sheild", new { @class = "answer-label" })
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 5</h2>
+                                    <h3>A monster is immune to damage from nonmagical bludgeoning weapons. Does he still take damage from falling?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/2be5c777-9da2-45b6-a06c-35bf6efccafa.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a5", "1", true) @Html.Label("Yes, fall is not a weapon", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a5", "2") @Html.Label("No, fall is a weapon", new { @class = "answer-label" })
+                                        </div>
+
+                                        <div>
+                                            @Html.RadioButton("a5", "2") @Html.Label("Yes, but has resistance to damage", new { @class = "answer-label" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 6</h2>
+                                    <h3>If a 5th level wizard casts a Fireball during surprise, do the enemies get disadvantage on their saving throw?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/a09d152d-cc14-49d1-85fa-685d07352fef.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a6", "1", true) @Html.Label("No", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a6", "2") @Html.Label("Yes", new { @class = "answer-label" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 7</h2>
+                                    <h3>Is a 1 on an ability check an automatic failure?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/674677d0-109a-4b90-8d1a-feae54e8eef3.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a7", "1", true) @Html.Label("No, is not an automatic failure", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a7", "2") @Html.Label("Yes", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a7", "3") @Html.Label("Yes and roll a d10 on fumble table", new { @class = "answer-label" })
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 8</h2>
+                                    <h3>Can a rogue get sneak attack damage against undead?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/eba670a9-a041-4bc1-949a-56abd37996a1.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            @Html.RadioButton("a8", "1", true) @Html.Label("Yep, sneak attack works against undead", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a8", "2") @Html.Label("nope", new { @class = "answer-label" })
+                                        </div>
+                                        <div>
+                                            @Html.RadioButton("a8", "3") @Html.Label("only if you use a bludgeoning weapon", new { @class = "answer-label" })
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 9</h2>
+                                    <h3>If you have a creature between you and the target...</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/e6624878-70bc-4d42-8174-6ffd323d9c0b.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
+                                        <div style="height:20px"></div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a9", "1", true) Target has half-cover + 2 bouns to AC</label>
+                                        </div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a9", "2") you have disadvantage</label>
+                                        </div>
+                                        <div>
+                                            <label class="answer-label">@Html.RadioButton("a9", "3") Target has cover + 4 bouns to AC </label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Question 10</h2>
+                                    <h3>Can you make an attack action from Prone condition?</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img style="height:250px; width:250px" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/e6f4b0e4-bcd2-4486-954e-9fb0274b0f32/abc1d6f7-98ca-48a7-8b4c-854bc8131f3e.jpg" alt="Alternate Text" />
+
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <div style="height:20px"></div>
+                                            <div>
+                                                @Html.RadioButton("a10", "1", true) @Html.Label("Yes, but you have disadvantage on attack rolls", new { @class = "answer-label" })
+                                            </div>
+                                            <div>
+                                                @Html.RadioButton("a10", "2") @Html.Label("only with a weapon with reach property", new { @class = "answer-label" })
+                                            </div>
+                                            <div>
+                                                @Html.RadioButton("a10", "3") @Html.Label("No", new { @class = "answer-label" })
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="btn btn-primary quiz-submit" type="submit" id="q1-submit" value="Finish Quiz..." />
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-lg-2"></div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <h2>Quiz Results</h2>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <button class="btn-primary" onclick="location.href = 'QuizSelection';">Try a different quiz.</button>
+                                    </div>
+
+                                    <div class="col-lg-6">
+
+                                        <ol style="font-size:20px">
+                                            <li id="a1"></li>
+                                            <li id="a2"></li>
+                                            <li id="a3"></li>
+                                            <li id="a4"></li>
+                                            <li id="a5"></li>
+                                            <li id="a6"></li>
+                                            <li id="a7"></li>
+                                            <li id="a8"></li>
+                                            <li id="a9"></li>
+                                            <li id="a10"></li>
+                                        </ol>
+                                        <div style="font-size:20px; text-align:center; width:120px" id="total"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+
+
+@section scripts{
+    <script src="~/Scripts/quiz.js">
+    </script>
+}
