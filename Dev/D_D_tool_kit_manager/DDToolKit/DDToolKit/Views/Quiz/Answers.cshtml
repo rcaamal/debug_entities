@@ -1,0 +1,55 @@
+﻿
+
+
+
+<div class="row">
+    <h3>Your score is: @ViewBag.correctAnswers / 10</h3>
+    <div class="col-lg-4">
+        @if (ViewBag.correctAnswers <= 4)
+        {
+
+            <div class="row">
+                <h3>To View The correct Answers, please click <a href="#" id="viewAnswers">HERE</a>, or if you prefer to take it again without looking at the answers yet, please click <a href="/Quiz/Questions"> Here</a></h3>
+                <div id="showAnswers" class="col-lg-8">
+                    <p><h3>The correct answer for question one is:</h3> Yes</p>
+                    <p><h3>The correct answer for question two is:</h3>No</p>
+                    <p><h3>The correct answer for question three is:</h3> Yes </p>
+                    <p><h3>The correct answer for question four is:</h3> Yes, mage armor spells works with a sheild</p>
+                    <p><h3>The correct answer for question five is:</h3> Yes, fall is not a weapon</p>
+                    <p><h3>The correct answer for question six is:</h3> No</p>
+                    <p><h3>The correct answer for question seven is:</h3> No, is not an automatic failure</p>
+                    <p><h3>The correct answer for question eight is:</h3> Yep, sneak attack works against undead</p>
+                    <p><h3>The correct answer for question nine is:</h3> Target has half-cover + 2 bouns to AC</p>
+                    <p><h3>The correct answer for question ten is:</h3> Yes, but you have disadvantage on attack rolls</p>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+        }
+    </div>
+    <div class="col-lg-4">
+        @if (ViewBag.correctAnswers == 7)
+        {
+            <h3>Only 3 mistakes. Not too bad. To redo the quiz, please click <a href="/Quiz/Questions"> Here</a> </h3>
+        }
+    </div>
+    <div class="col-lg-4">
+        @if (ViewBag.correctAnswers > 7)
+        {
+            <h3>Wow, You must be pro in the game</h3>
+        }
+    </div>
+
+
+
+</div>
+
+<h1>Click <a href="/Quiz/Questions"> Here</a> to return to the quiz page </h1>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/quiz.js">
+    </script>
+}

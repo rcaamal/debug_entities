@@ -28,59 +28,131 @@ namespace DDToolKit.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Questions(int? a1, int? a2, int? a3, int? a4, int? a5,
-            int? a6, int? a7, int? a8, int? a9, int? a10)
+        [HttpGet]
+        public ActionResult Answers()
         {
-            List<string> results = new List<string>();
-
-            results.Add(AnswerChecker(a1, 2));
-            results.Add(AnswerChecker(a2, 1));
-            results.Add(AnswerChecker(a3, 4));
-            results.Add(AnswerChecker(a4, 3));
-            results.Add(AnswerChecker(a5, 2));
-            results.Add(AnswerChecker(a6, 1));
-            results.Add(AnswerChecker(a7, 1));
-            results.Add(AnswerChecker(a8, 2));
-            results.Add(AnswerChecker(a9, 2));
-            results.Add(AnswerChecker(a10, 3));
-
-
-
-            int correctCount = 0;
-            for (int i = 0; i < results.Count; i++)
-            {
-                if (results[i] == "Correct")
-                {
-                    correctCount++;
-                }
-            }
-
-
-
-
-            ViewBag.Results = results;
             return View();
         }
 
+
+
         [HttpPost]
-        public ActionResult Answers(int numAnswers)
+        public ActionResult Answers(int? Ans1, int? Ans2, int? Ans3, int? Ans4, int? Ans5,
+            int? Ans6, int? Ans7, int? Ans8, int? Ans9, int? Ans10)
         {
+            int correctAnswers = 0;
             List<string> myList = new List<string>();
 
-            //numAnswers = 0;
-            for (int i = 0; i < myList.Count(); i++)
+
+            
+           if(Ans1 == 2)
             {
-                if (myList[i] == "Correct")
-                {
-                    
-                }
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans2 == 3)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans3 == 2)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans4 == 1)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans5 == 2)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans6 == 2)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans7 == 3)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans8 == 1)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans9 == 3)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
+            }
+            if (Ans10 == 1)
+            {
+                myList.Add("Correct");
+                correctAnswers++;
+            }
+            else
+            {
+                myList.Add("Wrong");
             }
 
+            ViewBag.correctAnswers = correctAnswers;
             ViewBag.Answers = myList;
             return View();
 
-
+            /*
+             * List of correct answers
+             * 1. Yes    
+             * 2. No    
+             * 3. Yes   
+             * 4. Yes, mage armor spells works with a sheild    
+             * 5. Yes, fall is not a weapon     
+             * 6. No    
+             * 7. No, is not an automatic failure   
+             * 8. Yep, sneak attack works against undead    
+             * 9. Target has half-cover + 2 bouns to AC     
+             * 10. Yes, but you have disadvantage on attack rolls   
+             */
         }
 
 
