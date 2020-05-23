@@ -4,70 +4,78 @@
     ViewBag.Title = "Manage";
     var gameid = ViewBag.gameid;
 }
+<body style="background-image:url('/Content/Wallpapers/wallpaper_Illo-5-1024x522.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
+    <div style="background-color:antiquewhite">
+        <h2>Manage</h2>
+        <p>@Html.ActionLink("Back to List", "Index", "Saves")</p>
+        <table class="table">
+            <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.OwnerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GameID)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MapWidth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MapHeight)
+                </th>
+                <th>
+                    <p></p>
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.MapLand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MapObjects)
+                </th>*@
+                <th></th>
+            </tr>
 
-<h2>Manage</h2>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.OwnerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameID)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MapWidth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MapHeight)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Play with this map", "Game", "Saves", new { id = gameid, mapid = item.ID }, null)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.MapLand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MapObjects)
+                    </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
 
-<table class="table">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.OwnerID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GameID)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MapWidth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MapHeight)
-        </th>
-        <th>
-            <p></p>
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.MapLand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MapObjects)
-        </th>*@
-        <th></th>
-    </tr>
+        </table>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.OwnerID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameID)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MapWidth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MapHeight)
-        </td>
-        <td>
-            @Html.ActionLink("Play with this map", "Game", "Saves", new { id = gameid, mapid = item.ID }, null)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.MapLand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MapObjects)
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+    </div>
+</body>

@@ -1,0 +1,49 @@
+﻿
+
+.SpellIndex {
+    text-align: center;
+    font-family: Algerian;
+    color: black;
+}
+
+#SmartSpell {
+    font-size: 14px;
+   
+}
+
+.SpellResult {
+    font-family: 'Arabic Typesetting';
+    color:black;
+
+
+}
+
+.linkColor {
+    color: black;
+    font-size: 30px;
+}
+
+.container {
+    text-align: center;
+    
+}
+
+.h1Details {
+    text-align: center;
+    color: white;
+}
+
+h4 {
+    text-align: center;
+    font-family: Algerian;
+    color: white;
+}
+
+
+p {
+    text-align: center;
+    font-family: 'Times New Roman';
+    color: white;
+}
+
+

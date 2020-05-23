@@ -1,8 +1,7 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
 * {
-    margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -12,11 +11,12 @@
 
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 30px;
+
+    font-size: 10px;
+   
     color: #000;
     background: #0CF;
+   
 }
 
 .wrapper #error_message{
@@ -31,23 +31,37 @@ body {
 }
 
 #contact {
-    background: #F9F9F9;
-    padding: 25px;
+    padding: 15px;
     margin: 300px 0;
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
     position: relative;
+    border: double;
+    border-width:thick;
+    border-color: #0CF;
+    background-color: silver;
 }
-
+h1 {
+    background-color: silver;
+    border: double;
+    border-width: thick;
+    border-color: #0CF;
+    display: inline-block;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #057490;
+    font-size:x-large;
+}
     #contact h3 {
-        color: #F96;
+        color: #057490;
         display: block;
         font-size: 30px;
         font-weight: 400;
+      
     }
 
     #contact h4 {
+        color: #057490;
         margin: 5px 0 15px;
         display: block;
         font-size: 13px;
@@ -91,7 +105,9 @@ fieldset {
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
+    
 }
+
 
     #contact button[type="submit"]:hover {
         background: #09C;

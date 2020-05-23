@@ -103,6 +103,7 @@ namespace DDToolKit.Controllers
 
 
         // GET: Creatures
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Creatures.ToList());
@@ -305,5 +306,17 @@ namespace DDToolKit.Controllers
             }
             return name;
         }
+
+        public JsonResult smartSearch(string search)
+        {
+
+
+            var magicName = db.Creatures.Where(x => x.Name.Contains(search)).Select(x => new { ID = x.ID, Name = x.Name }).ToList();
+
+            //string temp = "We got your search : " + search;
+            return Json(magicName, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

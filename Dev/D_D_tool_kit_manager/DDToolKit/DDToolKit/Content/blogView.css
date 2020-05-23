@@ -1,14 +1,13 @@
 ﻿body {
     color: #000000;
-    padding-left: 435px;
-    padding-right: 435px;
+   
     display: initial;
 }
 
 table {
     background-color: #808080;
-    resize: initial;
-    display: compact;
+    
+    margin-left:130px;
 }
 
 p.nuevo {
@@ -20,7 +19,7 @@ p.nuevo {
     padding-right: 35px;
     display: inline-table;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    margin-left: 135px;
+    margin-left: 85px;
 }
 
 
@@ -34,22 +33,24 @@ h1 {
     padding-right: 35px;
     display: inline-table;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    margin-left: 135px;
+    margin-left: 395px;
 }
 
 p {
     color: black;
 }
 
-th.comments {
-    padding-right: 155px;
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    margin-right: 5580px;
-    font-size: large;
-    color: #066380;
-    align-content: center;
-    position: center;
-}
+    p.comments {
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        font-size: large;
+        color: #066380;
+        margin-left: 230px;
+        border: groove;
+        display: inline-table;
+        border-width: thick;
+        border-color: #333030;
+        background-color:black;
+    }
 
 
 p.username {
@@ -120,5 +121,5 @@ td.showpub {
 }
 
 td.additional {
-    padding-left: 30px;
+    padding-left: 10px;
 }

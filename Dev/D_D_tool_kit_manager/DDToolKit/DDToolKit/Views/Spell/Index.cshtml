@@ -1,17 +1,36 @@
-﻿
+﻿@model  DDToolKit.Models.Magic
+
 
 @{
     ViewBag.Title = "Spells";
 }
 
+<body style="background-color:rgba(192,192,192,0.3);"></body>
+
+@Styles.Render("~/Content/Spell.css")
+
 @using (Html.BeginForm("Index", "Spell", FormMethod.Post))
 {
-    <div class="form-group">
-        <div class="search">
-            @Html.TextBox("spellName", null, new { @class = "form-control", type = "text" })
-            <button class="btn btn-primary" type="submit">Search</button>
+    <div class="row">
+        <h2 class="SpellIndex">Welcome to the spell Page!</h2>
+        <div class="col-lg-4">
+
         </div>
+        <div class="col-lg-4">
+            <div class="form-group ">
+                <div class="search text-center">
+                    @Html.TextBox("spellName", null, new { @class = "form-control", type = "text", placeholder = "Search for a spell name", id = "SmartSpell"})
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-primary" type="submit"> Search </button>
+        </div>
+
+
     </div>
+
 }
 <div class="container">
     @if (ViewBag.Success == true)
@@ -19,8 +38,15 @@
         foreach (var item in ViewBag.spellList)
         {
             string Spell = item.ToString();
-            <h4><a href="/Spell/spellInfo?spellName=@Spell">@Spell</a></h4>
+            <h4 class="SpellResult"><a class="linkColor" href="/Spell/spellInfo?spellName=@Spell">@Spell</a></h4>
         }
 
     }
 </div>
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/autoCompleteSpells.js"></script>
+
+}

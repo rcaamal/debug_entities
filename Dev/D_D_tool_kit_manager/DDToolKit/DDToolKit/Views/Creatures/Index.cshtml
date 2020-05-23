@@ -6,45 +6,71 @@
 
 
 
-<body style="background-image: url(https://storage.needpix.com/rsynced_images/dark-brown-background-1450781607k3z.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    ">
+<body style="background-color:rgba(192,192,192,0.3);">
 </body>
 
 <h2 class="Silver">Check to See The Monsters currently in the database!</h2>
 
 @using (Html.BeginForm("Index", "Creatures", FormMethod.Post))
 {
-    <p>
-        <div class="Searchable">
-            @Html.TextBox("SearchName")
-            <input type="submit" value="Search"/>
-            <br />
+    <div class="row">
+
+
+
+        <div class="col-lg-4">
+
         </div>
-    </p>
+        <div class="col-lg-4">
+
+            <p>
+                <div class="Searchable">
+                    @Html.TextBox("SearchName", null, new { @class = "form-control", type = "text", placeholder = "Search for a Monster name", id = "smartCreature" })
+                </div>
+            </p>
+
+        </div>
+        <div class="col-lg-4">
+            <input type="submit" value="Search" />
+        </div>
+    </div>
+
 }
 
+<div class="row">
+   
+    <div id="hideTable" class="col-lg-4">
 
-<table class="Silver">
-    <tr class="Silver">
-        <th class="Silver">
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+        <table class="Silver">
+            <tr class="Silver">
+                <th class="Silver">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+
+    </div>
+    <div class="col-lg-8"></div>
+</div>
 
 
 
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+    <script type="text/javascript" src="~/Scripts/autocompleteSmartMonster.js"></script>
+
+}
 
