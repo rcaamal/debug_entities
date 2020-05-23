@@ -8,10 +8,10 @@ namespace DDToolKit.Models
     public partial class PostModel : DbContext
     {
         public PostModel()
-         // : base("name=Monsters")
+          : base("name=Monsters")
 
 
-        : base("name=DDToolContext_Azure")
+        //: base("name=DDToolContext_Azure")
 
 
         {
