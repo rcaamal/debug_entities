@@ -1,4 +1,4 @@
-namespace DDToolKit.DAL
+namespace DDToolKit.Models
 {
     using System;
     using System.Collections.Generic;

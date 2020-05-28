@@ -1,6 +1,6 @@
 namespace DDToolKit.Model
 {
-    using DAL;
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

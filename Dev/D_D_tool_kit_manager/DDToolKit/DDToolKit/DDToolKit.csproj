@@ -200,13 +200,13 @@
     <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\SavesController.cs" />
     <Compile Include="Controllers\SpellController.cs" />
-    <Compile Include="DAL\AspNetRole.cs" />
-    <Compile Include="DAL\AspNetUser.cs" />
-    <Compile Include="DAL\AspNetUserClaim.cs" />
-    <Compile Include="DAL\AspNetUserLogin.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\BlogPost.cs" />
     <Compile Include="Models\Creature.cs" />
-    <Compile Include="DAL\Monsters.cs" />
+    <Compile Include="Models\Monsters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -493,8 +493,10 @@
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Web_deploy.config" />
     <Content Include="Views\Home\Acknowledgement.cshtml" />
+    <Content Include="Views\Manage\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DAL\" />
     <Folder Include="Views\Item\" />
   </ItemGroup>
   <ItemGroup>

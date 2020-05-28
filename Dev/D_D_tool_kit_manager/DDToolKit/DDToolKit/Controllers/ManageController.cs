@@ -333,6 +333,60 @@ namespace DDToolKit.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
+        [HttpGet]
+        public async Task<ActionResult> Delete()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+
+
+
+
+            return View(user);
+
+        }
+
+
+
+
+        [Authorize]
+        [HttpPost, ActionName("Delete")]
+        public async Task<ActionResult> DeleteConfirmed()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            var result = await UserManager.DeleteAsync(user);
+
+            string[] myCookies = Request.Cookies.AllKeys;
+
+            HttpCookie aCookie = new HttpCookie("lastVisit");
+            aCookie.Value = DateTime.Now.ToString();
+            aCookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(aCookie);
+
+            foreach (string cookie in myCookies)
+            {
+                Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-1);
+            }
+
+            if (result.Succeeded)
+            {
+
+
+
+
+
+                return RedirectToAction("Index", "Home");
+            }
+
+
+
+
+            return View();
+        }
+
+
+
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
@@ -379,6 +433,7 @@ namespace DDToolKit.Controllers
             ChangePasswordSuccess,
             SetTwoFactorSuccess,
             SetPasswordSuccess,
+            Delete,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
             Error
