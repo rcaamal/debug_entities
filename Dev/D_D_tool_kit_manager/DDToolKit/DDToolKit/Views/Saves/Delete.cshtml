@@ -27,14 +27,14 @@
             @Html.DisplayFor(model => model.OwnerID)
         </dd>
 
-        <dt>
+       <dt>
             @Html.DisplayNameFor(model => model.Monsters)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Monsters)
         </dd>
-
+           
         <dt>
             @Html.DisplayNameFor(model => model.Magic)
         </dt>
@@ -45,7 +45,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -54,3 +55,5 @@
         </div>
     }
 </div>
+
+
