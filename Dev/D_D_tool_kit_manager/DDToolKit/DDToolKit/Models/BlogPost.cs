@@ -18,6 +18,7 @@ namespace DDToolKit.Models
         [StringLength(50)]
         public string Title { get; set; }
 
+        
         public string Post { get; set; }
 
         [Column(TypeName = "date")]
