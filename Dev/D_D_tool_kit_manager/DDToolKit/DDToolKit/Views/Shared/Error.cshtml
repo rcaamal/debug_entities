@@ -4,6 +4,26 @@
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<body style="background-image:url('/Content/image/error.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    ">
 
+    <div style="background-color: #A52A2a;  height: 10px;">
+    </div>
+    <div style="background-color: #000000; color: White; height: 170px;">
+        <div style=" padding:20px;">
+            <h3>
+                Application Error:
+            </h3>
+            <h4>
+                Sorry for the inconveience, an error occurred while processing your request.
+            </h4>
+            <h6>@Html.ActionLink("Go Back To Home Page", "Index", "Home")</h6>
+            <br />
+            <br />
+        </div>
+    </div>
+    <div style="background-color: #A52A2a; color: White; height: 20px;">
+    </div>
+    </body>

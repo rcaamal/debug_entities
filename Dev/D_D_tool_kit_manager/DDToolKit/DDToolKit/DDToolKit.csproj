@@ -252,6 +252,7 @@
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\aboutStyle.css" />
     <Content Include="Content\arStyle.css" />
+    <Content Include="Content\image\error.png" />
     <Content Include="Content\Wallpapers\7x47jnc5lw041.jpg" />
     <Content Include="Content\Wallpapers\exploring_chult.jpg" />
     <Content Include="Content\Wallpapers\featured-magic-setting.png" />
