@@ -17,7 +17,7 @@ namespace DDToolKit.Controllers
     public class CreaturesController : Controller
     {
         private Monsters db = new Monsters();
-
+        [ValidateInput(false)]
         public List<string> TrimProficiency(Creature creature)
         {
             var prof = creature.Proficiencies.Split(';');
@@ -42,7 +42,7 @@ namespace DDToolKit.Controllers
             }
             return proficiency;
         }
-
+        [ValidateInput(false)]
         public List<string> TrimAction(string act)
         {
             if (act == null)
@@ -74,6 +74,7 @@ namespace DDToolKit.Controllers
             return actions;
         }
 
+        [ValidateInput(false)]
         public string TrimString(string text)
         {
             if (text != "[]" || text != "{}")
@@ -91,7 +92,7 @@ namespace DDToolKit.Controllers
             }
             return text;
         }
-
+        [ValidateInput(false)]
         public List<string> TrimAbilities(Creature creature)
         {
             if (creature.SpecialAbilities == null)
@@ -105,6 +106,7 @@ namespace DDToolKit.Controllers
 
         // GET: Creatures
         [Authorize]
+        [ValidateInput(false)]
         public ActionResult Index()
         {
             return View(db.Creatures.ToList());
@@ -112,6 +114,7 @@ namespace DDToolKit.Controllers
 
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Index(String SearchName)
         {
             var Res = db.Creatures.Where(p => p.Name.Contains(SearchName)).ToList();
@@ -121,6 +124,7 @@ namespace DDToolKit.Controllers
 
 
         // GET: Creatures/Details/5
+        [ValidateInput(false)]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -154,6 +158,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Creatures/Create
+        [ValidateInput(false)]
         public ActionResult Create()
         {
             return View();
@@ -164,6 +169,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "ID,Name,Size,Type,Subtype,Alignment,ArmorClass,HitPoints,HitDice,Speed,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Proficiencies,DamageVulnerabilities,DamageResistances,DamageImmunities,ConditionImmunities,Senses,Languages,ChallengeRating,SpecialAbilities,Actions,LegendaryActions,Reactions")] Creature creature)
         {
             if (ModelState.IsValid)
@@ -177,6 +183,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: Creatures/Edit/5
+        [ValidateInput(false)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -196,6 +203,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "ID,Name,Size,Type,Subtype,Alignment,ArmorClass,HitPoints,HitDice,Speed,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,Proficiencies,DamageVulnerabilities,DamageResistances,DamageImmunities,ConditionImmunities,Senses,Languages,ChallengeRating,SpecialAbilities,Actions,LegendaryActions,Reactions")] Creature creature)
         {
             if (ModelState.IsValid)
@@ -263,6 +271,7 @@ namespace DDToolKit.Controllers
         }
 
         [HttpGet]
+        [ValidateInput(false)]
         public ActionResult Spells()
         {
             return View();
@@ -298,7 +307,7 @@ namespace DDToolKit.Controllers
             ViewBag.Success = true;
             return View();
         }
-
+        [ValidateInput(false)]
         public string IsString(string name)
         {
             if (name == null)
@@ -308,6 +317,7 @@ namespace DDToolKit.Controllers
             return name;
         }
 
+        [ValidateInput(false)]
         public JsonResult smartSearch(string search)
         {
 

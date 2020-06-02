@@ -14,7 +14,7 @@ namespace DDToolKit.Controllers
     public class EquipmentController : Controller
     {
         private gameModel db = new gameModel();
-
+        [ValidateInput(false)]
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -37,13 +37,14 @@ namespace DDToolKit.Controllers
 
         // GET: Equipment
         [Authorize]
+        [ValidateInput(false)]
         public ActionResult Index()
         {
            
             return View();
         }
-        
 
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult Index(string equipName)
         {
@@ -66,7 +67,7 @@ namespace DDToolKit.Controllers
             return View();
         }
 
-
+        [ValidateInput(false)]
         public ActionResult equipInfo(string equipName)
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/equipment/" + equipName);
@@ -478,6 +479,7 @@ namespace DDToolKit.Controllers
 
         }
 
+        [ValidateInput(false)]
         public JsonResult smartSearch(string search)
         {
 

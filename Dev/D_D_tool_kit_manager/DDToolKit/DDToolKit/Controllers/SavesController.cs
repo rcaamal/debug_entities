@@ -57,6 +57,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "ID,Name,OwnerID,Monster1,Monster2,Monster3,Monster4,Monster5,Monster6,Monster7,Monster8,Monster9,Monster10,Monster11,Monster12,Monster13,Monster14,Monster15,Monster16,Monster17,Monster18,Monster19,Monster20,Magic")] Save save)
         {
 
@@ -93,6 +94,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "ID,Name,OwnerID,Monster1,Monster2,Monster3,Monster4,Monster5,Monster6,Monster7,Monster8,Monster9,Monster10,Monster11,Monster12,Monster13,Monster14,Monster15,Monster16,Monster17,Monster18,Monster19,Monster20,Magic")] Save save)
         {
             save.OwnerID = User.Identity.GetUserId();
@@ -233,6 +235,24 @@ namespace DDToolKit.Controllers
             {
                 return HttpNotFound();
             }
+
+            Magic db3 = new Magic();
+
+            string magic = (from saves in db.Saves
+
+                            where (saves.ID == id)
+
+                            select saves.Magic).Single();
+
+            if (magic != "" && magic != null)
+
+            {
+
+                ViewBag.MagicName = magic;
+
+            }
+
+
 
             //Passing in monster data from saves through viewbags.
             int temp;
