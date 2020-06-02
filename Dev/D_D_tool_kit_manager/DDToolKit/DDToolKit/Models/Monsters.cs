@@ -1,4 +1,4 @@
-namespace DDToolKit.DAL
+namespace DDToolKit.Models
 {
     using Model;
     using System;

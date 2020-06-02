@@ -48,6 +48,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "PostID,UserName,Title,Post,Published")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
@@ -61,6 +62,7 @@ namespace DDToolKit.Controllers
         }
 
         // GET: BlogPosts/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +82,7 @@ namespace DDToolKit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "PostID,UserName,Title,Post,Published")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
