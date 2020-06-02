@@ -1,4 +1,4 @@
-namespace DDToolKit.DAL
+namespace DDToolKit.Models
 {
     using Model;
     using System;
@@ -9,8 +9,8 @@ namespace DDToolKit.DAL
     {
         public Monsters()
 
-           // : base("name=Monsters")
-        : base("name=DDToolContext_Azure")
+            : base("name=Monsters")
+        //: base("name=DDToolContext_Azure")
         {
         }
 

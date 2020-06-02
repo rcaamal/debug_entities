@@ -22,8 +22,19 @@ h2 {
     border-width: thick;
     background-color: #715252;
     display: inline-block;
+   
+    color: #ebe6e6;
+    
+}
+h3 {
+    border: groove;
+    border-color: #2c447d;
+    border-width: thick;
+    background-color: #715252;
+    display: inline-block;
     padding: 5px;
     color: #ebe6e6;
+    margin-left: 70px;
 }
 
 p.currently {
@@ -40,6 +51,7 @@ p.come {
     border: dashed;
     border-color: #2c447d;
     border-width: thick;
+    margin-left:70px;
 }
 
 p.monsterImage {

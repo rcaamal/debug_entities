@@ -59,7 +59,7 @@ input[type=datetime] {
     display: inline-grid;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #ffffff;
-    margin: 0px 15px;
+    margin: 0px 35px;
 }
 
 div.col-md-13 {
@@ -92,7 +92,7 @@ h2 {
 h3 {
     padding-right: 55px;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    margin-left: 168px;
+    margin-left: 188px;
     font-size: large;
     color: #066380;
 }
@@ -108,7 +108,7 @@ h4 {
 h5 {
     padding-right: 55px;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    margin-left: 150px;
+    margin-left: 130px;
     font-size: large;
     color: #066380;
 }
@@ -134,7 +134,7 @@ button.link {
     border-width: thick;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #ffffff;
-    font-size: medium;
+    font-size: x-large;
 }
 
 body {

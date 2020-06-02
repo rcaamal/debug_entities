@@ -10,11 +10,13 @@ using DDToolKit.Models;
 
 namespace DDToolKit.Controllers
 {
+
     public class SpellController : Controller
     {
         private gameModel db = new gameModel();
         private Magic dbMagic = new Magic();
 
+        [ValidateInput(false)]
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -37,6 +39,7 @@ namespace DDToolKit.Controllers
 
         // GET: Spell
         [Authorize]
+        [ValidateInput(false)]
         public ActionResult Index()
         {
             
@@ -44,6 +47,7 @@ namespace DDToolKit.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Index(string spellName)
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/spells");
@@ -65,7 +69,7 @@ namespace DDToolKit.Controllers
             return View();
         }
 
-
+        [ValidateInput(false)]
         public ActionResult spellInfo(string spellName)
         {
             string json = SendRequest("https://www.dnd5eapi.co/api/spells/" + spellName);
@@ -230,7 +234,7 @@ namespace DDToolKit.Controllers
             return View();
 
         }
-        
+        [ValidateInput(false)]
         public JsonResult smartSearch(string search)
         {
             
