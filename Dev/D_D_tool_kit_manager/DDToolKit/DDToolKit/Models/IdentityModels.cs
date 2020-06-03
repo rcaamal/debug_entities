@@ -20,17 +20,17 @@ namespace DDToolKit.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+       public ApplicationDbContext()
 
 
 
 
 
-   : base("Monsters", throwIfV1Schema: false)
+         //: base("Monsters", throwIfV1Schema: false)
 
 
 
-          //: base("DDToolContext_Azure", throwIfV1Schema: false) 
+          : base("DDToolContext_Azure", throwIfV1Schema: false) 
 
 
         {

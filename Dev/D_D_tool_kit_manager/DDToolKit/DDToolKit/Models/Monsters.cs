@@ -9,8 +9,8 @@ namespace DDToolKit.Models
     {
         public Monsters()
 
-            : base("name=Monsters")
-        //: base("name=DDToolContext_Azure")
+            //: base("name=Monsters")
+        : base("name=DDToolContext_Azure")
         {
         }
 
