@@ -1,6 +1,6 @@
 # README Debug Entities
 
-This is the repository for Debug Entities, a team for the CS461/CS462 Senior Project 2020 at Western Oregon University. This project in this course is meant as a capstone project for a Bachelor's degree in Computer Science.
+This is the repository for Debug Entities, a team for the CS461/CS462 Senior Project 2020 at Western Oregon University. This project in this course is meant as a capstone project for a Bachelor's degree in Computer Science. Here is our AES video talking about ourselves and about our project enjoy. [AES Video](https://youtu.be/HbPBL49yS04)
 
 ### The contents of this repository includes: ###
 
