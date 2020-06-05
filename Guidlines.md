@@ -1,5 +1,9 @@
 This is how you start adding work each time you work on code.
 
+Fork
+
+Fork this repository to be able to have an identical copy of the work we have done and you are able to contriube to our project. 
+
 Fetch
 
 Fetching refers to getting the latest changes from an online repository without merging them in.
