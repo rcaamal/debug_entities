@@ -6,10 +6,10 @@ This is the repository for Debug Entities, a team for the CS461/CS462 Senior Pro
 
 
 1. Dev folder
-    * This folder is what contains our previous project that was class project where we worked on project to get us ready for our real project. It was an assignment to help us understand the concpets of this capstone to help us build and create our projects.
+    * This folder is what contains our previous project that was class project where we worked on project to get us ready for our real project. It was an assignment to help us understand the concpets of this capstone to help us build and create our projects. 
 
 1. Senior project Folder
-    * This folder contains our milestones that we did for this class.
+    * This folder contains our milestones that we did for this class. here is our [final E-R Diagram](https://github.com/rcaamal/debug_entities/blob/master/Dev/D_D_tool_kit_manager/README.md)
 
     1. Milestone1
 	    * Team logo 
