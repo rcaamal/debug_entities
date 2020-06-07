@@ -496,7 +496,6 @@
     <Content Include="Views\BlogPosts\Details.cshtml" />
     <Content Include="Views\BlogPosts\Edit.cshtml" />
     <Content Include="Views\BlogPosts\Index.cshtml" />
-    <Content Include="Web_deploy.config" />
     <Content Include="Views\Home\Acknowledgement.cshtml" />
     <Content Include="Views\Quiz\Questions.cshtml" />
     <Content Include="Views\Quiz\Answers.cshtml" />
