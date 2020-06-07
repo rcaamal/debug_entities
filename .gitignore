@@ -337,3 +337,4 @@ ASALocalRun/
 
 #ignoring the file
 Web_deploy.config
+AppSettingsSecrets.config
