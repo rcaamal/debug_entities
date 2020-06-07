@@ -241,10 +241,6 @@
     <Content Include="App_Data\mapup.sql" />
     <Content Include="App_Data\MagicUp.sql" />
     <Content Include="App_Data\MaigcDown.sql" />
-    <Content Include="App_Data\Monsters.mdf" />
-    <Content Include="App_Data\Monsters_log.ldf">
-      <DependentUpon>Monsters.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Savedown.sql" />
     <Content Include="App_Data\Saveup.sql" />
     <Content Include="App_Data\script.sql" />
@@ -502,12 +498,9 @@
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Web_deploy.config" />
     <Content Include="Views\Home\Acknowledgement.cshtml" />
-
     <Content Include="Views\Quiz\Questions.cshtml" />
     <Content Include="Views\Quiz\Answers.cshtml" />
-
     <Content Include="Views\Manage\Delete.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />

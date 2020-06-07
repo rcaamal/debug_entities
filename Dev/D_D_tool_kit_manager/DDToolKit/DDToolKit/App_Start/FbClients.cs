@@ -7,8 +7,8 @@ namespace DDToolKit.App_Start
 {
     public class FbClients
     {
-        public const string appId = "489417875063406";
-        public const string appSecret = "9b079646839da5b0855b4d4aaac86398";
+        public static string appId = System.Web.Configuration.WebConfigurationManager.AppSettings["fbappId"];
+        public static string appSecret = System.Web.Configuration.WebConfigurationManager.AppSettings["fbSecret"];
 
     }
 }
